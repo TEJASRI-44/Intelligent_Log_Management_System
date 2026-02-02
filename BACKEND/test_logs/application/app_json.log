@@ -1,0 +1,6 @@
+{"timestamp":"2026-01-11T09:10:00Z","severity":"INFO","service":"payment","message":"Payment initiated"}
+{"timestamp":"2026-01-11T09:10:02Z","severity":"ERROR","service":"payment","message":"Insufficient balance"}
+{"timestamp":"2026-01-11T09:10:05Z","severity":"SUCCESS","service":"payment","message":"Transaction completed"}
+{"timestamp":"2026-01-10T10:01:12Z","severity":"INFO","service":"auth-service","message":"User login successful"}
+{"timestamp":"2026-01-10T10:01:15Z","severity":"WARN","service":"auth-service","message":"Slow response detected"}
+{"timestamp":"2026-01-10T10:01:18Z","severity":"ERROR","service":"auth-service","message":"Database connection failed"}

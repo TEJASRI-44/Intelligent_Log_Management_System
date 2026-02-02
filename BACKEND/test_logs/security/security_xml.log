@@ -1,0 +1,14 @@
+<logs>
+  <log>
+    <timestamp>2026-01-13T01:01:00Z</timestamp>
+    <severity>ERROR</severity>
+    <service>iam</service>
+    <message>Unauthorized access attempt</message>
+  </log>
+  <log>
+    <timestamp>2026-01-13T01:02:00Z</timestamp>
+    <severity>INFO</severity>
+    <service>iam</service>
+    <message>Access policy evaluated</message>
+  </log>
+</logs>

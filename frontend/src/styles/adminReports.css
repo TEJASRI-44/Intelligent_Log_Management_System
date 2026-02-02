@@ -1,0 +1,152 @@
+.report-card {
+  /* background: #ffffff; */
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  border: 1px solid #e5e7eb;
+}
+
+.report-header {
+  margin-bottom: 14px;
+}
+
+.report-card h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* TABLES */
+
+.logs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.logs-table th {
+  text-align: left;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logs-table td {
+  padding: 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.logs-table.compact th,
+.logs-table.compact td {
+  padding: 8px;
+}
+
+.msg {
+  max-width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ERROR BLOCKS */
+
+.error-block {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.error-summary {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.severity-badge,
+.severity-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.severity-badge.error,
+.severity-pill.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.severity-badge.fatal,
+.severity-pill.fatal {
+  background: #7f1d1d;
+  color: #ffffff;
+}
+
+.severity-pill.warn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.severity-pill.info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+/* ACTIVE SYSTEMS */
+
+.system-block {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.system-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.system-name {
+  font-weight: 600;
+}
+
+.system-count {
+  font-size: 12px;
+  color: #374151;
+}
+
+.date-range {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.date-range input {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.date-range button {
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: #2563eb;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.date-range button:hover {
+  background: #1e40af;
+}

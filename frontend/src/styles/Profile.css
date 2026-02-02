@@ -1,0 +1,96 @@
+/* ===============================
+   USER PROFILE PAGE
+================================ */
+
+.user-profile-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.user-profile-header {
+  margin-bottom: 20px;
+}
+
+.user-profile-header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.user-profile-header p {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+/* CARD */
+.user-profile-card {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+/* CARD HEADER */
+.user-profile-card .card-header {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 14px 18px;
+}
+
+.user-profile-card h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* FORM LABELS */
+.user-profile-card label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* INPUTS */
+.user-profile-card .form-control {
+  border-radius: 6px;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+}
+
+.user-profile-card .form-control:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ACTION BUTTONS */
+.user-profile-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* EDIT BUTTON */
+.user-profile-edit-btn {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+/* SAVE / CANCEL */
+.user-profile-save-btn {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+}
+
+.user-profile-cancel-btn {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+}
+
+/* GRID SPACING */
+.user-profile-card .row > div {
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .user-profile-header h2 {
+    font-size: 1.4rem;
+  }
+}

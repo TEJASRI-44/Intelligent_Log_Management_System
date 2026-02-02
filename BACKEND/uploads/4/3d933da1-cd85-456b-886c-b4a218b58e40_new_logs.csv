@@ -1,0 +1,14 @@
+timestamp,level,service,message,user_id,ip_address
+2026-01-22T11:05:12Z,INFO,auth-service,User registration successful,u901,192.168.2.10
+2026-01-22T11:06:01Z,INFO,auth-service,Email verification completed,u901,192.168.2.10
+2026-01-22T11:07:44Z,ERROR,auth-service,Invalid password attempt,u345,192.168.2.45
+2026-01-22T11:08:30Z,WARNING,rate-limit-service,Too many login requests,u345,192.168.2.45
+2026-01-22T11:09:15Z,INFO,file-service,File upload started,u678,192.168.2.78
+2026-01-22T11:10:02Z,INFO,file-service,File checksum verified,u678,192.168.2.78
+2026-01-22T11:10:59Z,ERROR,file-service,File upload failed due to network issue,u678,192.168.2.78
+2026-01-22T11:12:20Z,INFO,search-service,Log search query executed,u123,192.168.1.10
+2026-01-22T11:13:05Z,WARNING,search-service,Slow query detected,u123,192.168.1.10
+2026-01-22T11:14:42Z,INFO,notification-service,Email notification sent,u901,192.168.2.10
+2026-01-22T11:15:30Z,ERROR,notification-service,SMTP server not responding,system,127.0.0.1
+2026-01-22T11:16:18Z,INFO,health-service,System health check passed,system,127.0.0.1
+

@@ -1,0 +1,146 @@
+/* =========================================
+   USER UPLOAD FILES – CLEAN PROFESSIONAL UI
+   (Isolated, page-specific styling)
+========================================= */
+
+/* -------- Page Header -------- */
+.user-upload-page {
+  width: 100%;
+}
+
+.user-upload-header {
+  margin-bottom: 32px;
+}
+
+.user-upload-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.user-upload-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* -------- Card -------- */
+.user-upload-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  max-width: 900px;
+}
+
+.user-upload-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fafbfc;
+}
+
+.user-upload-card-header h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* -------- Form Layout -------- */
+.user-upload-form {
+  padding: 28px;
+}
+
+.user-upload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.user-upload-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-upload-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* -------- Inputs -------- */
+.user-upload-group select,
+.user-upload-group input[type="file"] {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  background: #ffffff;
+  transition: all 0.2s;
+}
+
+.user-upload-group select:focus,
+.user-upload-group input[type="file"]:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* -------- Full Width -------- */
+.user-upload-full {
+  grid-column: 1 / -1;
+}
+
+/* -------- Actions -------- */
+.user-upload-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* -------- Upload Button -------- */
+.user-upload-btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-upload-btn:hover {
+  background: #1d4ed8;
+}
+
+.user-upload-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* -------- Message -------- */
+.user-upload-alert {
+  margin-top: 20px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+  .user-upload-card {
+    max-width: 100%;
+  }
+
+  .user-upload-actions {
+    justify-content: stretch;
+  }
+
+  .user-upload-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,107 @@
+/* ===============================
+   ADMIN LOG SEARCH – FILTERS
+   =============================== */
+
+.admin-log-filters {
+  background: #fff;
+}
+
+.admin-log-filters .card-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.admin-log-filters .form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 4px;
+}
+
+.admin-log-filters .form-control,
+.admin-log-filters .form-select {
+  font-size: 0.9rem;
+  padding: 6px 10px;
+}
+.admin-log-filters .form-select{
+    height: 38px;
+    padding: 7px 12px;
+    margin-top: 8px;
+}
+
+.admin-log-filters .form-control:focus,
+.admin-log-filters .form-select:focus {
+  box-shadow: none;
+  border-color: #0d6efd;
+}
+
+.admin-log-filters button.btn-primary {
+  font-size: 0.85rem;
+ 
+  font-weight: 600;
+  width: 100%;
+}
+
+/* Align button properly */
+.admin-log-filters .col-md-1 {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ===============================
+   TABLE & BADGES (unchanged)
+   =============================== */
+
+.admin-log-search .page-header h2 {
+  font-weight: 600;
+}
+
+.admin-log-search .page-header p {
+  font-size: 0.95rem;
+}
+
+.table th {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.table td {
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.log-message {
+  max-width: 520px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Severity Badges */
+.severity-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.severity-badge.INFO {
+  background-color: #e3f2fd;
+  color: #0d6efd;
+}
+
+.severity-badge.WARN {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.severity-badge.ERROR {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.severity-badge.FATAL {
+  background-color: #212529;
+  color: #fff;
+}

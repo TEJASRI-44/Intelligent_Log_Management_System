@@ -1,0 +1,4 @@
+timestamp,severity,service,message
+2026-01-12T22:10:00Z,WARNING,firewall,Multiple failed login attempts
+2026-01-12T22:11:00Z,ERROR,firewall,IP blocked due to brute force
+2026-01-12T22:15:00Z,INFO,ids,Threat scan completed

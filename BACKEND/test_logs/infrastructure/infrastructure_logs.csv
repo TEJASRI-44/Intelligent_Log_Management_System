@@ -1,0 +1,8 @@
+timestamp,severity,service,message
+2026-02-03T02:15:00Z,INFO,kube-node-1,Node heartbeat received
+2026-02-03T02:17:45Z,WARN,kube-node-1,Memory usage above 80%
+2026-02-03T02:20:10Z,ERROR,kube-node-1,Pod crash detected
+2026-02-03T02:22:30Z,INFO,kube-node-2,Node heartbeat received
+2026-02-03T02:25:05Z,ERROR,kube-node-2,Disk pressure condition met
+2026-02-03T02:27:40Z,INFO,kube-scheduler,Scheduling cycle completed
+2026-02-03T02:30:15Z,WARN,kube-controller,Replica count mismatch detected

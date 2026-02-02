@@ -1,0 +1,12 @@
+timestamp,level,service,message,user_id,ip_address
+2026-01-22T10:15:30Z,INFO,auth-service,User login successful,u123,192.168.1.10
+2026-01-22T10:16:05Z,INFO,auth-service,JWT token issued,u123,192.168.1.10
+2026-01-22T10:17:02Z,WARNING,file-service,File size exceeded recommended limit,u456,192.168.1.22
+2026-01-22T10:18:11Z,INFO,file-service,File upload completed,u456,192.168.1.22
+2026-01-22T10:18:45Z,ERROR,db-service,Database connection timeout,system,127.0.0.1
+2026-01-22T10:19:30Z,INFO,db-service,Database reconnected successfully,system,127.0.0.1
+2026-01-22T10:20:11Z,INFO,api-gateway,Request routed to user-dashboard,u123,192.168.1.10
+2026-01-22T10:21:40Z,ERROR,api-gateway,Unauthorized access attempt,u789,192.168.1.55
+2026-01-22T10:22:10Z,WARNING,log-service,High memory usage detected,system,127.0.0.1
+2026-01-22T10:23:00Z,INFO,log-service,Logs archived successfully,system,127.0.0.1
+

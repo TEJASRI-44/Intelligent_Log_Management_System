@@ -1,0 +1,19 @@
+2026-02-10 09:01:12 INFO api-gateway Service started version=2.4.1
+2026-02-10 09:01:15 INFO api-gateway Route registered path=/api/users
+2026-02-10 09:02:03 INFO auth-service Token issued user_id=U7821
+2026-02-10 09:02:08 WARN auth-service Suspicious login attempt user_id=U9999 ip=172.16.4.23
+2026-02-10 09:02:45 ERROR auth-service Token validation failed token_expired=true
+2026-02-10 09:03:10 INFO user-service Profile updated user_id=U7821
+2026-02-10 09:04:01 INFO search-service Search query executed keyword="log errors"
+2026-02-10 09:04:44 WARN search-service Slow query detected duration_ms=1870
+2026-02-10 09:05:20 INFO notification-service Push notification sent user_id=U7821
+2026-02-10 09:06:33 ERROR notification-service SMTP connection refused host=smtp.internal
+2026-02-10 09:07:55 INFO file-service File upload started file_id=F55491
+2026-02-10 09:08:14 INFO file-service File checksum verified file_id=F55491
+2026-02-10 09:08:41 ERROR file-service File upload failed reason=NETWORK_ERROR
+2026-02-10 09:09:22 INFO scheduler-service Job executed job=daily_cleanup
+2026-02-10 09:10:09 WARN scheduler-service Job execution delayed job=daily_cleanup
+2026-02-10 09:11:37 INFO audit-service User role changed admin_id=A221 target_user=U7821
+2026-02-10 09:12:58 INFO health-service Health check passed cpu=41% memory=58%
+2026-02-10 09:13:44 ERROR health-service Node unreachable node=node-7
+

@@ -1,0 +1,40 @@
+/* Root scope — prevents dashboard CSS from leaking */
+.acu-root {
+  background: #f8f9fb;
+}
+
+/* Centered form width */
+.acu-wrapper {
+  max-width: 1100px;
+}
+
+/* Card tweaks */
+.acu-card {
+  border-radius: 10px;
+}
+
+/* Header */
+.acu-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Sections */
+.acu-section {
+  margin-bottom: 28px;
+}
+
+.acu-section-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Form labels */
+.acu-root .form-label {
+  font-weight: 500;
+  font-size: 14px;
+}

@@ -1,0 +1,266 @@
+/* =========================================
+   USER SEARCH LOGS – CLEAN PROFESSIONAL UI
+   (Admin-safe, user-prefixed only)
+========================================= */
+
+/* -------- Page Layout -------- */
+.user-page-content {
+  width: 100%;
+}
+
+.user-page-header {
+  margin-bottom: 32px;
+}
+
+.user-page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.user-page-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* -------- Stats -------- */
+.user-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.user-stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.user-stat-card h3 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.user-stat-card p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.user-stat-card.error h3 {
+  color: #ef4444;
+}
+
+.user-stat-card.warning h3 {
+  color: #f59e0b;
+}
+
+/* -------- Cards -------- */
+.user-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 28px;
+}
+
+.user-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fafbfc;
+}
+
+.user-card-header h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* -------- Search Form -------- */
+.user-search-form {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.user-search-form input,
+.user-search-form select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.user-search-form input:focus,
+.user-search-form select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* -------- Filter Row -------- */
+.user-filter-row {
+  display: flex;
+  gap: 16px;
+  grid-column: 1 / -1;
+}
+
+.user-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.user-form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* -------- Primary Button -------- */
+.user-primary-btn {
+  grid-column: 1 / -1;
+  justify-self: flex-end;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-primary-btn:hover {
+  background: #1d4ed8;
+}
+
+/* -------- Alerts -------- */
+.user-alert {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+/* -------- Table -------- */
+.user-table-container {
+  overflow-x: auto;
+}
+
+.user-data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-data-table th {
+  background: #f8fafc;
+  padding: 14px 24px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.user-data-table td {
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.user-data-table tr:hover {
+  background: #f8fafc;
+}
+
+/* -------- Severity Badges -------- */
+.user-badge {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.user-badge.info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.user-badge.warn {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.user-badge.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.user-badge.fatal {
+  background: #fce7f3;
+  color: #9f1239;
+}
+
+/* -------- Message Cell -------- */
+.user-message-cell {
+  max-width: 420px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -------- Pagination -------- */
+.user-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+  background: #fafbfc;
+}
+
+.user-pagination button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #c7d2fe;
+  background: white;
+  color: #1e3a8a;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.user-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.user-pagination span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+  .user-filter-row {
+    flex-direction: column;
+  }
+
+  .user-primary-btn {
+    width: 100%;
+  }
+}
