@@ -1,5 +1,7 @@
 // src/components/user/UserSidebar.jsx
-export default function UserSidebar({ activePage, setActivePage }) {
+import { NavLink } from "react-router-dom";
+
+export default function UserSidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
@@ -7,26 +9,43 @@ export default function UserSidebar({ activePage, setActivePage }) {
       </div>
 
       <nav className="sidebar-nav">
-        
-        <button className={`nav-item ${activePage === "search" ? "active" : ""}`}
-          onClick={() => setActivePage("search")}>
+
+        <NavLink
+          to="/user/logs"
+          className={({ isActive }) =>
+            `nav-item  text-decoration-none ${isActive ? "active" : "text-decoration-none"}`
+          }
+        >
           <span className="nav-text">Overview & Logs</span>
-        </button>
+        </NavLink>
 
-        <button className={`nav-item ${activePage === "upload" ? "active" : ""}`}
-          onClick={() => setActivePage("upload")}>
+        <NavLink
+          to="/user/upload-file"
+          className={({ isActive }) =>
+            `nav-item text-decoration-none ${isActive ? "active" : "text-decoration-none"}`
+          }
+        >
           <span className="nav-text">Upload Files</span>
-        </button>
+        </NavLink>
 
-        <button className={`nav-item ${activePage === "files" ? "active" : ""}`}
-          onClick={() => setActivePage("files")}>
+        <NavLink
+          to="/user/my-files"
+          className={({ isActive }) =>
+            `nav-item text-decoration-none ${isActive ? "active" : "text-decoration-none"}`
+          }
+        >
           <span className="nav-text">My Files</span>
-        </button>
+        </NavLink>
 
-        <button className={`nav-item ${activePage === "profile" ? "active" : ""}`}
-          onClick={() => setActivePage("profile")}>
+        <NavLink
+          to="/user/profile"
+          className={({ isActive }) =>
+            `nav-item text-decoration-none ${isActive ? "active" : "text-decoration-none"}`
+          }
+        >
           <span className="nav-text">Profile</span>
-        </button>
+        </NavLink>
+
       </nav>
     </aside>
   );

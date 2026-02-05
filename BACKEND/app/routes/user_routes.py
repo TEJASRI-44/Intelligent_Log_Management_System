@@ -14,6 +14,8 @@ from app.schemas.password import ChangePasswordRequest
 from app.models.user_credentials import UserCredentials
 from datetime import datetime
 from fastapi import Query
+from sqlalchemy import text
+
 import re
 
 from app.services.user_service import (

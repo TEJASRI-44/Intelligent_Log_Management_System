@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.scheduler import start_scheduler
-
+import uvicorn
 
 
 
@@ -73,3 +73,7 @@ def root():
 @app.on_event("startup")
 def startup_event():
     start_scheduler()
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8000,reload=True)
