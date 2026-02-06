@@ -14,7 +14,7 @@ export default function AdminSidebar() {
 
   return (
     <aside className="admin-sidebar">
-      <h2 className="logo">ILMS Admin</h2>
+      <h2 className="logo text-white">ILMS Admin</h2>
 
       <nav>
         {links.map(([path, label]) => (

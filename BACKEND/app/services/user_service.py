@@ -54,9 +54,9 @@ def create_user_by_admin(db: Session, admin_id: int, payload):
 
     db.add(AuditTrail(
         user_id=admin_id,
-        action_type="CREATE_USER",
+        action_type="CREATED USER",
         entity_type="USER",
-        entity_id=user.user_id
+        entity_id=user.username
     ))
 
     db.commit()

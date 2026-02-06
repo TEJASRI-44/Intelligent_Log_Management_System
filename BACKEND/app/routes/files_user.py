@@ -72,8 +72,8 @@ def delete_uploaded_file(
 
     audit = AuditTrail(
         user_id=user_id,
-        action_type="DELETE_FILE",
-        entity_type="RAW_FILE",
+        action_type="DELETED FILE",
+        entity_type="RAW FILE",
         entity_id=file_id
     )
 

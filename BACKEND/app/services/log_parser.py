@@ -47,7 +47,7 @@ def classify_log(message: str) -> str:
 
     msg = message.lower()
 
-    # 🔐 Security related logs
+    # Security related logs
     if any(keyword in msg for keyword in [
         "login",
         "authentication",
@@ -63,7 +63,7 @@ def classify_log(message: str) -> str:
     ]):
         return "SECURITY"
 
-    # 🖥 Infrastructure related logs
+    #  Infrastructure related logs
     if any(keyword in msg for keyword in [
         "cpu",
         "memory",
@@ -80,7 +80,7 @@ def classify_log(message: str) -> str:
     ]):
         return "INFRASTRUCTURE"
 
-    # 📝 Audit & compliance logs
+    #  Audit & compliance logs
     if any(keyword in msg for keyword in [
         "audit",
         "compliance",
@@ -94,7 +94,7 @@ def classify_log(message: str) -> str:
     ]):
         return "AUDIT"
 
-    # ⚙️ Application related logs
+    #  Application related logs
     if any(keyword in msg for keyword in [
         "exception",
         "error",
@@ -110,51 +110,3 @@ def classify_log(message: str) -> str:
 
     return "UNCATEGORIZED"
 
-
-
-def parse_and_store_logs(
-    db: Session,
-    file_id: int,
-    raw_text: str
-):
-    """
-    Clean → Parse → Categorize → Insert into log_entries
-    """
-     
-    cleaned_lines = clean_log_lines(raw_text)
-
-    for line in cleaned_lines:
-        match = LOG_PATTERN.match(line)
-        if not match:
-            print("❌ REGEX FAILED:", line)
-            continue
-        print("✅ REGEX MATCHED:", line)
-
-        data = match.groupdict()
-
-        log_time = datetime.strptime(
-            data["timestamp"], "%Y-%m-%d %H:%M:%S"
-        )
-
-        severity = db.query(LogSeverity).filter(
-            LogSeverity.severity_code == data["severity"]
-        ).first()
-
-        category_name = classify_log(data["message"])
-        category = db.query(LogCategory).filter(
-            LogCategory.category_name == category_name
-        ).first()
-
-        log_entry = LogEntry(
-            file_id=file_id,
-            log_timestamp=log_time,
-            severity_id=severity.severity_id if severity else None,
-            category_id=category.category_id if category else None,
-            service_name=data["service"],
-            message=data["message"],
-            raw_log=line
-        )
-
-        db.add(log_entry)
-
-    db.commit()

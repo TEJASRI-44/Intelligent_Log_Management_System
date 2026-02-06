@@ -38,7 +38,7 @@ export async function fetchActiveSystems(startDate, endDate) {
     }
   );
 
-  return res.json(); // ✅ RETURNS ARRAY
+  return res.json(); 
 }
 
 export async function fetchRecentLogs(days = 10, page = 1, limit = 10) {

@@ -5,9 +5,11 @@ from app.models.log_entries import LogEntry
 from app.models.log_severities import LogSeverity
 from app.models.log_categories import LogCategory
 from app.services.log_parser import classify_log
+from app.services.log_parser import clean_log_lines
 
 def parse_csv_logs(db: Session, file_id: int, raw_text: str):
-    reader = csv.DictReader(raw_text.splitlines())
+    cleaned_lines=clean_log_lines(raw_text)
+    reader = csv.DictReader(cleaned_lines)
     inserted = 0
 
     for row in reader:
@@ -36,4 +38,4 @@ def parse_csv_logs(db: Session, file_id: int, raw_text: str):
         inserted += 1
 
     db.commit()
-    print(f"✅ CSV logs inserted: {inserted}")
+    print(f" CSV logs inserted: {inserted}")

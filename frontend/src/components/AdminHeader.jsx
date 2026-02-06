@@ -12,10 +12,10 @@ export default function AdminHeader({ user }) {
 
   return (
     <header className="header d-flex justify-content-between align-items-center">
-      <h1 className="mb-0">Admin Dashboard</h1>
+      <h2 className=" mb-0">Intelligent Log Management System</h2>
 
       <div className="d-flex align-items-center gap-3">
-        <span className="text-muted small">{user?.email}</span>
+        <span className="text-muted small">{user?.username}</span>
 
         <button
           className="btn btn-outline-danger btn-sm"

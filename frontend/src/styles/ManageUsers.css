@@ -159,6 +159,12 @@ h2 {
   padding: 40px 20px;
   color: #999;
 }
+.email-bar{
+  height: 38px;
+}
+.app-but{
+  height: 38px;
+}
 
 /* Responsive design */
 @media (max-width: 1024px) {

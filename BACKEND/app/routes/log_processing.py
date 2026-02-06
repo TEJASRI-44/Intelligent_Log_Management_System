@@ -31,21 +31,21 @@ def search_logs(
         .join(LogCategory, LogEntry.category_id == LogCategory.category_id)
     )
 
-    # 📅 Date filters
+    #  Date filters
     if start_date:
         query = query.filter(LogEntry.log_timestamp >= start_date)
     if end_date:
         query = query.filter(LogEntry.log_timestamp <= end_date)
 
-    # 🗂 Category filter
+    # Category filter
     if category:
         query = query.filter(LogCategory.category_name == category.upper())
 
-    # 🚨 Severity filter
+    # Severity filter
     if severity:
         query = query.filter(LogSeverity.severity_code == severity.upper())
 
-    # 🔍 Keyword search
+    #  Keyword search
     if keyword:
         query = query.filter(LogEntry.message.ilike(f"%{keyword}%"))
 

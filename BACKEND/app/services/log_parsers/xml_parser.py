@@ -37,4 +37,4 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
         inserted += 1
 
     db.commit()
-    print(f"✅ XML logs inserted: {inserted}")
+    print(f" XML logs inserted: {inserted}")

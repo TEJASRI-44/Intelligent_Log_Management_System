@@ -253,7 +253,14 @@
   font-weight: 500;
   color: #334155;
 }
-
+.search {
+  height:38px;
+  padding:7px 12px;
+}
+.reset{
+  height:38px;
+  padding:7px 12px;
+}
 /* -------- Responsive -------- */
 @media (max-width: 768px) {
   .user-filter-row {

@@ -18,7 +18,7 @@ export default function AdminReports() {
 
   const [error, setError] = useState("");
 
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
   const [selectedDateLogs, setSelectedDateLogs] = useState(0);
 
   const [startDate, setStartDate] = useState("");
@@ -272,8 +272,6 @@ export default function AdminReports() {
   </div>
 )}
 
-
-      {/* ================= RECENT LOGS ================= */}
       {/* ================= RECENT LOGS ================= */}
 <div className="card shadow-sm">
   <div className="card-body">
@@ -317,12 +315,12 @@ export default function AdminReports() {
                 <tr key={i}>
                   <td>{new Date(l.timestamp).toLocaleString()}</td>
                   <td>
-                    <span className={`badge ${
+                    <span className={` ${
                       l.severity === "ERROR"
-                        ? "bg-danger"
+                        ? "text-danger"
                         : l.severity === "WARN"
-                        ? "bg-warning text-dark"
-                        : "bg-info"
+                        ? "text-warning text-dark"
+                        : "text-info"
                     }`}>
                       {l.severity}
                     </span>

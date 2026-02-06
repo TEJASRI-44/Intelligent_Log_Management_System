@@ -70,6 +70,7 @@ export default function AdminAudits() {
               <label className="form-label">Rows per page</label>
               <select
                 className="form-select"
+                
                 value={limit}
                 onChange={e => {
                   setLimit(parseInt(e.target.value, 10));
@@ -105,7 +106,7 @@ export default function AdminAudits() {
                   <td>{new Date(l.time).toLocaleString()}</td>
                   <td>{l.username || "-"}</td>
                   <td>
-                    <span className="badge bg-primary">
+                    <span className="text-primary">
                       {l.action}
                     </span>
                   </td>

@@ -127,7 +127,7 @@ function resetFilters() {
           <h2>Filter Logs</h2>
         </div>
 
-        <form className="user-search-form" onSubmit={handleUserSearch}>
+        <form className="user-search-form " onSubmit={handleUserSearch}>
           <input
             placeholder="Search by keyword..."
             value={userFilters.keyword}
@@ -191,7 +191,9 @@ function resetFilters() {
             <div className="d-flex">
             
               <div>
+                
                 <select
+               
                 value={userPageSize}
                 onChange={e => setUserPageSize(Number(e.target.value))}
               >
@@ -200,20 +202,19 @@ function resetFilters() {
                 <option value={50}>50</option>
                 <option value={100}>100</option>
               </select>
-              </div>
-               <div>
 
-                <label>Logs per page</label>
-               </div>
+              <label htmlFor="logs per page" className="m-3">Rows</label>
+              </div>
+               
             </div>
             
          
             <div className="d-flex h-75 align-items-center flex-row justify-content-around ">
 
-                <button type="submit" className="col-md-4 mx-2 user-primary-btn rounded-2">
+                <button type="submit" className="col-md-4 mx-2 user-primary-btn rounded-2 search">
                     Search 
                 </button>
-                <button type="button" className="col-md-4 mx-2 user-secondary-btn rounded-2" onClick={resetFilters}>
+                <button type="button" className="col-md-4 mx-2 user-secondary-btn rounded-2 reset" onClick={resetFilters}>
                     Reset 
                 </button>
             </div>

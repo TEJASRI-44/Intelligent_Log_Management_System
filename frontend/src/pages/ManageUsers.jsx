@@ -10,6 +10,8 @@ import { fetchTeams } from "../api/admin.api";
 
 import EditUserModal from "./EditUserModal";
 import "../styles/ManageUsers.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 export default function ManageUsers() {
   const [users, setUsers] = useState([]);
@@ -36,7 +38,7 @@ export default function ManageUsers() {
 
   function onSaved() {
     closeModal();
-    load();
+    loadUsers();
   }
     useEffect(() => {
   fetchTeams()
@@ -66,7 +68,7 @@ export default function ManageUsers() {
   async function toggleStatus(user) {
     if (user.user_id === currentUserId) return;
     await updateUserStatus(user.user_id, !user.is_active);
-    load();
+    loadUsers();
   }
 
   async function removeUser(user) {
@@ -74,7 +76,7 @@ export default function ManageUsers() {
 
     if (window.confirm(`Delete user ${user.email}? This action is irreversible.`)) {
       await deleteUser(user.user_id);
-      load();
+      loadUsers();
     }
   }
 
@@ -82,9 +84,7 @@ export default function ManageUsers() {
     <>
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h2>Manage Users</h2>
-        <span className="text-muted small">
-          You cannot modify your own account
-        </span>
+       
       </div>
 
       {error && (
@@ -97,7 +97,9 @@ export default function ManageUsers() {
       <div className="col-md-4">
         <label className="form-label">Email</label>
         <input
-          className="form-control"
+          
+          className="form-control email-bar"
+          
           placeholder="Search by email"
           value={email}
           onChange={e => setEmail(e.target.value)}
@@ -140,7 +142,7 @@ export default function ManageUsers() {
 
       <div className="col-md-2">
         <button
-          className="btn btn-primary w-100"
+          className="btn btn-primary app-but w-100"
           onClick={() => loadUsers(1)}
         >
           Apply
@@ -176,14 +178,14 @@ export default function ManageUsers() {
                   <div className="text-muted small">
                     {u.username || "-"}
                     {isSelf && (
-                      <span className="badge bg-secondary ms-2">You</span>
+                      <span className="text-warning ms-2">You</span>
                     )}
                   </div>
                 </td>
 
                 <td>
                   {(u.roles || []).map(r => (
-                    <span key={r} className="badge bg-primary me-1">
+                    <span key={r} className="text-primary me-1 d-block">
                       {r}
                     </span>
                   ))}
@@ -191,7 +193,7 @@ export default function ManageUsers() {
 
                 <td>
                   {(u.teams || []).map(t => (
-                    <span key={t} className="badge bg-info text-dark me-1">
+                    <span key={t} className=" text-dark me-1 d-block">
                       {t}
                     </span>
                   ))}
@@ -199,8 +201,8 @@ export default function ManageUsers() {
 
                 <td>
                   <span
-                    className={`badge ${
-                      u.is_active ? "bg-success" : "bg-secondary"
+                    className={` ${
+                      u.is_active ? "text-success" : "text-secondary"
                     }`}
                   >
                     {u.is_active ? "Active" : "Inactive"}
@@ -208,27 +210,42 @@ export default function ManageUsers() {
                 </td>
 
                 <td className="text-end">
-                  <button
-                    className="btn btn-sm btn-outline-primary me-1"
-                    onClick={() => onEdit(u)}  
+                 <button
+                    className="btn btn-sm  me-1"
+                    onClick={() => onEdit(u)}
                   >
-                    Edit
+                    <i className="bi bi-pencil "></i>
                   </button>
 
-                  <button
-                    className="btn btn-sm btn-outline-warning me-1"
-                    disabled={isSelf}
-                    onClick={() => toggleStatus(u)}
-                  >
-                    {u.is_active ? "Deactivate" : "Activate"}
-                  </button>
+
+                  <div className="me-4">
+                    <i
+                  className={`bi m-auto ${
+                    u.is_active ? "bi-toggle-on text-primary" : "bi-toggle-off text-secondary"
+                  }`}
+                  role="button"
+                  aria-label={u.is_active ? "Deactivate user" : "Activate user"}
+                  title={u.is_active ? "Deactivate" : "Activate"}
+                  style={{
+                    fontSize: "1.4rem",
+                    cursor: isSelf ? "not-allowed" : "pointer",
+                    opacity: isSelf ? 0.5 : 1
+                  }}
+                  onClick={() => {
+                    if (!isSelf) toggleStatus(u);
+                  }}
+                ></i>
+                  </div>
+
+
 
                   <button
-                    className="btn btn-sm btn-outline-danger"
+                    className="btn btn-sm "
                     disabled={isSelf}
                     onClick={() => removeUser(u)}
                   >
-                    Delete
+                   <i className="bi bi-trash text-danger"></i>
+
                   </button>
                 </td>
               </tr>

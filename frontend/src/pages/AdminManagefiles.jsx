@@ -159,7 +159,7 @@ console.log(files);
 
             <div className="col-md-2">
               <button
-                className="btn btn-primary w-100"
+                className="btn btn-primary app-but w-100"
                 onClick={loadFiles}
               >
                 Apply

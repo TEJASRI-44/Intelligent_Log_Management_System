@@ -5,6 +5,7 @@ from app.models.log_entries import LogEntry
 from app.models.log_severities import LogSeverity
 from app.models.log_categories import LogCategory
 from app.services.log_parser import classify_log
+from app.services.log_parser import clean_log_lines
 
 LOG_PATTERN = re.compile(
     r"(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+"
@@ -16,7 +17,9 @@ LOG_PATTERN = re.compile(
 def parse_text_logs(db: Session, file_id: int, raw_text: str):
     inserted = 0
 
-    for line in raw_text.splitlines():
+    cleaned_lines = clean_log_lines(raw_text)
+    
+    for line in  cleaned_lines():
         match = LOG_PATTERN.match(line.strip())
         if not match:
             continue
@@ -48,4 +51,4 @@ def parse_text_logs(db: Session, file_id: int, raw_text: str):
         inserted += 1
 
     db.commit()
-    print(f"✅ TEXT logs inserted: {inserted}")
+    print(f"TEXT logs inserted: {inserted}")

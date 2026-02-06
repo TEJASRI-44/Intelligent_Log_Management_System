@@ -11,48 +11,45 @@ export default function AdminLogSearch() {
     severity: "",
     keyword: ""
   });
+  const [total, setTotal] = useState(0);
 
   const [logs, setLogs] = useState([]);
   const [message, setMessage] = useState("");
 const [pageSize, setPageSize] = useState(10);
+const totalPages = Math.ceil(total / pageSize);
+const [page,setPage]=useState("")
+ 
 
-  const [page, setPage] = useState(1);
-  useEffect(() => {
-    fetchLogs(page);
-    // eslint-disable-next-line
-  }, [page]);
+  async function fetchLogs(pageToLoad = page) {
+  setMessage("");
 
-  async function fetchLogs(newPage = 1) {
-    setMessage("");
-    setLogs([]);
-    setPage(newPage);
+  const payload = {
+    ...filters,
+    page: pageToLoad,
+    limit: pageSize,
+    start_date: filters.start_date
+      ? `${filters.start_date}T00:00:00`
+      : undefined,
+    end_date: filters.end_date
+      ? `${filters.end_date}T23:59:59`
+      : undefined
+  };
 
-    const payload = {
-      ...filters,
-      page: newPage,
-      limit: pageSize,
-      start_date: filters.start_date
-        ? `${filters.start_date}T00:00:00`
-        : undefined,
-      end_date: filters.end_date
-        ? `${filters.end_date}T23:59:59`
-        : undefined
-    };
-
-    try {
-      const res = await adminSearchLogs(payload);
-      setLogs(res.results || []);
-      setMessage(`Showing ${res.results?.length || 0} of ${res.count} logs`);
-    } catch (err) {
-      console.error(err);
-      setMessage("Failed to search logs");
-    }
+  try {
+    const res = await adminSearchLogs(payload);
+    setLogs(res.results || []);
+    setTotal(res.count || 0);
+    setMessage(`Showing ${res.results?.length || 0} of ${res.count} logs`);
+  } catch (err) {
+    console.error(err);
+    setMessage("Failed to search logs");
   }
-
+}
   useEffect(() => {
-    fetchLogs(1);
-    // eslint-disable-next-line
-  }, []);
+  fetchLogs(page);
+  // eslint-disable-next-line
+}, [page, pageSize, filters]);
+
 
   function handleSearch(e) {
     e.preventDefault();
@@ -66,8 +63,6 @@ const [pageSize, setPageSize] = useState(10);
     severity: "",
     keyword: ""
   };
-    setFilters(filters);
-    handleSearch(new Event("submit"));
     fetchLogs(1);
   }
 
@@ -90,9 +85,9 @@ const [pageSize, setPageSize] = useState(10);
             <div className="row g-3">
 
               <div className="col-md-2">
-                <label className="form-label">Keyword</label>
+                <label className="form-label ">Keyword</label>
                 <input
-                  className="form-control"
+                  className="form-control box"
                   placeholder="Search log message"
                   value={filters.keyword}
                   onChange={e =>
@@ -136,10 +131,10 @@ const [pageSize, setPageSize] = useState(10);
               </div>
 
               <div className="col-md-2">
-                <label className="form-label">From</label>
+                <label className="form-label ">From</label>
                 <input
                   type="date"
-                  className="form-control"
+                  className="form-control box"
                   value={filters.start_date}
                   onChange={e =>
                     setFilters({ ...filters, start_date: e.target.value })
@@ -148,10 +143,10 @@ const [pageSize, setPageSize] = useState(10);
               </div>
 
               <div className="col-md-2">
-                <label className="form-label">To</label>
+                <label className="form-label ">To</label>
                 <input
                   type="date"
-                  className="form-control"
+                  className="form-control box"
                   value={filters.end_date}
                   onChange={e =>
                     setFilters({ ...filters, end_date: e.target.value })
@@ -164,9 +159,9 @@ const [pageSize, setPageSize] = useState(10);
                           className="form-select"
                           value={pageSize}
                           onChange={e => {
-                          setPageSize(Number(e.target.value));
-                          setPage(1);
+                            setPageSize(Number(e.target.value));
                           }}
+
                       >
                           <option value={5}>5</option>
                           <option value={10}>10</option>
@@ -177,10 +172,10 @@ const [pageSize, setPageSize] = useState(10);
               
             </div>
             <div className="col-md-1 d-grid align-self-end d-flex flex-row gap-2">
-                <button className="btn btn-primary">
+                <button className="btn btn-primary mt-4">
                   Search
                 </button>
-                <button  className="btn btn-outline-primary mt-3  " onClick={resetFilters}>
+                <button  className="btn btn-primary mt-4" onClick={resetFilters}>
                   Reset
                 </button>
             </div>
@@ -244,23 +239,25 @@ const [pageSize, setPageSize] = useState(10);
         {/* PAGINATION */}
         <div className="d-flex justify-content-end align-items-center gap-3 p-3 border-top">
           <button
-            type="button"
-            className="btn btn-outline-secondary btn-sm"
-            disabled={page === 1}
-            onClick={() => fetchLogs(page - 1)}
-          >
-            Prev
-          </button>
+  className="btn btn-outline-secondary btn-sm"
+  disabled={page === 1}
+  onClick={() => setPage(page - 1)}
+>
+  Prev
+</button>
 
-          <span className="fw-semibold">Page {page}</span>
+<span className="fw-semibold">
+  Page {page} of {totalPages || 1}
+</span>
 
-          <button
-            type="button"
-            className="btn btn-outline-secondary btn-sm"
-            onClick={() => fetchLogs(page + 1)}
-          >
-            Next
-          </button>
+<button
+  className="btn btn-outline-secondary btn-sm"
+  disabled={page >= totalPages}
+  onClick={() => setPage(page + 1)}
+>
+  Next
+</button>
+
         </div>
       </div>
 

@@ -112,13 +112,13 @@ def admin_delete_file(
     if not file:
         raise HTTPException(status_code=404, detail="File not found")
 
-    # ✅ SOFT DELETE
+    #  SOFT DELETE
     file.is_deleted = True
 
     db.add(AuditTrail(
         user_id=int(current_user["sub"]),
-        action_type="SOFT_DELETE_FILE",
-        entity_type="RAW_FILE",
+        action_type="SOFT DELETED FILE",
+        entity_type="RAW FILE",
         entity_id=file_id
     ))
 
@@ -143,8 +143,8 @@ def restore_file(
 
     db.add(AuditTrail(
         user_id=int(current_user["sub"]),
-        action_type="RESTORE_FILE",
-        entity_type="RAW_FILE",
+        action_type="RESTORED FILE",
+        entity_type="RAW FILE",
         entity_id=file_id
     ))
 

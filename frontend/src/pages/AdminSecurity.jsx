@@ -100,8 +100,8 @@ export default function AdminSecurity() {
                   <td>{l.ip || "-"}</td>
                   <td>
                     <span
-                      className={`badge ${
-                        l.success ? "bg-success" : "bg-danger"
+                      className={` ${
+                        l.success ? "text-success" : "text-danger"
                       }`}
                     >
                       {l.success ? "SUCCESS" : "FAILED"}

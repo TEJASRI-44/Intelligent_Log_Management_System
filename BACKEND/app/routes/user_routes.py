@@ -37,7 +37,7 @@ router = APIRouter(prefix="/users", tags=["Users"])
 
 
 # --------------------------------------------------
-# 🔐 Helper: Require ADMIN role
+#  Helper: Require ADMIN role
 # --------------------------------------------------
 def require_admin(user):
     roles = user.get("roles", [])
@@ -49,7 +49,7 @@ def require_admin(user):
 
 
 # --------------------------------------------------
-# ➕ ADMIN CREATE USER
+#  ADMIN CREATE USER
 # --------------------------------------------------
 @router.post("/create")
 def admin_create_user(
@@ -70,7 +70,7 @@ def admin_create_user(
 
 
 # --------------------------------------------------
-# 👥 VIEW USERS (WITH ROLES & TEAMS + IDs)
+#  VIEW USERS (WITH ROLES & TEAMS + IDs)
 # --------------------------------------------------
 @router.get("/view")
 def view_users(
@@ -262,7 +262,7 @@ def change_my_password(
     # ✅ Audit
     db.add(AuditTrail(
         user_id=user_id,
-        action_type="CHANGE_PASSWORD",
+        action_type="CHANGED PASSWORD",
         entity_type="USER",
         entity_id=user_id
     ))
