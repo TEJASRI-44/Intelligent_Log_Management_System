@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { adminSearchLogs } from "../api/admin.api";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/AdminLogSearch.css";
@@ -15,14 +15,14 @@ export default function AdminLogSearch() {
 
   const [logs, setLogs] = useState([]);
   const [message, setMessage] = useState("");
-const [pageSize, setPageSize] = useState(10);
-const totalPages = Math.ceil(total / pageSize);
-const [page,setPage]=useState("")
- 
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
+
+  
   async function fetchLogs(pageToLoad = page) {
   setMessage("");
-
+  
   const payload = {
     ...filters,
     page: pageToLoad,
@@ -37,9 +37,11 @@ const [page,setPage]=useState("")
 
   try {
     const res = await adminSearchLogs(payload);
-    setLogs(res.results || []);
-    setTotal(res.count || 0);
-    setMessage(`Showing ${res.results?.length || 0} of ${res.count} logs`);
+    setLogs(res.results);
+    console.log(res.total);
+    
+    setTotal(res.total);
+    setMessage(`Showing ${res.results?.length || 0} of ${res.total} logs`);
   } catch (err) {
     console.error(err);
     setMessage("Failed to search logs");
@@ -63,6 +65,7 @@ const [page,setPage]=useState("")
     severity: "",
     keyword: ""
   };
+    setFilters(filters);
     fetchLogs(1);
   }
 
@@ -238,25 +241,24 @@ const [page,setPage]=useState("")
 
         {/* PAGINATION */}
         <div className="d-flex justify-content-end align-items-center gap-3 p-3 border-top">
-          <button
-  className="btn btn-outline-secondary btn-sm"
-  disabled={page === 1}
-  onClick={() => setPage(page - 1)}
->
-  Prev
-</button>
+              <button
+                className="btn btn-secondary btn-sm"
+                disabled={page === 1}
+                onClick={() => setPage(p => p - 1)}
+              >
+                Prev
+              </button>
 
-<span className="fw-semibold">
-  Page {page} of {totalPages || 1}
-</span>
+              <span>Page {page} of {Math.ceil(total / pageSize)}</span>
 
-<button
-  className="btn btn-outline-secondary btn-sm"
-  disabled={page >= totalPages}
-  onClick={() => setPage(page + 1)}
->
-  Next
-</button>
+              <button
+                className="btn btn-secondary btn-sm"
+                disabled={page >= Math.ceil(total / pageSize)}
+                onClick={() => setPage(p => p + 1)}
+              >
+                Next
+              </button>
+
 
         </div>
       </div>

@@ -15,9 +15,6 @@ export default function AdminSecurity() {
 }, [page, successFilter, limit]);
 
 
-  useEffect(() => {
-    loadLogs(page);
-  }, [page, successFilter]);
 
   async function loadLogs(p) {
     const res = await fetchLoginHistory(
