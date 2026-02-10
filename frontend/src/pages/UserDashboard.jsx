@@ -26,7 +26,7 @@ export default function UserDashboard() {
 
       {/* MAIN AREA */}
       <div className="dashboard-main">
-        <header className="dashboard-header">
+        <header className="dashboard-header position-fixed top-0 start-0 end-0 ">
           <h1>Intelligent Log Management System</h1>
           <button className="logout-btn" onClick={handleLogout}>
             Sign Out

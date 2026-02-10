@@ -150,3 +150,105 @@
 .date-range button:hover {
   background: #1e40af;
 }
+/* =========================
+   RESPONSIVE STYLES
+   ========================= */
+
+/* Tablets & below */
+@media (max-width: 768px) {
+
+  /* Cards */
+  .report-card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .report-card h3 {
+    font-size: 15px;
+  }
+
+  .muted {
+    font-size: 12px;
+  }
+
+  /* Tables */
+  .table-responsive,
+  .logs-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .logs-table th,
+  .logs-table td {
+    font-size: 12px;
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  /* Log message wrapping */
+  .msg {
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* Error & system blocks */
+  .error-summary,
+  .system-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* Date range filters */
+  .date-range {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .date-range input,
+  .date-range button {
+    width: 100%;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 576px) {
+
+  /* Cards spacing */
+  .card {
+    margin-bottom: 16px;
+  }
+
+  .card-body h3 {
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  /* Dropdowns */
+  .form-select {
+    font-size: 13px;
+  }
+
+  /* Header layout fixes */
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Pagination buttons */
+  .btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}

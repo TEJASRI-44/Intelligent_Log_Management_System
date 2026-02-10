@@ -17,11 +17,13 @@ import AdminLogSearch from "./pages/AdminLogSearch";
 import AdminManageFiles from "./pages/AdminManagefiles";
 import AdminSecurity from "./pages/AdminSecurity";
 import AdminAudits from "./pages/AdminAudits";
-
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
   return (
-    <Routes>
+    
+    <>
+      <Routes>
 
       <Route path="/" element={<Home />} />
 
@@ -74,5 +76,17 @@ export default function App() {
       <Route path="*" element={<Navigate to="/" />} />
 
     </Routes>
+    <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="dark"
+      />
+    </>
+   
   );
 }

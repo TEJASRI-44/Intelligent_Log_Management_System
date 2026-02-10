@@ -26,8 +26,8 @@ def list_all_files(
     name: str | None = Query(None),
     team_id: int | None = Query(None),
     status: str | None = Query(None),
-    page: int = Query(1, ge=1),          # ✅
-    limit: int = Query(10, le=100),      # ✅
+    page: int = Query(1, ge=1),          
+    limit: int = Query(10, le=100),      
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
@@ -56,7 +56,7 @@ def list_all_files(
 
 
 
-    total = query.count()   # ✅ total rows
+    total = query.count()  
 
     files = (
         query

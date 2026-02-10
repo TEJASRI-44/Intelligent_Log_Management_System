@@ -12,6 +12,8 @@ from app.core.security import verify_password
 from app.core.security import hash_password
 from app.schemas.password import ChangePasswordRequest
 from app.models.user_credentials import UserCredentials
+from app.models.log_categories import LogCategory
+
 from datetime import datetime
 from fastapi import Query
 from sqlalchemy import text
@@ -104,11 +106,11 @@ def view_users(
             "is_active": u.is_active,
             "created_at": u.created_at,
 
-            # ✅ Names for display
+          
             "roles": [r.role_name for r in roles],
             "teams": [t.team_name for t in teams],
 
-            # ✅ IDs for editing modal
+            #  IDs for editing modal
             "role_ids": [r.role_id for r in roles],
             "team_ids": [t.team_id for t in teams],
         })
@@ -238,28 +240,26 @@ def change_my_password(
     if not creds:
         raise HTTPException(status_code=404, detail="Credentials not found")
 
-    # ✅ Verify current password
     if not verify_password(payload.current_password, creds.password_hash):
         raise HTTPException(
             status_code=400,
             detail="Current password is incorrect"
         )
 
-    # ✅ Prevent reuse
     if verify_password(payload.new_password, creds.password_hash):
         raise HTTPException(
             status_code=400,
             detail="New password must be different"
         )
 
-    # ✅ Update password
+   
     creds.password_hash = hash_password(payload.new_password)
     creds.password_changed_at = text("NOW()")
     creds.failed_attempts = 0
     creds.is_locked = False
     creds.locked_until = None
 
-    # ✅ Audit
+ 
     db.add(AuditTrail(
         user_id=user_id,
         action_type="CHANGED PASSWORD",
@@ -334,7 +334,20 @@ def get_my_logs(
         query = query.filter(LogEntry.log_timestamp <= end_date)
 
     if category:
-        query = query.filter(LogEntry.category == category)
+        category_obj = (
+            db.query(LogCategory)
+            .filter(LogCategory.category_name == category)
+            .first()
+        )
+
+        if not category_obj:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid category: {category}"
+            )
+
+        query = query.filter(LogEntry.category_id == category_obj.category_id)
+
 
     if severity:
         query = query.filter(LogSeverity.severity_code == severity)

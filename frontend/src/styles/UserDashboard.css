@@ -144,9 +144,10 @@ body {
 /* -------- Main Content -------- */
 .main-content {
   flex: 1;
-  margin-left: 200px;
+  margin-left: 109px;
   padding: 32px;
   overflow-y: auto;
+  margin-top: 50px;
 }
 
 .page-content {
@@ -367,7 +368,7 @@ body {
 /* -------- Responsive -------- */
 @media (max-width: 768px) {
   .sidebar {
-    width: 70px;
+    width: 100px;
   }
 
   .nav-text {
@@ -375,7 +376,7 @@ body {
   }
 
   .main-content {
-    margin-left: 70px;
+    margin-left:170px;
     padding: 20px;
   }
 
@@ -386,5 +387,12 @@ body {
   .search-form,
   .upload-form {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:500px) {
+   .main-content {
+    margin-left:270px;
+    padding: 20px;
   }
 }

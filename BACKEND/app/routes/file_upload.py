@@ -33,9 +33,7 @@ def upload_log_file(
     db: Session = Depends(get_db),
     current_user: dict = Depends(get_current_user)
 ):
-    # ------------------------------------------------
-    # 1️⃣ Validate upload policy
-    # ------------------------------------------------
+
     user_id = int(current_user["sub"])
 
     if not is_upload_allowed(
@@ -46,9 +44,7 @@ def upload_log_file(
     ):
         raise HTTPException(status_code=403, detail="Upload not allowed")
 
-    # ------------------------------------------------
-    # 2️⃣ Read file & checksum
-    # ------------------------------------------------
+   
     content = file.file.read()
     if not content:
         raise HTTPException(status_code=400, detail="Empty file")
@@ -58,9 +54,7 @@ def upload_log_file(
     if db.query(RawFile).filter(RawFile.checksum == checksum).first():
         raise HTTPException(status_code=409, detail="Duplicate file")
 
-    # ------------------------------------------------
-    # 3️⃣ Store file locally (Appwrite-style)
-    # ------------------------------------------------
+  
     """ team_dir = os.path.join(BASE_UPLOAD_DIR, str(team_id))
     os.makedirs(team_dir, exist_ok=True)
 
@@ -71,8 +65,7 @@ def upload_log_file(
     with open(file_path, "wb") as f:
         f.write(content)
     # -------------------- """
-# 3️⃣ Store file in Appwrite Storage
-# ------------------------------------------------
+
         
     storage = get_appwrite_storage()
     file.file.seek(0)

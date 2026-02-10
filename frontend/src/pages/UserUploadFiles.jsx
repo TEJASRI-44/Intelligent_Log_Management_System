@@ -6,6 +6,7 @@ import {
   fetchAllowedSources,
   fetchAllowedFormats
 } from "../api/lookups.api";
+import { toast } from "react-toastify";
 
 import "../styles/UserUploadFiles.css";
 
@@ -19,7 +20,7 @@ export default function UserUploadFiles() {
   const [formatId, setFormatId] = useState("");
   const [file, setFile] = useState(null);
 
-  const [message, setMessage] = useState("");
+
   const [loading, setLoading] = useState(false);
   
 
@@ -60,17 +61,18 @@ useEffect(() => {
   e.preventDefault();
 
   if (!file) {
-    setMessage("✗ Please select a file");
+    toast.error("Please select a file to upload.");
     return;
   }
 
   setLoading(true);
-  setMessage("");
 
   try {
     await uploadLogFile(teamId, sourceId, formatId, file);
 
-    setMessage("✓ File uploaded successfully. Processing started.");
+   
+    toast.success("File uploaded successfully!");
+    
     setFile(null);
     e.target.reset();
 
@@ -81,7 +83,7 @@ useEffect(() => {
       err?.response?.data?.detail ||
       "Upload failed. Please try again.";
 
-    setMessage(` ${backendMsg}`);
+    toast.error(backendMsg);
   } finally {
     setLoading(false);
   }
@@ -179,11 +181,11 @@ useEffect(() => {
           </div>
         </form>
 
-        {message && (
+     {/*    {message && (
           <div className="user-upload-alert">
             {message}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

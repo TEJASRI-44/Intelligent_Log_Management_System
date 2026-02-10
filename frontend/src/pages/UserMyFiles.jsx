@@ -1,8 +1,13 @@
 // src/pages/user/UserMyFiles.jsx
 import { useEffect, useState } from "react";
-import { fetchMyFiles, deleteMyFile, restoreMyFile, userDownloadFile } from "../api/files.api";
+import {
+  fetchMyFiles,
+  deleteMyFile,
+  restoreMyFile,
+  userDownloadFile
+} from "../api/files.api";
 import { fetchMyTeams } from "../api/lookups.api";
-import "../styles/UserMyFiles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function UserMyFiles() {
   const [files, setFiles] = useState([]);
@@ -14,8 +19,6 @@ export default function UserMyFiles() {
   const [filters, setFilters] = useState({ name: "" });
   const [loading, setLoading] = useState(false);
 
-  /* ================= EFFECTS ================= */
-
   useEffect(() => {
     fetchMyTeams().then(setTeams);
   }, []);
@@ -24,67 +27,56 @@ export default function UserMyFiles() {
     loadFiles();
   }, [page, pageSize, selectedTeam]);
 
-  /* ================= LOAD FILES ================= */
-
-async function loadFiles() {
-  setLoading(true);
-  try {
-    const res = await fetchMyFiles({
-      name: filters.name || undefined,
-      team_id: selectedTeam || undefined,
-      page,
-      limit: pageSize
-    });
-
-    setFiles(res.results || []);
-    setTotalFiles(res.count || 0);
-
-  } catch (err) {
-    console.error("Failed to load files", err);
-    setFiles([]);
-    setTotalFiles(0);
-  } finally {
-    setLoading(false);
+  async function loadFiles() {
+    setLoading(true);
+    try {
+      const res = await fetchMyFiles({
+        name: filters.name || undefined,
+        team_id: selectedTeam || undefined,
+        page,
+        limit: pageSize
+      });
+      setFiles(res.results || []);
+      setTotalFiles(res.count || 0);
+    } catch {
+      setFiles([]);
+      setTotalFiles(0);
+    } finally {
+      setLoading(false);
+    }
   }
-}
 
-    async function handleDelete(fileId) {
-        if (!window.confirm("Delete this file?")) return;
+  async function handleDelete(id) {
+    if (!window.confirm("Delete this file?")) return;
+    await deleteMyFile(id);
+    loadFiles();
+  }
 
-        try {
-            await deleteMyFile(fileId);
-            await loadFiles(); 
-        } catch (err) {
-            console.error("Delete failed", err);
-        }
-    }
-    async function handleRestore(fileId) {
-        try {
-            await restoreMyFile(fileId);
-            await loadFiles();
-        } catch (err) {
-            console.error("Restore failed", err);
-        }
-    }
-
-  /* ================= RENDER ================= */
+  async function handleRestore(id) {
+    await restoreMyFile(id);
+    loadFiles();
+  }
 
   return (
-    <div className="user-files-page">
+    <div className="container-fluid px-3 px-md-4 py-4">
+
       {/* HEADER */}
-      <div className="user-files-header">
-        <h1>My Files</h1>
-        <p>Files uploaded by you across your teams</p>
+      <div className="mb-4">
+        <h2 className="mb-1">My Files</h2>
+        <p className="text-muted mb-0">
+          Files uploaded by you across your teams
+        </p>
       </div>
 
       {/* FILTERS */}
-      <div className="user-files-filter-card">
-        <div className="user-files-filter-body">
-          <div className="user-files-filter-grid">
+      <div className="card shadow-sm mb-4">
+        <div className="card-body">
+          <div className="row g-3 align-items-end">
 
-            <div className="user-files-filter-group">
-              <label>File Name</label>
+            <div className="col-12 col-md-4">
+              <label className="form-label">File Name</label>
               <input
+                className="form-control"
                 placeholder="Search by file name"
                 onChange={e =>
                   setFilters({ ...filters, name: e.target.value })
@@ -92,9 +84,10 @@ async function loadFiles() {
               />
             </div>
 
-            <div className="user-files-filter-group">
-              <label>Team</label>
+            <div className="col-12 col-md-4">
+              <label className="form-label">Team</label>
               <select
+                className="form-select"
                 value={selectedTeam}
                 onChange={e => {
                   setSelectedTeam(e.target.value);
@@ -110,9 +103,10 @@ async function loadFiles() {
               </select>
             </div>
 
-            <div className="user-files-filter-group small">
-              <label>Rows</label>
+            <div className="col-6 col-md-2">
+              <label className="form-label">Rows</label>
               <select
+                className="form-select"
                 value={pageSize}
                 onChange={e => {
                   setPageSize(Number(e.target.value));
@@ -126,9 +120,9 @@ async function loadFiles() {
               </select>
             </div>
 
-            <div className="user-files-filter-group action">
+            {/* <div className="col-6 col-md-2">
               <button
-                className="user-files-apply-btn"
+                className="btn btn-primary w-100"
                 onClick={() => {
                   setPage(1);
                   loadFiles();
@@ -137,123 +131,108 @@ async function loadFiles() {
                 Apply
               </button>
             </div>
-
+ */}
           </div>
         </div>
       </div>
 
       {/* TABLE */}
-      <div className="user-files-card">
-        <div className="user-files-table-container">
-          <table className="user-files-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Team</th>
-                <th>Uploaded At</th>
-                <th>Size</th>
-                <th className="align-right">Status</th>
-              </tr>
-            </thead>
+      <div className="card shadow-sm">
+        <div className="card-body">
 
-            <tbody>
-              {!Array.isArray(files) && (
+          <div className="table-responsive">
+            <table className="table table-hover  align-middle mb-0">
+              <thead className="table-light">
                 <tr>
-                  <td colSpan="5" className="user-files-error">
-                    ERROR: files is not an array
-                  </td>
+                  <th>Name</th>
+                  <th>Team</th>
+                  <th>Uploaded At</th>
+                  <th>Size</th>
+                  <th>Status</th>
+                  <th className="text-end">Action</th>
                 </tr>
-              )}
+              </thead>
 
-              {Array.isArray(files) && files.length === 0 && !loading && (
-                <tr>
-                  <td colSpan="5" className="user-files-empty">
-                    No files found
-                  </td>
-                </tr>
-              )}
+              <tbody>
+                {loading && (
+                  <tr>
+                    <td colSpan="6" className="text-center text-muted">
+                      Loading...
+                    </td>
+                  </tr>
+                )}
 
-              {Array.isArray(files) &&
-                files.map(f => (
+                {!loading && files.length === 0 && (
+                  <tr>
+                    <td colSpan="6" className="text-center text-muted">
+                      No files found
+                    </td>
+                  </tr>
+                )}
+
+                {files.map(f => (
                   <tr
                     key={f.file_id}
-                    className={f.is_deleted ? "user-files-row-deleted" : ""}
+                    className={f.is_deleted ? "table-secondary" : ""}
                   >
                     <td>{f.name}</td>
                     <td>{f.team}</td>
                     <td>{new Date(f.uploaded_at).toLocaleString()}</td>
                     <td>{(f.file_size / 1024).toFixed(1)} KB</td>
                     <td>
-                      <span className={`badge ${
-                        "bg-primary"
-                      }`}>
+                      <span className="badge bg-primary">
                         {f.status}
                       </span>
                     </td>
-
-                    <td className="align-right">
-                         {/* <button
-                            className="btn btn-sm btn-outline-primary"
-                            disabled={f.is_deleted || f.status === "ARCHIVED"}
-                            title={
-                            f.is_deleted
-                                ? "File is deleted"
-                                : f.status === "ARCHIVED"
-                                ? "Archived files cannot be downloaded"
-                                : "Download file"
-                            }
-                            onClick={() => userDownloadFile(f.file_id)}
-                        >
-                            Download
-                        </button> */}
+                    <td className="text-end">
                       {f.is_deleted ? (
                         <button
-                        type="button"
-                          className="user-files-restore-btn"
+                          className="btn btn-sm btn-success"
                           onClick={() => handleRestore(f.file_id)}
                         >
                           Restore
                         </button>
                       ) : (
                         <button
-                            type="button"
-                            className="user-files-delete-btn"
-                            onClick={() => handleDelete(f.file_id)}
-                            >
-                            Delete
+                          className="btn btn-sm btn-outline-danger"
+                          onClick={() => handleDelete(f.file_id)}
+                        >
+                          Delete
                         </button>
-
                       )}
                     </td>
                   </tr>
                 ))}
-            </tbody>
-          </table>
-        </div>
+              </tbody>
+            </table>
+          </div>
 
-        {/* PAGINATION */}
-        <div className="user-files-pagination">
-          <button
-            type="button"
-            disabled={page === 1}
-            onClick={() => setPage(p => p - 1)}
-          >
-            Prev
-          </button>
+          {/* PAGINATION */}
+          <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3">
+            <button
+              className="btn btn-outline-secondary btn-sm"
+              disabled={page === 1}
+              onClick={() => setPage(p => p - 1)}
+            >
+              Prev
+            </button>
 
-          <span>
-            Page {page} of {Math.ceil(totalFiles / pageSize) || 1}
-          </span>
+            <span className="fw-semibold">
+              Page {page} of {Math.ceil(totalFiles / pageSize) || 1}
+            </span>
 
-          <button
-            type="button"
-            disabled={page >= Math.ceil(totalFiles / pageSize)}
-            onClick={() => setPage(p => p + 1)}
-          >
-            Next
-          </button>
+            <button
+              className="btn btn-outline-secondary btn-sm"
+              disabled={page >= Math.ceil(totalFiles / pageSize)}
+              onClick={() => setPage(p => p + 1)}
+            >
+              Next
+            </button>
+          </div>
+
         </div>
       </div>
+
     </div>
   );
 }

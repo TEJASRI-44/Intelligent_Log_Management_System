@@ -27,8 +27,9 @@ export default function UserSearchLogs() {
   }, []);
 
   useEffect(() => {
-    handleUserSearch(new Event("submit"));
-  }, [userPage, userPageSize, userLogScope]);
+  loadUserLogs();
+}, [userPage, userPageSize, userLogScope, userFilters]);
+
 
   /* ================= HANDLERS ================= */
 
@@ -64,26 +65,22 @@ export default function UserSearchLogs() {
 
 function handleUserSearch(e) {
   e.preventDefault();
-  setUserPage(1);        // reset pagination on new search
-  loadUserLogs();
+  setUserPage(1); 
 }
 
 
+
 function resetFilters() {
-    const userFilters = {
+  setUserFilters({
     start_date: "",
     end_date: "",
     category: "",
     severity: "",
     keyword: ""
-    };
-    setUserFilters(userFilters);
-    useEffect(() => {
-    loadUserLogs();
-    }, [userPage, userPageSize, userLogScope]);
+  });
+  setUserPage(1);
+}
 
-
-  }
 
 
 
@@ -211,10 +208,10 @@ function resetFilters() {
          
             <div className="d-flex h-75 align-items-center flex-row justify-content-around ">
 
-                <button type="submit" className="col-md-4 mx-2 user-primary-btn rounded-2 search">
+               {/*  <button type="submit" className="col-md-4 mx-2 user-primary-btn rounded-2 search">
                     Search 
-                </button>
-                <button type="button" className="col-md-4 mx-2 user-secondary-btn rounded-2 reset" onClick={resetFilters}>
+                </button> */}
+                <button type="button" className="col-md-6 mx-2 user-secondary-btn rounded-2 reset" onClick={resetFilters}>
                     Reset 
                 </button>
             </div>

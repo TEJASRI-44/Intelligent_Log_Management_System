@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modal, Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { toast } from "react-toastify";
 import { changeMyPassword } from "../api/user.api";
 
 export default function ChangePasswordModal({ show, onClose }) {
@@ -14,13 +14,12 @@ export default function ChangePasswordModal({ show, onClose }) {
   const [showConfirm, setShowConfirm] = useState(false);
 
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+
 
   function resetForm() {
     setCurrentPassword("");
     setNewPassword("");
     setConfirmPassword("");
-    setMessage("");
     setShowCurrent(false);
     setShowNew(false);
     setShowConfirm(false);
@@ -53,14 +52,11 @@ export default function ChangePasswordModal({ show, onClose }) {
         new_password: newPassword
       });
 
-      setMessage("Password changed successfully");
-      alert("Password Changed Succesfully")
+      toast.success("Password changed successfully");
       // Close after user sees success
       setTimeout(handleClose, 1200);
     } catch (err) {
-      setMessage(
-        err.response?.data?.detail || " Failed to change password"
-      );
+      toast.error(err.response?.data?.message || "Failed to change password");
     } finally {
       setLoading(false);
     }
@@ -72,17 +68,8 @@ export default function ChangePasswordModal({ show, onClose }) {
         <Modal.Title>Change Password</Modal.Title>
       </Modal.Header>
 
-      <Modal.Body>
-        {message && (
-          <div
-            className={`alert ${
-              message.startsWith("✅") ? "alert-success" : "alert-danger"
-            } py-2`}
-          >
-            {message}
-          </div>
-        )}
-
+      <Modal.Body  >
+     
         <form onSubmit={handleSubmit}>
           {/* CURRENT PASSWORD */}
           <div className="mb-3">

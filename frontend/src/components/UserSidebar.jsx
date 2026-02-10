@@ -1,49 +1,54 @@
 // src/components/user/UserSidebar.jsx
 import { NavLink } from "react-router-dom";
+import "../styles/UserSidebar.css";
 
 export default function UserSidebar() {
   return (
-    <aside className="sidebar">
-      <div className="sidebar-header">
-        <div className="logo">LogHub Dashboard</div>
+    
+    <aside className="sidebar border-end position-fixed top-0 start-0 vh-100 vh-100 p-3 bg-dark " style={{ width: "220px" }}>
+      
+      {/* LOGO */}
+      <div className="mb-4  fw-bold fs-5  text-white"style={{ marginTop: "100px" }}>
+        User Dashboard
       </div>
 
-      <nav className="sidebar-nav">
+      
+      <nav className="nav nav-pills flex-column gap-2 ">
 
         <NavLink
           to="/user/logs"
           className={({ isActive }) =>
-            `nav-item  text-decoration-none ${isActive ? "active" : "text-decoration-none"}`
+            `nav-link ${isActive ? "active" : "text-white"}`
           }
         >
-          <span className="nav-text">Overview & Logs</span>
+          Overview & Logs
         </NavLink>
 
         <NavLink
           to="/user/upload-file"
           className={({ isActive }) =>
-            `nav-item text-decoration-none ${isActive ? "active" : "text-decoration-none"}`
+            `nav-link ${isActive ? "active" : "text-white"}`
           }
         >
-          <span className="nav-text">Upload Files</span>
+          Upload Files
         </NavLink>
 
         <NavLink
           to="/user/my-files"
           className={({ isActive }) =>
-            `nav-item text-decoration-none ${isActive ? "active" : "text-decoration-none"}`
+            `nav-link ${isActive ? "active" : "text-white"}`
           }
         >
-          <span className="nav-text">My Files</span>
+          My Files
         </NavLink>
 
         <NavLink
           to="/user/profile"
           className={({ isActive }) =>
-            `nav-item text-decoration-none ${isActive ? "active" : "text-decoration-none"}`
+            `nav-link ${isActive ? "active" : "text-white"}`
           }
         >
-          <span className="nav-text">Profile</span>
+          Profile
         </NavLink>
 
       </nav>

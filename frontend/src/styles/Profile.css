@@ -88,6 +88,14 @@
   margin-bottom: 10px;
 }
 
+.form-control:disabled {
+  background-color: #edf3f8 !important;   /* light gray */
+  color: #2284da;              /* muted text */
+  cursor: not-allowed;
+  opacity: 1;                  /* override Bootstrap */
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .user-profile-header h2 {

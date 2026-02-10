@@ -19,7 +19,7 @@ def parse_text_logs(db: Session, file_id: int, raw_text: str):
 
     cleaned_lines = clean_log_lines(raw_text)
     
-    for line in  cleaned_lines():
+    for line in  cleaned_lines:
         match = LOG_PATTERN.match(line.strip())
         if not match:
             continue
