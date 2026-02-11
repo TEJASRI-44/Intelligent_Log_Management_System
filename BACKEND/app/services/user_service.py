@@ -56,7 +56,7 @@ def create_user_by_admin(db: Session, admin_id: int, payload):
         user_id=admin_id,
         action_type="CREATED USER",
         entity_type="USER",
-        entity_id=user.username
+        entity_id=user.user_id
     ))
 
     db.commit()

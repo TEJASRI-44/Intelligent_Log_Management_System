@@ -53,6 +53,7 @@ def logs_per_day(
         .limit(30)
         .all()
     )
+    print(results)
 
     return [
         {
