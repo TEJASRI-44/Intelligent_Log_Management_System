@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = import.meta.env.VITE_API_URL||"http://localhost:8000";
 
 
 function getAuthHeaders() {
@@ -81,7 +81,7 @@ export async function adminDeleteFile(fileId) {
 
 export const adminRestoreFile = async (fileId) => {
   return axios.post(
-    `http://localhost:8000/admin/files/${fileId}/restore`,
+    `${BASE_URL}/admin/files/${fileId}/restore`,
     {}, 
     {
       headers: getAuthHeaders(), 
@@ -91,7 +91,7 @@ export const adminRestoreFile = async (fileId) => {
 
 export const adminDownloadFile = async (fileId) => {
   const res = await axios.get(
-    `http://localhost:8000/admin/files/${fileId}/download`,
+    `${BASE_URL}/admin/files/${fileId}/download`,
     {
       headers: getAuthHeaders(),
       responseType: "blob"
@@ -109,7 +109,7 @@ export const adminDownloadFile = async (fileId) => {
 
 export const runLogRetention = async () => {
   return axios.post(
-    "http://localhost:8000/admin/retention/archive-now",
+    `${BASE_URL}/admin/retention/archive-now`,
     {},
     { headers: getAuthHeaders() }
   );

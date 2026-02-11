@@ -1,5 +1,9 @@
+import app.logging_config 
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+
 
 from app.scheduler import start_scheduler
 import uvicorn

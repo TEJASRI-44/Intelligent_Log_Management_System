@@ -1,3 +1,0 @@
-2026-01-14T05:00:00Z INFO kube-node CPU usage normal
-2026-01-14T05:10:00Z WARN kube-node Memory usage high
-2026-01-14T05:20:00Z ERROR kube-node Node not responding

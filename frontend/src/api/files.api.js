@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000";
+const API_URL = import.meta.env.VITE_API_URL||"http://localhost:8000";
 
 function getAuthHeader() {
   const token = localStorage.getItem("token");
@@ -60,7 +60,7 @@ export async function fetchMyFiles(params = {}) {
 
 
 export async function deleteMyFile(fileId) {
-  await axios.delete(`http://localhost:8000/users/files/${fileId}`, {
+  await axios.delete(`${API_URL}/users/files/${fileId}`, {
     headers: getAuthHeader()
   });
 }
@@ -75,7 +75,7 @@ export async function restoreMyFile(fileId) {
 
 export const userDownloadFile = async (fileId) => {
   const res = await axios.get(
-    `http://localhost:8000/users/files/${fileId}/download`,
+    `${API_URL}/users/files/${fileId}/download`,
     {
       headers: getAuthHeaders(),
       responseType: "blob"

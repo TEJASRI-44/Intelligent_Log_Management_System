@@ -44,7 +44,7 @@ def process_uploaded_file(file_id: int):
             print("   ", line)
 
         #  Parse logs
-        inserted_count = parse_logs_by_format(
+        parsed_percentage = parse_logs_by_format(
             db=db,
             file_id=raw_file.file_id,
             format_id=raw_file.format_id,
@@ -55,7 +55,7 @@ def process_uploaded_file(file_id: int):
         raw_file.status_id = get_status_id(db, "PARSED")
         db.commit()
 
-        print(f" File {file_id} parsed successfully | Logs inserted: {inserted_count}")
+        print(f" File {file_id} parsed successfully | file parsed : {parsed_percentage}%")
 
     except Exception as e:
         db.rollback()

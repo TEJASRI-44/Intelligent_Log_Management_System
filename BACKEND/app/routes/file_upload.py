@@ -85,12 +85,10 @@ def upload_log_file(
             detail=f"Appwrite upload failed: {e.message}"
         )
     except Exception as e:
-        print("❌ Unknown upload error:", str(e))
+        print("Unknown upload error:", str(e))
         raise
 
-    # ------------------------------------------------
-    # 4️⃣ Store metadata in DB
-    # ------------------------------------------------
+   
     raw_file = RawFile(
         team_id=team_id,
         uploaded_by=user_id,
@@ -99,18 +97,16 @@ def upload_log_file(
         checksum=checksum,
         format_id=format_id,
         source_id=source_id,
-        storage_type_id=2,  # 2 = APPWRITE
-        storage_path=uploaded["$id"], # ✅ LOCAL PATH
-        status_id=1              # UPLOADED
+        storage_type_id=2, 
+        storage_path=uploaded["$id"],  
+        status_id=1              
     )
 
     db.add(raw_file)
     db.commit()
     db.refresh(raw_file)
 
-    # ------------------------------------------------
-    # 5️⃣ Background log processing
-    # ------------------------------------------------
+   
     background_tasks.add_task(
         process_uploaded_file,
         raw_file.file_id

@@ -16,12 +16,14 @@ LOG_PATTERN = re.compile(
 
 def parse_text_logs(db: Session, file_id: int, raw_text: str):
     inserted = 0
-
+    skipped=0
+    parsed_percentage=0.0
     cleaned_lines = clean_log_lines(raw_text)
     
     for line in  cleaned_lines:
         match = LOG_PATTERN.match(line.strip())
         if not match:
+            skipped+=1
             continue
 
         data = match.groupdict()
@@ -49,6 +51,9 @@ def parse_text_logs(db: Session, file_id: int, raw_text: str):
 
         db.add(entry)
         inserted += 1
+         
 
     db.commit()
+    parsed_percentage=(inserted/(inserted+skipped))*100 if (inserted+skipped)>0 else 0
+    return parsed_percentage
     print(f"TEXT logs inserted: {inserted}")

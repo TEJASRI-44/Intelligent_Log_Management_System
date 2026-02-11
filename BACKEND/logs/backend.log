@@ -1,0 +1,1488 @@
+2026-02-10 15:44:25 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:44:26 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:44:26 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:44:26 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:44:26 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:44:29 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:44:29 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:44:29 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:44:29 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:44:29 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:44:37 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:44:38 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:44:38 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:44:38 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:44:38 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:44:44 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:44:44 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:44:44 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:44:44 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:44:44 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:52:06 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:52:06 INFO uvicorn.error Started server process [34128]
+2026-02-10 15:52:06 INFO uvicorn.error Waiting for application startup.
+2026-02-10 15:52:06 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:52:06 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:52:06 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:52:06 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:52:06 INFO uvicorn.error Application startup complete.
+2026-02-10 15:52:21 INFO uvicorn.access 127.0.0.1:46678 - "GET /teams HTTP/1.1" 307
+2026-02-10 15:52:21 INFO uvicorn.access 127.0.0.1:46678 - "GET /teams/ HTTP/1.1" 200
+2026-02-10 15:52:21 INFO stdout === ADMIN FILES DEBUG ===
+2026-02-10 15:52:21 INFO stdout file_id=28, name=x2.txt, status=PARSED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=26, name=x1.txt, status=FAILED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=25, name=app_30.txt, status=ARCHIVED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=24, name=applicxation_29.txt, status=PARSED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=22, name=json_log.json, status=FAILED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=21, name=sec2.txt, status=PARSED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=20, name=logs_3.csv, status=PARSED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=19, name=sample_logs2.csv, status=ARCHIVED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=18, name=new_logs.csv, status=PARSED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout file_id=17, name=inf_lgs.csv, status=PARSED, is_deleted=False
+2026-02-10 15:52:21 INFO stdout =========================
+2026-02-10 15:52:21 INFO uvicorn.access 127.0.0.1:46682 - "GET /admin/files?name=&page=1&limit=10 HTTP/1.1" 200
+2026-02-10 15:52:26 INFO uvicorn.access 127.0.0.1:46682 - "OPTIONS /admin/files?name=&team_id=3&page=1&limit=10 HTTP/1.1" 200
+2026-02-10 15:52:26 INFO stdout === ADMIN FILES DEBUG ===
+2026-02-10 15:52:26 INFO stdout file_id=28, name=x2.txt, status=PARSED, is_deleted=False
+2026-02-10 15:52:26 INFO stdout file_id=26, name=x1.txt, status=FAILED, is_deleted=False
+2026-02-10 15:52:26 INFO stdout file_id=25, name=app_30.txt, status=ARCHIVED, is_deleted=False
+2026-02-10 15:52:26 INFO stdout file_id=24, name=applicxation_29.txt, status=PARSED, is_deleted=False
+2026-02-10 15:52:26 INFO stdout file_id=22, name=json_log.json, status=FAILED, is_deleted=False
+2026-02-10 15:52:26 INFO stdout file_id=21, name=sec2.txt, status=PARSED, is_deleted=False
+2026-02-10 15:52:26 INFO stdout =========================
+2026-02-10 15:52:26 INFO uvicorn.access 127.0.0.1:46682 - "GET /admin/files?name=&team_id=3&page=1&limit=10 HTTP/1.1" 200
+2026-02-10 15:52:31 INFO uvicorn.access 127.0.0.1:52900 - "OPTIONS /users/me HTTP/1.1" 200
+2026-02-10 15:52:31 INFO uvicorn.access 127.0.0.1:52900 - "GET /users/me HTTP/1.1" 200
+2026-02-10 15:52:43 INFO uvicorn.access 127.0.0.1:43898 - "OPTIONS /users/me HTTP/1.1" 200
+2026-02-10 15:52:44 INFO uvicorn.access 127.0.0.1:43898 - "PUT /users/me HTTP/1.1" 200
+2026-02-10 15:52:44 INFO uvicorn.access 127.0.0.1:43898 - "GET /users/me HTTP/1.1" 200
+2026-02-10 15:53:18 INFO uvicorn.error Shutting down
+2026-02-10 15:53:18 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 15:53:18 INFO uvicorn.error Application shutdown complete.
+2026-02-10 15:53:18 INFO uvicorn.error Finished server process [34128]
+2026-02-10 15:53:20 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:53:20 INFO uvicorn.error Started server process [34974]
+2026-02-10 15:53:20 INFO uvicorn.error Waiting for application startup.
+2026-02-10 15:53:20 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:53:20 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:53:20 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:53:20 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:53:20 INFO uvicorn.error Application startup complete.
+2026-02-10 15:53:21 INFO uvicorn.error Shutting down
+2026-02-10 15:53:21 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 15:53:21 INFO uvicorn.error Application shutdown complete.
+2026-02-10 15:53:21 INFO uvicorn.error Finished server process [34974]
+2026-02-10 15:53:23 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:53:23 INFO uvicorn.error Started server process [35027]
+2026-02-10 15:53:23 INFO uvicorn.error Waiting for application startup.
+2026-02-10 15:53:23 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:53:23 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:53:23 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:53:23 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:53:23 INFO uvicorn.error Application startup complete.
+2026-02-10 15:53:24 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:53:25 INFO uvicorn.error Started server process [35043]
+2026-02-10 15:53:25 INFO uvicorn.error Waiting for application startup.
+2026-02-10 15:53:25 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:53:25 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:53:25 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:53:25 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:53:25 INFO uvicorn.error Application startup complete.
+2026-02-10 15:53:27 INFO uvicorn.error Shutting down
+2026-02-10 15:53:28 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 15:53:28 INFO uvicorn.error Application shutdown complete.
+2026-02-10 15:53:28 INFO uvicorn.error Finished server process [35043]
+2026-02-10 15:53:29 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 15:53:29 INFO uvicorn.error Started server process [35110]
+2026-02-10 15:53:29 INFO uvicorn.error Waiting for application startup.
+2026-02-10 15:53:29 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 15:53:29 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 15:53:29 INFO apscheduler.scheduler Scheduler started
+2026-02-10 15:53:29 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 15:53:29 INFO uvicorn.error Application startup complete.
+2026-02-10 15:54:15 INFO uvicorn.access 127.0.0.1:39218 - "POST /users/login-json HTTP/1.1" 200
+2026-02-10 15:54:15 INFO uvicorn.access 127.0.0.1:39218 - "OPTIONS /users/stats/summary HTTP/1.1" 200
+2026-02-10 15:54:15 INFO stdout user_id:
+2026-02-10 15:54:15 INFO stdout 13
+2026-02-10 15:54:15 INFO uvicorn.access 127.0.0.1:39220 - "OPTIONS /users/my-logs?page=1&limit=10 HTTP/1.1" 200
+2026-02-10 15:54:15 INFO uvicorn.access 127.0.0.1:39218 - "GET /users/stats/summary HTTP/1.1" 200
+2026-02-10 15:54:15 INFO uvicorn.access 127.0.0.1:39220 - "GET /users/my-logs?page=1&limit=10 HTTP/1.1" 200
+2026-02-10 15:54:17 INFO uvicorn.access 127.0.0.1:39220 - "OPTIONS /users/my-teams HTTP/1.1" 200
+2026-02-10 15:54:17 INFO uvicorn.access 127.0.0.1:39220 - "GET /users/my-teams HTTP/1.1" 200
+2026-02-10 15:54:21 INFO uvicorn.access 127.0.0.1:39220 - "OPTIONS /lookups/team/4/sources HTTP/1.1" 200
+2026-02-10 15:54:21 INFO uvicorn.access 127.0.0.1:39220 - "GET /lookups/team/4/sources HTTP/1.1" 200
+2026-02-10 15:54:23 INFO uvicorn.access 127.0.0.1:39220 - "OPTIONS /lookups/team/3/sources HTTP/1.1" 200
+2026-02-10 15:54:23 INFO uvicorn.access 127.0.0.1:39220 - "GET /lookups/team/3/sources HTTP/1.1" 200
+2026-02-10 15:54:25 INFO uvicorn.access 127.0.0.1:39220 - "OPTIONS /lookups/team/3/source/1/formats HTTP/1.1" 200
+2026-02-10 15:54:25 INFO uvicorn.access 127.0.0.1:39220 - "GET /lookups/team/3/source/1/formats HTTP/1.1" 200
+2026-02-10 16:01:39 INFO uvicorn.access 127.0.0.1:47266 - "OPTIONS /files/upload?team_id=3&source_id=1&format_id=1 HTTP/1.1" 200
+2026-02-10 16:01:40 INFO uvicorn.access 127.0.0.1:47266 - "POST /files/upload?team_id=3&source_id=1&format_id=1 HTTP/1.1" 200
+2026-02-10 16:01:41 INFO stdout First 3 lines of file:
+2026-02-10 16:01:41 INFO stdout 2026-02-10 15:44:25 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+2026-02-10 16:01:41 INFO stdout * 'orm_mode' has been renamed to 'from_attributes'
+2026-02-10 16:01:41 INFO stdout warnings.warn(message, UserWarning)
+2026-02-10 16:01:41 INFO stdout TEXT logs inserted: 117
+2026-02-10 16:01:41 INFO stdout File 29 parsed successfully | Logs inserted: None
+2026-02-10 16:08:52 INFO uvicorn.error Shutting down
+2026-02-10 16:08:52 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:08:52 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:08:52 INFO uvicorn.error Finished server process [35110]
+2026-02-10 16:08:54 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:08:54 INFO uvicorn.error Started server process [43257]
+2026-02-10 16:08:54 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:08:54 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:08:54 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:08:54 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:08:54 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:08:54 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:11 INFO uvicorn.error Shutting down
+2026-02-10 16:09:11 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:09:11 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:09:11 INFO uvicorn.error Finished server process [43257]
+2026-02-10 16:09:13 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:09:13 INFO uvicorn.error Started server process [43470]
+2026-02-10 16:09:13 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:09:13 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:09:13 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:09:13 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:09:13 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:09:13 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:27 INFO uvicorn.error Shutting down
+2026-02-10 16:09:27 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:09:27 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:09:27 INFO uvicorn.error Finished server process [43470]
+2026-02-10 16:09:29 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:09:29 INFO uvicorn.error Started server process [43649]
+2026-02-10 16:09:29 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:09:29 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:09:29 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:09:29 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:09:29 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:09:29 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:30 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:09:30 INFO uvicorn.error Started server process [43679]
+2026-02-10 16:09:30 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:09:30 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:09:30 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:09:30 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:09:30 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:09:30 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:41 INFO uvicorn.error Shutting down
+2026-02-10 16:09:41 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:09:41 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:09:41 INFO uvicorn.error Finished server process [43679]
+2026-02-10 16:09:43 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:09:43 INFO uvicorn.error Started server process [43822]
+2026-02-10 16:09:43 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:09:43 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:09:43 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:09:43 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:09:43 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:09:43 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:45 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:09:45 INFO uvicorn.error Started server process [43870]
+2026-02-10 16:09:45 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:09:45 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:09:45 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:09:45 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:09:45 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:09:45 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:47 INFO uvicorn.error Shutting down
+2026-02-10 16:09:47 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:09:47 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:09:47 INFO uvicorn.error Finished server process [43870]
+2026-02-10 16:09:49 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:09:49 INFO uvicorn.error Started server process [43911]
+2026-02-10 16:09:49 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:09:49 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:09:49 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:09:49 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:09:49 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:09:49 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:50 INFO uvicorn.error Shutting down
+2026-02-10 16:09:50 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:09:50 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:09:50 INFO uvicorn.error Finished server process [43911]
+2026-02-10 16:09:51 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:09:52 INFO uvicorn.error Started server process [43960]
+2026-02-10 16:09:52 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:09:52 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:09:52 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:09:52 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:09:52 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:09:52 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:53 INFO uvicorn.error Shutting down
+2026-02-10 16:09:53 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:09:53 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:09:53 INFO uvicorn.error Finished server process [43960]
+2026-02-10 16:09:55 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:09:55 INFO uvicorn.error Started server process [44033]
+2026-02-10 16:09:55 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:09:55 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:09:55 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:09:55 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:09:55 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:09:55 INFO uvicorn.error Application startup complete.
+2026-02-10 16:09:59 INFO uvicorn.error Shutting down
+2026-02-10 16:09:59 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:09:59 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:09:59 INFO uvicorn.error Finished server process [44033]
+2026-02-10 16:10:01 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:01 INFO uvicorn.error Started server process [44128]
+2026-02-10 16:10:01 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:01 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:01 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:01 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:01 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:01 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:01 INFO uvicorn.error Shutting down
+2026-02-10 16:10:02 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:10:02 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:10:02 INFO uvicorn.error Finished server process [44128]
+2026-02-10 16:10:03 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:03 INFO uvicorn.error Started server process [44153]
+2026-02-10 16:10:03 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:04 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:04 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:04 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:04 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:04 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:06 INFO uvicorn.error Shutting down
+2026-02-10 16:10:06 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:10:06 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:10:06 INFO uvicorn.error Finished server process [44153]
+2026-02-10 16:10:08 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:08 INFO uvicorn.error Started server process [44221]
+2026-02-10 16:10:08 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:08 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:08 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:08 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:08 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:08 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:10 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:10 INFO uvicorn.error Started server process [44257]
+2026-02-10 16:10:10 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:10 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:10 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:10 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:10 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:10 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:15 INFO uvicorn.error Shutting down
+2026-02-10 16:10:15 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:10:15 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:10:15 INFO uvicorn.error Finished server process [44257]
+2026-02-10 16:10:17 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:17 INFO uvicorn.error Started server process [44353]
+2026-02-10 16:10:17 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:17 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:17 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:17 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:17 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:18 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:26 INFO uvicorn.error Shutting down
+2026-02-10 16:10:26 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:10:26 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:10:26 INFO uvicorn.error Finished server process [44353]
+2026-02-10 16:10:27 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:27 INFO uvicorn.error Started server process [44494]
+2026-02-10 16:10:27 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:27 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:27 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:27 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:27 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:27 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:29 INFO uvicorn.error Shutting down
+2026-02-10 16:10:29 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:10:29 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:10:29 INFO uvicorn.error Finished server process [44494]
+2026-02-10 16:10:31 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:31 INFO uvicorn.error Started server process [44549]
+2026-02-10 16:10:31 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:31 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:31 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:31 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:31 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:31 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:33 INFO uvicorn.error Shutting down
+2026-02-10 16:10:34 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:10:34 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:10:34 INFO uvicorn.error Finished server process [44549]
+2026-02-10 16:10:35 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:35 ERROR stderr Process SpawnProcess-82:
+2026-02-10 16:10:35 ERROR stderr Traceback (most recent call last):
+2026-02-10 16:10:35 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-10 16:10:35 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-10 16:10:35 ERROR stderr File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-10 16:10:35 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-10 16:10:35 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-10 16:10:35 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-10 16:10:35 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-10 16:10:35 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-10 16:10:35 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-10 16:10:35 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 21, in <module>
+    from app.routes.file_upload import router as file_upload_router
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/routes/file_upload.py", line 15, in <module>
+    from app.services.log_background_processor import process_uploaded_file
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_background_processor.py", line 6, in <module>
+    from app.services.log_parsers.parser_router import parse_logs_by_format
+2026-02-10 16:10:35 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_parsers/parser_router.py", line 3, in <module>
+    from app.services.log_parsers.text_parser import parse_text_logs
+2026-02-10 16:10:35 ERROR stderr ImportError: cannot import name 'parse_text_logs' from 'app.services.log_parsers.text_parser' (/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_parsers/text_parser.py)
+2026-02-10 16:10:37 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:37 ERROR stderr Process SpawnProcess-83:
+2026-02-10 16:10:37 ERROR stderr Traceback (most recent call last):
+2026-02-10 16:10:37 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-10 16:10:37 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-10 16:10:37 ERROR stderr File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-10 16:10:37 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-10 16:10:37 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-10 16:10:37 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-10 16:10:37 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-10 16:10:37 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-10 16:10:37 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-10 16:10:37 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 21, in <module>
+    from app.routes.file_upload import router as file_upload_router
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/routes/file_upload.py", line 15, in <module>
+    from app.services.log_background_processor import process_uploaded_file
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_background_processor.py", line 6, in <module>
+    from app.services.log_parsers.parser_router import parse_logs_by_format
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_parsers/parser_router.py", line 3, in <module>
+    from app.services.log_parsers.text_parser import parse_text_logs
+2026-02-10 16:10:37 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_parsers/text_parser.py", line 57
+2026-02-10 16:10:37 ERROR stderr parsed_percentage=
+2026-02-10 16:10:37 ERROR stderr ^
+2026-02-10 16:10:37 ERROR stderr SyntaxError: invalid syntax
+2026-02-10 16:10:39 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:40 ERROR stderr Process SpawnProcess-84:
+2026-02-10 16:10:40 ERROR stderr Traceback (most recent call last):
+2026-02-10 16:10:40 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-10 16:10:40 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-10 16:10:40 ERROR stderr File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-10 16:10:40 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-10 16:10:40 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-10 16:10:40 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-10 16:10:40 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-10 16:10:40 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-10 16:10:40 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-10 16:10:40 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 21, in <module>
+    from app.routes.file_upload import router as file_upload_router
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/routes/file_upload.py", line 15, in <module>
+    from app.services.log_background_processor import process_uploaded_file
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_background_processor.py", line 6, in <module>
+    from app.services.log_parsers.parser_router import parse_logs_by_format
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_parsers/parser_router.py", line 3, in <module>
+    from app.services.log_parsers.text_parser import parse_text_logs
+2026-02-10 16:10:40 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_parsers/text_parser.py", line 57
+2026-02-10 16:10:40 ERROR stderr parsed_percentage=
+2026-02-10 16:10:40 ERROR stderr ^
+2026-02-10 16:10:40 ERROR stderr SyntaxError: invalid syntax
+2026-02-10 16:10:41 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:42 INFO uvicorn.error Started server process [44698]
+2026-02-10 16:10:42 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:42 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:42 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:42 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:42 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:42 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:49 INFO uvicorn.error Shutting down
+2026-02-10 16:10:49 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:10:49 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:10:49 INFO uvicorn.error Finished server process [44698]
+2026-02-10 16:10:52 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:52 INFO uvicorn.error Started server process [44857]
+2026-02-10 16:10:52 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:52 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:52 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:52 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:52 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:52 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:52 INFO uvicorn.error Shutting down
+2026-02-10 16:10:52 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:10:52 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:10:52 INFO uvicorn.error Finished server process [44857]
+2026-02-10 16:10:54 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:54 INFO uvicorn.error Started server process [44902]
+2026-02-10 16:10:54 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:54 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:54 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:54 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:54 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:54 INFO uvicorn.error Application startup complete.
+2026-02-10 16:10:56 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:10:56 INFO uvicorn.error Started server process [44927]
+2026-02-10 16:10:56 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:10:56 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:10:56 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:10:56 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:10:56 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:10:56 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:01 INFO uvicorn.error Shutting down
+2026-02-10 16:11:02 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:11:02 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:11:02 INFO uvicorn.error Finished server process [44927]
+2026-02-10 16:11:04 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:04 INFO uvicorn.error Started server process [45030]
+2026-02-10 16:11:04 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:04 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:04 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:04 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:04 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:04 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:06 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:06 INFO uvicorn.error Started server process [45076]
+2026-02-10 16:11:06 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:06 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:06 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:06 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:06 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:06 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:08 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:09 INFO uvicorn.error Started server process [45100]
+2026-02-10 16:11:09 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:09 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:09 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:09 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:09 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:09 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:10 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:11 INFO uvicorn.error Started server process [45147]
+2026-02-10 16:11:11 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:11 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:11 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:11 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:11 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:11 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:13 INFO uvicorn.error Shutting down
+2026-02-10 16:11:13 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:11:13 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:11:13 INFO uvicorn.error Finished server process [45147]
+2026-02-10 16:11:14 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:14 ERROR stderr Process SpawnProcess-93:
+2026-02-10 16:11:14 ERROR stderr Traceback (most recent call last):
+2026-02-10 16:11:14 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-10 16:11:14 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-10 16:11:14 ERROR stderr File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-10 16:11:14 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-10 16:11:14 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-10 16:11:14 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-10 16:11:14 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-10 16:11:14 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-10 16:11:14 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-10 16:11:14 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 21, in <module>
+    from app.routes.file_upload import router as file_upload_router
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/routes/file_upload.py", line 15, in <module>
+    from app.services.log_background_processor import process_uploaded_file
+2026-02-10 16:11:14 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_background_processor.py", line 58
+2026-02-10 16:11:14 ERROR stderr print(f" File {file_id} parsed successfully | Logs inserted: {}")
+2026-02-10 16:11:14 ERROR stderr ^
+2026-02-10 16:11:14 ERROR stderr SyntaxError: f-string: empty expression not allowed
+2026-02-10 16:11:20 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:20 INFO uvicorn.error Started server process [45264]
+2026-02-10 16:11:20 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:20 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:20 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:20 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:20 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:20 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:24 INFO uvicorn.error Shutting down
+2026-02-10 16:11:24 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:11:24 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:11:24 INFO uvicorn.error Finished server process [45264]
+2026-02-10 16:11:26 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:27 INFO uvicorn.error Started server process [45364]
+2026-02-10 16:11:27 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:27 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:27 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:27 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:27 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:27 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:29 INFO uvicorn.error Shutting down
+2026-02-10 16:11:29 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:11:29 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:11:29 INFO uvicorn.error Finished server process [45364]
+2026-02-10 16:11:30 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:31 INFO uvicorn.error Started server process [45436]
+2026-02-10 16:11:31 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:31 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:31 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:31 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:31 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:31 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:31 INFO uvicorn.error Shutting down
+2026-02-10 16:11:32 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:11:32 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:11:32 INFO uvicorn.error Finished server process [45436]
+2026-02-10 16:11:33 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:33 INFO uvicorn.error Started server process [45464]
+2026-02-10 16:11:33 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:33 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:33 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:33 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:33 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:33 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:35 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:35 INFO uvicorn.error Started server process [45500]
+2026-02-10 16:11:35 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:35 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:35 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:35 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:35 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:35 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:37 INFO uvicorn.error Shutting down
+2026-02-10 16:11:37 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:11:37 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:11:37 INFO uvicorn.error Finished server process [45500]
+2026-02-10 16:11:38 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:38 INFO uvicorn.error Started server process [45536]
+2026-02-10 16:11:38 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:38 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:38 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:38 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:38 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:38 INFO uvicorn.error Application startup complete.
+2026-02-10 16:11:42 INFO uvicorn.error Shutting down
+2026-02-10 16:11:42 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:11:42 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:11:42 INFO uvicorn.error Finished server process [45536]
+2026-02-10 16:11:43 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:11:44 INFO uvicorn.error Started server process [45613]
+2026-02-10 16:11:44 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:11:44 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:11:44 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:11:44 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:11:44 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:11:44 INFO uvicorn.error Application startup complete.
+2026-02-10 16:14:30 INFO uvicorn.error Shutting down
+2026-02-10 16:14:30 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:14:30 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:14:30 INFO uvicorn.error Finished server process [45613]
+2026-02-10 16:14:32 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:14:32 INFO uvicorn.error Started server process [47065]
+2026-02-10 16:14:32 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:14:32 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:14:32 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:14:32 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:14:32 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:14:32 INFO uvicorn.error Application startup complete.
+2026-02-10 16:14:33 INFO uvicorn.error Shutting down
+2026-02-10 16:14:33 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:14:33 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:14:33 INFO uvicorn.error Finished server process [47065]
+2026-02-10 16:14:35 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:14:36 INFO uvicorn.error Started server process [47127]
+2026-02-10 16:14:36 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:14:36 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:14:36 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:14:36 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:14:36 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:14:36 INFO uvicorn.error Application startup complete.
+2026-02-10 16:14:36 INFO uvicorn.error Shutting down
+2026-02-10 16:14:36 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:14:36 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:14:36 INFO uvicorn.error Finished server process [47127]
+2026-02-10 16:14:38 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:14:39 INFO uvicorn.error Started server process [47170]
+2026-02-10 16:14:39 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:14:39 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:14:39 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:14:39 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:14:39 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:14:39 INFO uvicorn.error Application startup complete.
+2026-02-10 16:14:39 INFO uvicorn.error Shutting down
+2026-02-10 16:14:39 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:14:39 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:14:39 INFO uvicorn.error Finished server process [47170]
+2026-02-10 16:14:41 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:14:41 INFO uvicorn.error Started server process [47204]
+2026-02-10 16:14:41 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:14:41 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:14:41 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:14:41 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:14:41 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:14:41 INFO uvicorn.error Application startup complete.
+2026-02-10 16:14:43 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:14:43 INFO uvicorn.error Started server process [47243]
+2026-02-10 16:14:43 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:14:43 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:14:43 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:14:43 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:14:43 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:14:43 INFO uvicorn.error Application startup complete.
+2026-02-10 16:14:45 INFO uvicorn.error Shutting down
+2026-02-10 16:14:45 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:14:45 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:14:45 INFO uvicorn.error Finished server process [47243]
+2026-02-10 16:14:47 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:14:47 INFO uvicorn.error Started server process [47284]
+2026-02-10 16:14:47 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:14:47 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:14:47 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:14:47 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:14:47 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:14:47 INFO uvicorn.error Application startup complete.
+2026-02-10 16:18:57 INFO uvicorn.error Shutting down
+2026-02-10 16:18:57 INFO uvicorn.error Waiting for application shutdown.
+2026-02-10 16:18:57 INFO uvicorn.error Application shutdown complete.
+2026-02-10 16:18:57 INFO uvicorn.error Finished server process [47284]
+2026-02-10 16:18:59 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:18:59 INFO uvicorn.error Started server process [49468]
+2026-02-10 16:18:59 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:18:59 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:18:59 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:18:59 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:18:59 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:18:59 INFO uvicorn.error Application startup complete.
+2026-02-10 16:19:01 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-10 16:19:01 INFO uvicorn.error Started server process [49510]
+2026-02-10 16:19:01 INFO uvicorn.error Waiting for application startup.
+2026-02-10 16:19:01 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-10 16:19:01 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-10 16:19:01 INFO apscheduler.scheduler Scheduler started
+2026-02-10 16:19:01 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-10 16:19:01 INFO uvicorn.error Application startup complete.
+2026-02-10 16:44:20 INFO uvicorn.access 127.0.0.1:34436 - "OPTIONS /users/login-json HTTP/1.1" 200
+2026-02-10 16:44:20 INFO uvicorn.access 127.0.0.1:34436 - "POST /users/login-json HTTP/1.1" 200
+2026-02-10 16:44:20 INFO uvicorn.access 127.0.0.1:34436 - "OPTIONS /users/stats/summary HTTP/1.1" 200
+2026-02-10 16:44:20 INFO uvicorn.access 127.0.0.1:34436 - "OPTIONS /users/my-logs?page=1&limit=10 HTTP/1.1" 200
+2026-02-10 16:44:20 INFO stdout user_id:
+2026-02-10 16:44:20 INFO stdout 13
+2026-02-10 16:44:20 INFO uvicorn.access 127.0.0.1:34444 - "GET /users/my-logs?page=1&limit=10 HTTP/1.1" 200
+2026-02-10 16:44:20 INFO uvicorn.access 127.0.0.1:34436 - "GET /users/stats/summary HTTP/1.1" 200
+2026-02-10 16:44:21 INFO uvicorn.access 127.0.0.1:34444 - "OPTIONS /users/my-teams HTTP/1.1" 200
+2026-02-10 16:44:21 INFO uvicorn.access 127.0.0.1:34444 - "GET /users/my-teams HTTP/1.1" 200
+2026-02-10 16:44:21 INFO uvicorn.access 127.0.0.1:34444 - "OPTIONS /users/files/my-files?page=1&limit=10 HTTP/1.1" 200
+2026-02-10 16:44:21 INFO stdout MY FILES RAW RESULT:
+2026-02-10 16:44:21 INFO stdout [(28, 'x2.txt', datetime.datetime(2026, 2, 9, 16, 8, 42, 174180, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 1025, False, 'Security Operations', 'PARSED'), (26, 'x1.txt', datetime.datetime(2026, 2, 9, 15, 22, 14, 520260, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 1193, False, 'Security Operations', 'FAILED'), (25, 'app_30.txt', datetime.datetime(2026, 1, 29, 13, 13, 35, 435431, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 1401, False, 'Security Operations', 'ARCHIVED'), (24, 'applicxation_29.txt', datetime.datetime(2026, 1, 29, 13, 4, 52, 414783, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 1035, False, 'Security Operations', 'PARSED'), (22, 'json_log.json', datetime.datetime(2026, 1, 27, 12, 20, 56, 1789, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 1384, False, 'Security Operations', 'FAILED'), (21, 'sec2.txt', datetime.datetime(2026, 1, 23, 18, 21, 18, 173830, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 1088, False, 'Security Operations', 'PARSED'), (19, 'sample_logs2.csv', datetime.datetime(2026, 1, 22, 16, 25, 15, 415740, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 814, False, 'Cloud Infrastructure', 'ARCHIVED'), (18, 'new_logs.csv', datetime.datetime(2026, 1, 22, 15, 35, 14, 111592, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 1085, False, 'Cloud Infrastructure', 'PARSED'), (17, 'inf_lgs.csv', datetime.datetime(2026, 1, 22, 13, 17, 47, 120700, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 893, False, 'Cloud Infrastructure', 'PARSED'), (16, 'infrastructure_logs.csv', datetime.datetime(2026, 1, 22, 13, 0, 55, 463965, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), 487, False, 'Cloud Infrastructure', 'PARSED')]
+2026-02-10 16:44:21 INFO uvicorn.access 127.0.0.1:34444 - "GET /users/files/my-files?page=1&limit=10 HTTP/1.1" 200
+2026-02-10 16:44:26 INFO uvicorn.access 127.0.0.1:52508 - "GET /users/my-teams HTTP/1.1" 200
+2026-02-10 16:44:29 INFO uvicorn.access 127.0.0.1:52508 - "OPTIONS /lookups/team/3/sources HTTP/1.1" 200
+2026-02-10 16:44:29 INFO uvicorn.access 127.0.0.1:52508 - "GET /lookups/team/3/sources HTTP/1.1" 200
+2026-02-10 16:44:30 INFO uvicorn.access 127.0.0.1:52508 - "OPTIONS /lookups/team/3/source/1/formats HTTP/1.1" 200
+2026-02-10 16:44:30 INFO uvicorn.access 127.0.0.1:52508 - "GET /lookups/team/3/source/1/formats HTTP/1.1" 200
+2026-02-10 16:44:37 INFO uvicorn.access 127.0.0.1:49818 - "OPTIONS /files/upload?team_id=3&source_id=1&format_id=1 HTTP/1.1" 200
+2026-02-10 16:44:38 INFO uvicorn.access 127.0.0.1:49818 - "POST /files/upload?team_id=3&source_id=1&format_id=1 HTTP/1.1" 200
+2026-02-10 16:44:39 INFO stdout First 3 lines of file:
+2026-02-10 16:44:39 INFO stdout 2026-02-10 15:44:25 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+2026-02-10 16:44:39 INFO stdout * 'orm_mode' has been renamed to 'from_attributes'
+2026-02-10 16:44:39 INFO stdout warnings.warn(message, UserWarning)
+2026-02-10 16:44:39 INFO stdout File 30 parsed successfully | file parsed : 98.31932773109243%
+2026-02-10 19:09:55 INFO uvicorn.access 127.0.0.1:49644 - "OPTIONS /users/my-teams HTTP/1.1" 200
+2026-02-10 19:09:55 INFO uvicorn.access 127.0.0.1:49654 - "OPTIONS /users/files/my-files?page=1&limit=10 HTTP/1.1" 200
+2026-02-10 19:09:55 INFO uvicorn.access 127.0.0.1:49644 - "GET /users/my-teams HTTP/1.1" 401
+2026-02-10 19:09:55 INFO uvicorn.access 127.0.0.1:49654 - "GET /users/files/my-files?page=1&limit=10 HTTP/1.1" 401
+2026-02-10 19:09:55 INFO uvicorn.access 127.0.0.1:49644 - "OPTIONS /users/me HTTP/1.1" 200
+2026-02-10 19:09:55 INFO uvicorn.access 127.0.0.1:49654 - "GET /users/me HTTP/1.1" 401
+2026-02-11 02:00:00 INFO apscheduler.executors.default Running job "run_log_retention (trigger: cron[hour='2', minute='0'], next run at: 2026-02-12 02:00:00 IST)" (scheduled at 2026-02-11 02:00:00+05:30)
+2026-02-11 02:00:00 INFO stdout [LOG RETENTION] Archived 0 files
+2026-02-11 02:00:00 INFO apscheduler.executors.default Job "run_log_retention (trigger: cron[hour='2', minute='0'], next run at: 2026-02-12 02:00:00 IST)" executed successfully
+2026-02-11 11:43:16 INFO uvicorn.error Shutting down
+2026-02-11 11:43:16 INFO uvicorn.error Waiting for application shutdown.
+2026-02-11 11:43:16 INFO uvicorn.error Application shutdown complete.
+2026-02-11 11:43:16 INFO uvicorn.error Finished server process [49510]
+2026-02-11 12:08:54 ERROR stderr Process SpawnProcess-1:
+2026-02-11 12:08:54 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:08:54 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:08:54 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:08:54 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 22, in import_from_string
+    raise exc from None
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:08:54 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:08:54 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:08:54 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:08:54 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:08:54 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:08:54 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:08:54 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:08:54 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 1, in <module>
+    from apscheduler.schedulers.background import BackgroundScheduler
+2026-02-11 12:08:54 ERROR stderr ModuleNotFoundError: No module named 'apscheduler'
+2026-02-11 12:09:31 ERROR stderr Process SpawnProcess-1:
+2026-02-11 12:09:31 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:09:31 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:09:31 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:09:31 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:09:31 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:09:31 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:09:31 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:09:31 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:09:31 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:09:31 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:09:31 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 16, in <module>
+    engine = create_engine(DATABASE_URL)
+2026-02-11 12:09:31 ERROR stderr File "<string>", line 2, in create_engine
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+    u = _url.make_url(url)
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+2026-02-11 12:09:31 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+2026-02-11 12:09:31 ERROR stderr ValueError: invalid literal for int() with base 10: 'None'
+2026-02-11 12:19:09 ERROR stderr Process SpawnProcess-1:
+2026-02-11 12:19:09 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:19:09 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:19:09 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:19:09 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:19:09 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:19:09 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:19:09 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:19:09 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:19:09 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:19:09 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:19:09 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:19:09 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 13, in <module>
+    PASSWORD = urllib.parse.quote_plus(PASS)
+2026-02-11 12:19:09 ERROR stderr File "/usr/lib/python3.10/urllib/parse.py", line 927, in quote_plus
+    string = quote(string, safe + space, encoding, errors)
+2026-02-11 12:19:09 ERROR stderr File "/usr/lib/python3.10/urllib/parse.py", line 911, in quote
+    return quote_from_bytes(string, safe)
+2026-02-11 12:19:09 ERROR stderr File "/usr/lib/python3.10/urllib/parse.py", line 936, in quote_from_bytes
+    raise TypeError("quote_from_bytes() expected bytes")
+2026-02-11 12:19:09 ERROR stderr TypeError: quote_from_bytes() expected bytes
+2026-02-11 12:20:24 ERROR stderr Process SpawnProcess-1:
+2026-02-11 12:20:24 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:20:24 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:20:24 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:20:24 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:20:24 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:20:24 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:20:24 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:20:24 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:20:24 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:20:24 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:20:24 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:20:24 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 13, in <module>
+    PASSWORD = urllib.parse.quote_plus(PASS)
+2026-02-11 12:20:24 ERROR stderr File "/usr/lib/python3.10/urllib/parse.py", line 927, in quote_plus
+    string = quote(string, safe + space, encoding, errors)
+2026-02-11 12:20:24 ERROR stderr File "/usr/lib/python3.10/urllib/parse.py", line 911, in quote
+    return quote_from_bytes(string, safe)
+2026-02-11 12:20:24 ERROR stderr File "/usr/lib/python3.10/urllib/parse.py", line 936, in quote_from_bytes
+    raise TypeError("quote_from_bytes() expected bytes")
+2026-02-11 12:20:24 ERROR stderr TypeError: quote_from_bytes() expected bytes
+2026-02-11 12:20:49 ERROR stderr Process SpawnProcess-2:
+2026-02-11 12:20:49 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:20:49 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:20:49 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:20:49 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:20:49 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:20:49 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:20:49 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:20:49 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:20:49 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:20:49 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:20:49 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:20:49 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 13
+2026-02-11 12:20:49 ERROR stderr PASSWORD = urllib.parse.quote_plus(str(PASS)
+2026-02-11 12:20:49 ERROR stderr ^
+2026-02-11 12:20:49 ERROR stderr SyntaxError: '(' was never closed
+2026-02-11 12:20:52 ERROR stderr Process SpawnProcess-3:
+2026-02-11 12:20:52 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:20:52 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:20:52 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:20:52 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:20:52 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:20:52 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:20:52 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:20:52 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:20:52 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:20:52 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:20:52 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 17, in <module>
+    engine = create_engine(DATABASE_URL)
+2026-02-11 12:20:52 ERROR stderr File "<string>", line 2, in create_engine
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+    u = _url.make_url(url)
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+2026-02-11 12:20:52 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+2026-02-11 12:20:52 ERROR stderr ValueError: invalid literal for int() with base 10: 'None'
+2026-02-11 12:21:42 ERROR stderr Process SpawnProcess-1:
+2026-02-11 12:21:42 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:21:42 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:21:42 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:21:42 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:21:42 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:21:42 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:21:42 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:21:42 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:21:42 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:21:42 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:21:42 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 17, in <module>
+    engine = create_engine(DATABASE_URL)
+2026-02-11 12:21:42 ERROR stderr File "<string>", line 2, in create_engine
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+    u = _url.make_url(url)
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+2026-02-11 12:21:42 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+2026-02-11 12:21:42 ERROR stderr ValueError: invalid literal for int() with base 10: 'None'
+2026-02-11 12:23:50 ERROR stderr Process SpawnProcess-1:
+2026-02-11 12:23:50 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:23:50 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:23:50 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:23:50 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:23:50 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:23:50 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:23:50 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:23:50 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:23:50 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:23:50 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:23:50 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 17, in <module>
+    engine = create_engine(DATABASE_URL)
+2026-02-11 12:23:50 ERROR stderr File "<string>", line 2, in create_engine
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+    u = _url.make_url(url)
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+2026-02-11 12:23:50 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+    components["port"] = int(components["port"])
+2026-02-11 12:23:50 ERROR stderr ValueError: invalid literal for int() with base 10: 'None'
+2026-02-11 12:24:11 ERROR stderr Process SpawnProcess-1:
+2026-02-11 12:24:11 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:24:11 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:24:11 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:24:11 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:24:11 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:24:11 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:24:11 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:24:11 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:24:11 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:24:11 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:24:11 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 17, in <module>
+    engine = create_engine(DATABASE_URL)
+2026-02-11 12:24:11 ERROR stderr File "<string>", line 2, in create_engine
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+    u = _url.make_url(url)
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+2026-02-11 12:24:11 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+    components["port"] = int(components["port"])
+2026-02-11 12:24:11 ERROR stderr ValueError: invalid literal for int() with base 10: 'None'
+2026-02-11 12:26:30 ERROR stderr Process SpawnProcess-2:
+2026-02-11 12:26:30 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:26:30 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:26:30 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:26:30 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:26:30 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:26:30 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:26:30 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:26:30 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:26:30 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:26:30 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:26:30 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 18, in <module>
+    engine = create_engine(DATABASE_URL)
+2026-02-11 12:26:30 ERROR stderr File "<string>", line 2, in create_engine
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+    u = _url.make_url(url)
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+2026-02-11 12:26:30 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+    components["port"] = int(components["port"])
+2026-02-11 12:26:30 ERROR stderr ValueError: invalid literal for int() with base 10: 'None'
+2026-02-11 12:26:33 INFO stdout USER: None, PASSWORD: None, HOST: None, PORT: None, DBNAME: None
+2026-02-11 12:26:33 ERROR stderr Process SpawnProcess-3:
+2026-02-11 12:26:33 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:26:33 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:26:33 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:26:33 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:26:33 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:26:33 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:26:33 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:26:33 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:26:33 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:26:33 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:26:33 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 18, in <module>
+    engine = create_engine(DATABASE_URL)
+2026-02-11 12:26:33 ERROR stderr File "<string>", line 2, in create_engine
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+    u = _url.make_url(url)
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+2026-02-11 12:26:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+    components["port"] = int(components["port"])
+2026-02-11 12:26:33 ERROR stderr ValueError: invalid literal for int() with base 10: 'None'
+2026-02-11 12:27:20 INFO stdout USER: None, PASSWORD: None, HOST: None, PORT: None, DBNAME: None
+2026-02-11 12:27:20 ERROR stderr Process SpawnProcess-4:
+2026-02-11 12:27:20 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:27:20 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:27:20 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:27:20 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:27:20 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:27:20 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:27:20 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:27:20 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:27:20 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:27:20 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:27:20 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 4, in <module>
+    from app.database import SessionLocal
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/database.py", line 18, in <module>
+    engine = create_engine(DATABASE_URL)
+2026-02-11 12:27:20 ERROR stderr File "<string>", line 2, in create_engine
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 564, in create_engine
+    u = _url.make_url(url)
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 856, in make_url
+    return _parse_url(name_or_url)
+2026-02-11 12:27:20 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/sqlalchemy/engine/url.py", line 917, in _parse_url
+    components["port"] = int(components["port"])
+2026-02-11 12:27:20 ERROR stderr ValueError: invalid literal for int() with base 10: 'None'
+2026-02-11 12:27:28 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-11 12:27:28 ERROR stderr Process SpawnProcess-5:
+2026-02-11 12:27:28 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:27:28 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:27:28 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:27:28 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 22, in import_from_string
+    raise exc from None
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:27:28 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:27:28 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:27:28 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:27:28 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:27:28 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:27:28 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:27:28 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 5, in <module>
+    from app.services.log_retention_service import archive_files_by_retention
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_retention_service.py", line 7, in <module>
+    from app.appwrite_client import get_appwrite_storage
+2026-02-11 12:27:28 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/appwrite_client.py", line 3, in <module>
+    from appwrite.client import Client
+2026-02-11 12:27:28 ERROR stderr ModuleNotFoundError: No module named 'appwrite'
+2026-02-11 12:27:33 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-11 12:27:33 ERROR stderr Process SpawnProcess-1:
+2026-02-11 12:27:33 ERROR stderr Traceback (most recent call last):
+2026-02-11 12:27:33 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-11 12:27:33 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-11 12:27:33 ERROR stderr File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 22, in import_from_string
+    raise exc from None
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-11 12:27:33 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-11 12:27:33 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-11 12:27:33 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-11 12:27:33 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-11 12:27:33 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-11 12:27:33 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-11 12:27:33 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 8, in <module>
+    from app.scheduler import start_scheduler
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/scheduler.py", line 5, in <module>
+    from app.services.log_retention_service import archive_files_by_retention
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_retention_service.py", line 7, in <module>
+    from app.appwrite_client import get_appwrite_storage
+2026-02-11 12:27:33 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/appwrite_client.py", line 3, in <module>
+    from appwrite.client import Client
+2026-02-11 12:27:33 ERROR stderr ModuleNotFoundError: No module named 'appwrite'
+2026-02-11 12:27:55 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-11 12:27:56 ERROR stderr /home/venkata.teja/PYTHON/Intelligent_Log_Management_System/.venv/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-11 12:27:56 INFO uvicorn.error Started server process [163812]
+2026-02-11 12:27:56 INFO uvicorn.error Waiting for application startup.
+2026-02-11 12:27:56 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-11 12:27:56 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-11 12:27:56 INFO apscheduler.scheduler Scheduler started
+2026-02-11 12:27:56 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-11 12:27:56 INFO uvicorn.error Application startup complete.
+2026-02-11 12:28:26 INFO uvicorn.access 127.0.0.1:38884 - "OPTIONS /users/stats/summary HTTP/1.1" 200
+2026-02-11 12:28:26 INFO uvicorn.access 127.0.0.1:38900 - "OPTIONS /users/my-logs?page=1&limit=10 HTTP/1.1" 200
+2026-02-11 12:28:26 INFO uvicorn.access 127.0.0.1:38884 - "GET /users/stats/summary HTTP/1.1" 401
+2026-02-11 12:28:26 INFO uvicorn.access 127.0.0.1:38900 - "GET /users/my-logs?page=1&limit=10 HTTP/1.1" 401
+2026-02-11 12:34:54 INFO uvicorn.error Shutting down
+2026-02-11 12:34:54 INFO uvicorn.error Waiting for application shutdown.
+2026-02-11 12:34:54 INFO uvicorn.error Application shutdown complete.
+2026-02-11 12:34:54 INFO uvicorn.error Finished server process [163812]

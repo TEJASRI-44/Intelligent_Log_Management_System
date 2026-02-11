@@ -20,12 +20,15 @@ def require_admin(user):
         )
 @router.get("/search")
 def admin_search_logs(
+    page: int = Query(1, ge=1),
     start_date: datetime | None = Query(None),
+    limit:int=Query(10,ge=1,le=100),
     end_date: datetime | None = Query(None),
     category: str | None = Query(None),
     severity: str | None = Query(None),
     keyword: str | None = Query(None),
     db: Session = Depends(get_db),
+   
     current_user=Depends(get_current_user)
 ):
     require_admin(current_user)
@@ -56,10 +59,16 @@ def admin_search_logs(
     if keyword:
         query = query.filter(LogEntry.message.ilike(f"%{keyword}%"))
 
-    logs = query.order_by(LogEntry.log_timestamp.desc()).limit(500).all()
-
+    logs = (query
+                .order_by(LogEntry.log_timestamp.desc())
+                .offset((page-1)*limit)
+                .limit(limit)
+                .all())
+    total=query.count()
     return {
         "count": len(logs),
+        "page":page,
+        "pageSize":limit,    
         "results": [
             {
                 "timestamp": row.log_timestamp,
@@ -69,5 +78,7 @@ def admin_search_logs(
                 "message": row.message
             }
             for row in logs
-        ]
+        ],
+        "total": total
+        
     }

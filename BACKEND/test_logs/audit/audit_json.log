@@ -1,2 +1,0 @@
-{"timestamp":"2026-01-15T12:00:00Z","severity":"INFO","service":"file-service","message":"User admin uploaded file app_text.log"}
-{"timestamp":"2026-01-15T12:05:00Z","severity":"INFO","service":"file-service","message":"User admin deleted file infra_text.log"}

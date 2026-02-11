@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000";
+const API_URL = import.meta.env.VITE_API_URL||"http://localhost:8000";
 
 function getAuthHeader() {
   const token = localStorage.getItem("token");
@@ -32,7 +32,7 @@ export const fetchFormats = async () => {
 
 export async function fetchMyTeams() {
   const res = await axios.get(
-    "http://localhost:8000/users/my-teams",
+    `${API_URL}/users/my-teams`,
     { headers: getAuthHeader() }
   );
   return res.data;
