@@ -9,9 +9,12 @@ function getAuthHeader() {
   };
 }
 
-export async function uploadLogFile(teamId, sourceId, formatId, file) {
+export async function uploadLogFile(teamId, sourceId, formatId, files) {
   const formData = new FormData();
-  formData.append("file", file);
+
+  files.forEach(file => {
+    formData.append("files", file); // IMPORTANT: must match backend param name
+  });
 
   const res = await axios.post(
     `${API_URL}/files/upload`,

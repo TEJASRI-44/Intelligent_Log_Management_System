@@ -29,9 +29,6 @@ def require_admin(user):
             detail="Admin access required"
         )
 
-# ---------------------------------------------------------
-# 1️⃣ Logs Per Day
-# ---------------------------------------------------------
 from sqlalchemy import func, cast, Date, desc
 
 @router.get("/logs-per-day")

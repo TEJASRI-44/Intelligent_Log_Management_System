@@ -1,65 +1,81 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/UserSidebar.css";
 
 export default function UserSidebar() {
-  return (
-     <>
+  const [isOpen, setIsOpen] = useState(false);
 
+  const closeSidebar = () => setIsOpen(false);
+
+  return (
+    <>
+     
       <button
-        className="btn btn-dark d-md-none position-fixed top-0 start-0 m-3 z-3"
+        className="btn  fixed-top btn-sm mobile-toggle-btn"
         onClick={() => setIsOpen(!isOpen)}
       >
-       menu
+        {isOpen ? <i class="bi bi-x-lg"></i>
+: <i class="bi bi-list"></i>
+
+
+}
       </button>
-     
-    <aside className="sidebar border-end position-fixed top-0 start-0 vh-100 vh-100 p-3 bg-dark " style={{ width: "220px" }}>
-      
-  
-      <div className="mb-4  fw-bold fs-5  text-white"style={{ marginTop: "100px" }}>
-        User Dashboard
-      </div>
 
-      
-      <nav className="nav nav-pills flex-column gap-2 ">
+      {isOpen && (
+        <div 
+          className="sidebar-overlay d-md-none" 
+          onClick={closeSidebar}
+        ></div>
+      )}
 
-        <NavLink
-          to="/user/logs"
-          className={({ isActive }) =>
-            `nav-link ${isActive ? "active" : "text-white"}`
-          }
-        >
-          Overview & Logs
-        </NavLink>
+      <aside className={`sidebar bg-dark border-end ${isOpen ? "open" : ""}`}>
+        
+        <div className="sidebar-brand text-white fw-bold fs-5">
+          User Dashboard
+        </div>
 
-        <NavLink
-          to="/user/upload-file"
-          className={({ isActive }) =>
-            `nav-link ${isActive ? "active" : "text-white"}`
-          }
-        >
-          Upload Files
-        </NavLink>
+        <nav className="nav nav-pills flex-column gap-2 px-3">
+          <NavLink
+            to="/user/logs"
+            onClick={closeSidebar}
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active bg-primary" : "text-white link-hover"}`
+            }
+          >
+            Overview & Logs
+          </NavLink>
 
-        <NavLink
-          to="/user/my-files"
-          className={({ isActive }) =>
-            `nav-link ${isActive ? "active" : "text-white"}`
-          }
-        >
-          My Files
-        </NavLink>
+          <NavLink
+            to="/user/upload-file"
+            onClick={closeSidebar}
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active bg-primary" : "text-white link-hover"}`
+            }
+          >
+            Upload Files
+          </NavLink>
 
-        <NavLink
-          to="/user/profile"
-          className={({ isActive }) =>
-            `nav-link ${isActive ? "active" : "text-white"}`
-          }
-        >
-          Profile
-        </NavLink>
+          <NavLink
+            to="/user/my-files"
+            onClick={closeSidebar}
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active bg-primary" : "text-white link-hover"}`
+            }
+          >
+            My Files
+          </NavLink>
 
-      </nav>
-    </aside>
+          <NavLink
+            to="/user/profile"
+            onClick={closeSidebar}
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active bg-primary" : "text-white link-hover"}`
+            }
+          >
+            Profile
+          </NavLink>
+        </nav>
+      </aside>
     </>
   );
 }

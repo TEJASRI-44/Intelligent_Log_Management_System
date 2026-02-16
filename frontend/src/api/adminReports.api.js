@@ -1,7 +1,9 @@
 import axios from "axios";
 import { getToken } from "../auth/auth.service";
 
-const API_URL = import.meta.env.VITE_API_URL||"http://localhost:8000/admin/reports";
+const BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:8000";
+
 
 function getAuthHeader() {
   const token = getToken();
@@ -11,14 +13,14 @@ function getAuthHeader() {
 }
 
 export const fetchLogsPerDay = async () => {
-  const res = await axios.get(`${API_URL}/logs-per-day`, {
+  const res = await axios.get(`${BASE_URL}/admin/reports/logs-per-day`, {
     headers: getAuthHeader()
   });
   return res.data;
 };
 
 export const fetchTopErrors = async () => {
-  const res = await axios.get(`${API_URL}/top-errors`, {
+  const res = await axios.get(`${BASE_URL}/admin/reports/top-errors`, {
     headers: getAuthHeader()
   });
   return res.data;
@@ -30,7 +32,7 @@ export async function fetchActiveSystems(startDate, endDate) {
   if (endDate) params.append("end_date", endDate);
 
   const res = await fetch(
-    `${API_URL}/active-systems?${params}`,
+    `${BASE_URL}/admin/reports/active-systems?${params}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -43,7 +45,7 @@ export async function fetchActiveSystems(startDate, endDate) {
 
 export async function fetchRecentLogs(days = 10, page = 1, limit = 10) {
   const res = await axios.get(
-    `${API_URL}/recent-logs`,
+    `${BASE_URL}/admin/reports/recent-logs`,
     {
       params: { days, page, limit },
       headers: getAuthHeader()

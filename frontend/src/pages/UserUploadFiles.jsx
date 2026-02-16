@@ -18,7 +18,8 @@ export default function UserUploadFiles() {
   const [teamId, setTeamId] = useState("");
   const [sourceId, setSourceId] = useState("");
   const [formatId, setFormatId] = useState("");
-  const [file, setFile] = useState(null);
+  const [files, setFiles] = useState([]);
+
 
 
   const [loading, setLoading] = useState(false);
@@ -57,23 +58,25 @@ useEffect(() => {
 
   /* ================= HANDLER ================= */
 
-  async function handleUpload(e) {
+async function handleUpload(e) {
   e.preventDefault();
 
-  if (!file) {
-    toast.error("Please select a file to upload.");
+  if (!files.length) {
+    toast.error("Please select at least one file to upload.");
     return;
   }
 
   setLoading(true);
 
   try {
-    await uploadLogFile(teamId, sourceId, formatId, file);
+    await uploadLogFile(teamId, sourceId, formatId, files); 
 
-   
-    toast.success("File uploaded successfully!");
-    
-    setFile(null);
+    toast.success("Files uploaded successfully!");
+    setFiles([]);
+    setTeamId("");
+    setSourceId("");
+    setFormatId("");
+
     e.target.reset();
 
   } catch (err) {
@@ -163,8 +166,9 @@ useEffect(() => {
               <label>Log File</label>
               <input
                 type="file"
-                required
-                onChange={e => setFile(e.target.files[0])}
+                className="form-control"
+                multiple
+                onChange={(e) => setFiles(Array.from(e.target.files))}
               />
             </div>
 

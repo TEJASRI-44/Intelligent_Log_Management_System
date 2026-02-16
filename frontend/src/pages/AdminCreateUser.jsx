@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createUser, fetchRoles, fetchTeams } from "../api/admin.api";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/AdminCreateUserScoped.css";
-
+import { toast } from "react-toastify";
 export default function AdminCreateUser() {
   const [roles, setRoles] = useState([]);
   const [teams, setTeams] = useState([]);
@@ -44,11 +44,26 @@ export default function AdminCreateUser() {
 };
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
     await createUser(form);
-    alert("User created successfully");
-  };
+
+    toast.success("User Created Successfully!");
+    setForm({
+      name: "",
+      email: "",
+      password: "",
+      role_ids: [],
+      team_ids: []
+    });
+
+  } catch (error) {
+    toast.error("Something went wrong");
+  }
+};
+
 
   return (
     <div className="acu-root container-fluid py-4">
@@ -73,6 +88,7 @@ export default function AdminCreateUser() {
                     <label className="form-label">Email *</label>
                     <input
                       className="form-control"
+                      value={form.email}
                       required
                       onChange={e => setForm({ ...form, email: e.target.value })}
                     />
@@ -81,6 +97,7 @@ export default function AdminCreateUser() {
                   <div className="col-md-4">
                     <label className="form-label">Username</label>
                     <input
+                    value={form.username}
                       className="form-control"
                       onChange={e => setForm({ ...form, username: e.target.value })}
                     />
@@ -90,6 +107,7 @@ export default function AdminCreateUser() {
                     <label className="form-label">Password *</label>
                     <input
                       type="password"
+                      value={form.password}
                       className="form-control"
                       required
                       onChange={e => setForm({ ...form, password: e.target.value })}
@@ -106,6 +124,7 @@ export default function AdminCreateUser() {
                     <label className="form-label">First Name *</label>
                     <input
                       className="form-control"
+                      value={form.first_name}
                       required
                       onChange={e => setForm({ ...form, first_name: e.target.value })}
                     />
@@ -115,6 +134,7 @@ export default function AdminCreateUser() {
                     <label className="form-label">Last Name</label>
                     <input
                       className="form-control"
+                      value={form.last_name}
                       onChange={e => setForm({ ...form, last_name: e.target.value })}
                     />
                   </div>
@@ -123,6 +143,7 @@ export default function AdminCreateUser() {
                     <label className="form-label">Job Title</label>
                     <input
                       className="form-control"
+                      value={form.job_title}
                       onChange={e => setForm({ ...form, job_title: e.target.value })}
                     />
                   </div>
