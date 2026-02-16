@@ -23,10 +23,26 @@ export default function AdminCreateUser() {
     fetchTeams().then(setTeams);
   }, []);
 
-  const handleMultiSelect = (e, key) => {
-    const values = Array.from(e.target.selectedOptions).map(o => Number(o.value));
-    setForm({ ...form, [key]: values });
-  };
+  const handleCheckboxChange = (e, field) => {
+  const value = parseInt(e.target.value);
+
+  setForm(prev => {
+    const currentValues = prev[field] || [];
+
+    if (e.target.checked) {
+      return {
+        ...prev,
+        [field]: [...currentValues, value]
+      };
+    } else {
+      return {
+        ...prev,
+        [field]: currentValues.filter(id => id !== value)
+      };
+    }
+  });
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -117,44 +133,57 @@ export default function AdminCreateUser() {
               <div className="acu-section">
                 <h6 className="acu-section-title">Access Control</h6>
                 <div className="row g-4">
-                  <div className="col-md-6">
-                    <label className="form-label">Roles</label>
-                    <select
-                      multiple
-                      size="6"
-                      className="form-select"
-                      onChange={e => handleMultiSelect(e, "role_ids")}
-                    >
-                      {roles.map(r => (
-                        <option key={r.role_id} value={r.role_id}>
-                          {r.role_name}
-                        </option>
-                      ))}
-                    </select>
-                    <small className="text-muted">
-                      Hold Ctrl / Cmd to select multiple
-                    </small>
-                  </div>
+  
+ 
+                <div className="col-md-6">
+                  <label className="form-label fw-semibold">Roles</label>
 
-                  <div className="col-md-6">
-                    <label className="form-label">Teams</label>
-                    <select
-                      multiple
-                      size="6"
-                      className="form-select"
-                      onChange={e => handleMultiSelect(e, "team_ids")}
-                    >
-                      {teams.map(t => (
-                        <option key={t.team_id} value={t.team_id}>
-                          {t.team_name}
-                        </option>
-                      ))}
-                    </select>
-                    <small className="text-muted">
-                      Hold Ctrl / Cmd to select multiple
-                    </small>
+                  <div className="checkbox-container">
+                    {roles.map(r => (
+                      <div key={r.role_id} className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          id={`role-${r.role_id}`}
+                          value={r.role_id}
+                          onChange={(e) => handleCheckboxChange(e, "role_ids")}
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor={`role-${r.role_id}`}
+                        >
+                          {r.role_name}
+                        </label>
+                      </div>
+                    ))}
                   </div>
                 </div>
+                <div className="col-md-6">
+                  <label className="form-label fw-semibold">Teams</label>
+
+                  <div className="checkbox-container">
+                    {teams.map(t => (
+                      <div key={t.team_id} className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          id={`team-${t.team_id}`}
+                          value={t.team_id}
+                          onChange={(e) => handleCheckboxChange(e, "team_ids")}
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor={`team-${t.team_id}`}
+                        >
+                          {t.team_name}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
               </div>
 
               {/* ACTION */}

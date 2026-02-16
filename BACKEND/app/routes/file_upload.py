@@ -106,7 +106,7 @@ def upload_log_file(
     db.commit()
     db.refresh(raw_file)
 
-   
+     
     background_tasks.add_task(
         process_uploaded_file,
         raw_file.file_id
