@@ -35,7 +35,7 @@ export default function AdminSidebar() {
       )}
 
       <aside className={`admin-sidebar bg-dark ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-brand">
+        <div className="sidebar-brand mt-0">
           <h2 className="logo text-white fs-4 mb-0">ILMS Admin</h2>
         </div>
 

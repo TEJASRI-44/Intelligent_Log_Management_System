@@ -14,7 +14,7 @@
 
 .sidebar-brand {
   padding: 30px 20px;
-  margin-top: 40px;
+  margin-top: -14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 20px;
   text-align: center;
@@ -61,6 +61,8 @@
     transform: translateX(0) !important;
   }
   .mobile-toggle-btn {
+    left: 0 !important;;
+    width: 10px !important;
     display: none !important;
   }
 }

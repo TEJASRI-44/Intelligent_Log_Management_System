@@ -4843,3 +4843,86 @@ LINE 1: ...pe, entity_id) VALUES (1, 'CREATED USER', 'USER', 'rajini') ...
 2026-02-16 15:43:32 INFO apscheduler.scheduler Scheduler started
 2026-02-16 15:43:32 INFO stdout [SCHEDULER] Log retention scheduler started
 2026-02-16 15:43:32 INFO uvicorn.error Application startup complete.
+2026-02-16 15:52:45 INFO uvicorn.access 127.0.0.1:58500 - "OPTIONS /admin/teams HTTP/1.1" 200
+2026-02-16 15:52:45 INFO uvicorn.access 127.0.0.1:58506 - "OPTIONS /admin/users?page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:52:45 INFO uvicorn.access 127.0.0.1:58506 - "GET /admin/users?page=1&limit=10 HTTP/1.1" 307
+2026-02-16 15:52:45 INFO uvicorn.access 127.0.0.1:58506 - "OPTIONS /admin/users/?page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:52:45 INFO uvicorn.access 127.0.0.1:58506 - "GET /admin/users/?page=1&limit=10 HTTP/1.1" 401
+2026-02-16 15:52:47 INFO uvicorn.access 127.0.0.1:58500 - "GET /admin/teams HTTP/1.1" 200
+2026-02-16 15:53:02 INFO uvicorn.access 127.0.0.1:58866 - "OPTIONS /users/login-json HTTP/1.1" 200
+2026-02-16 15:53:04 INFO uvicorn.access 127.0.0.1:58866 - "POST /users/login-json HTTP/1.1" 200
+2026-02-16 15:53:08 INFO uvicorn.access 127.0.0.1:58866 - "POST /users/login-json HTTP/1.1" 200
+2026-02-16 15:53:08 INFO uvicorn.access 127.0.0.1:58866 - "OPTIONS /admin/reports/logs-per-day HTTP/1.1" 200
+2026-02-16 15:53:08 INFO uvicorn.access 127.0.0.1:58866 - "OPTIONS /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:53:08 INFO uvicorn.access 127.0.0.1:35774 - "OPTIONS /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:53:08 INFO uvicorn.access 127.0.0.1:58866 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:53:09 INFO stdout [(datetime.date(2026, 2, 9), 14)]
+2026-02-16 15:53:09 INFO uvicorn.access 127.0.0.1:35786 - "GET /admin/reports/logs-per-day HTTP/1.1" 200
+2026-02-16 15:53:09 INFO uvicorn.access 127.0.0.1:58866 - "OPTIONS /admin/reports/top-errors HTTP/1.1" 200
+2026-02-16 15:53:09 INFO uvicorn.access 127.0.0.1:35774 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:53:09 INFO uvicorn.access 127.0.0.1:58866 - "GET /admin/reports/top-errors HTTP/1.1" 200
+2026-02-16 15:57:01 INFO uvicorn.access 127.0.0.1:41588 - "OPTIONS /teams HTTP/1.1" 200
+2026-02-16 15:57:01 INFO uvicorn.access 127.0.0.1:41588 - "GET /teams HTTP/1.1" 307
+2026-02-16 15:57:01 INFO uvicorn.access 127.0.0.1:41588 - "OPTIONS /admin/files?name=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:01 INFO uvicorn.access 127.0.0.1:41590 - "OPTIONS /teams/ HTTP/1.1" 200
+2026-02-16 15:57:01 INFO uvicorn.access 127.0.0.1:41590 - "GET /teams/ HTTP/1.1" 200
+2026-02-16 15:57:01 INFO stdout === ADMIN FILES DEBUG ===
+2026-02-16 15:57:01 INFO stdout file_id=1, name=x1.txt, status=PARSED, is_deleted=False
+2026-02-16 15:57:01 INFO stdout =========================
+2026-02-16 15:57:02 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/files?name=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:02 INFO uvicorn.access 127.0.0.1:41588 - "OPTIONS /users/my-teams HTTP/1.1" 200
+2026-02-16 15:57:02 INFO uvicorn.access 127.0.0.1:41588 - "GET /users/my-teams HTTP/1.1" 200
+2026-02-16 15:57:05 INFO uvicorn.access 127.0.0.1:41588 - "GET /users/my-teams HTTP/1.1" 200
+2026-02-16 15:57:09 INFO uvicorn.access 127.0.0.1:36010 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:09 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:09 INFO stdout [(datetime.date(2026, 2, 9), 14)]
+2026-02-16 15:57:09 INFO uvicorn.access 127.0.0.1:35998 - "GET /admin/reports/logs-per-day HTTP/1.1" 200
+2026-02-16 15:57:10 INFO uvicorn.access 127.0.0.1:35998 - "OPTIONS /admin/roles HTTP/1.1" 200
+2026-02-16 15:57:10 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/teams HTTP/1.1" 200
+2026-02-16 15:57:10 INFO uvicorn.access 127.0.0.1:35998 - "GET /admin/roles HTTP/1.1" 200
+2026-02-16 15:57:11 INFO uvicorn.access 127.0.0.1:36010 - "GET /admin/reports/top-errors HTTP/1.1" 200
+2026-02-16 15:57:13 INFO uvicorn.access 127.0.0.1:36010 - "GET /admin/users?page=1&limit=10 HTTP/1.1" 307
+2026-02-16 15:57:13 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/teams HTTP/1.1" 200
+2026-02-16 15:57:16 INFO uvicorn.access 127.0.0.1:36010 - "GET /admin/users/?page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:16 INFO uvicorn.access 127.0.0.1:41588 - "OPTIONS /admin/logs/search?category=&severity=&keyword=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:16 INFO uvicorn.access 127.0.0.1:36010 - "GET /admin/logs/search?category=&severity=&keyword=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:20 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/users?page=1&limit=10 HTTP/1.1" 307
+2026-02-16 15:57:20 INFO uvicorn.access 127.0.0.1:36010 - "GET /admin/teams HTTP/1.1" 200
+2026-02-16 15:57:23 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/users/?page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:28 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/logs/search?category=&severity=&keyword=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:29 INFO uvicorn.access 127.0.0.1:41588 - "GET /teams HTTP/1.1" 307
+2026-02-16 15:57:29 INFO uvicorn.access 127.0.0.1:54092 - "GET /teams/ HTTP/1.1" 200
+2026-02-16 15:57:29 INFO stdout === ADMIN FILES DEBUG ===
+2026-02-16 15:57:29 INFO stdout file_id=1, name=x1.txt, status=PARSED, is_deleted=False
+2026-02-16 15:57:29 INFO stdout =========================
+2026-02-16 15:57:30 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/files?name=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:31 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/logs/search?category=&severity=&keyword=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:34 INFO uvicorn.access 127.0.0.1:41588 - "GET /teams HTTP/1.1" 307
+2026-02-16 15:57:34 INFO uvicorn.access 127.0.0.1:54092 - "GET /teams/ HTTP/1.1" 200
+2026-02-16 15:57:34 INFO stdout === ADMIN FILES DEBUG ===
+2026-02-16 15:57:34 INFO stdout file_id=1, name=x1.txt, status=PARSED, is_deleted=False
+2026-02-16 15:57:34 INFO stdout =========================
+2026-02-16 15:57:34 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/files?name=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:35 INFO uvicorn.access 127.0.0.1:41588 - "OPTIONS /admin/security/login-history?page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:35 INFO uvicorn.access 127.0.0.1:41588 - "GET /admin/security/login-history?page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:59 INFO uvicorn.access 127.0.0.1:57986 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:57:59 INFO stdout [(datetime.date(2026, 2, 9), 14)]
+2026-02-16 15:57:59 INFO uvicorn.access 127.0.0.1:57978 - "GET /admin/reports/logs-per-day HTTP/1.1" 200
+2026-02-16 15:57:59 INFO uvicorn.access 127.0.0.1:57998 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:58:00 INFO uvicorn.access 127.0.0.1:57998 - "GET /admin/roles HTTP/1.1" 200
+2026-02-16 15:58:00 INFO uvicorn.access 127.0.0.1:57978 - "GET /admin/teams HTTP/1.1" 200
+2026-02-16 15:58:00 INFO uvicorn.access 127.0.0.1:57986 - "GET /admin/reports/top-errors HTTP/1.1" 200
+2026-02-16 15:58:02 INFO uvicorn.access 127.0.0.1:57986 - "GET /admin/users?page=1&limit=10 HTTP/1.1" 307
+2026-02-16 15:58:02 INFO uvicorn.access 127.0.0.1:57998 - "GET /admin/teams HTTP/1.1" 200
+2026-02-16 15:58:03 INFO uvicorn.access 127.0.0.1:57998 - "GET /admin/logs/search?category=&severity=&keyword=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:58:04 INFO uvicorn.access 127.0.0.1:57998 - "GET /teams HTTP/1.1" 307
+2026-02-16 15:58:04 INFO uvicorn.access 127.0.0.1:57998 - "GET /teams/ HTTP/1.1" 200
+2026-02-16 15:58:04 INFO stdout === ADMIN FILES DEBUG ===
+2026-02-16 15:58:04 INFO stdout file_id=1, name=x1.txt, status=PARSED, is_deleted=False
+2026-02-16 15:58:04 INFO stdout =========================
+2026-02-16 15:58:04 INFO uvicorn.access 127.0.0.1:57978 - "GET /admin/files?name=&page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:58:05 INFO uvicorn.access 127.0.0.1:57986 - "GET /admin/users/?page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:58:05 INFO uvicorn.access 127.0.0.1:57986 - "GET /admin/security/login-history?page=1&limit=10 HTTP/1.1" 200
+2026-02-16 15:58:07 INFO uvicorn.access 127.0.0.1:57998 - "GET /admin/users?page=1&limit=10 HTTP/1.1" 307
+2026-02-16 15:58:07 INFO uvicorn.access 127.0.0.1:57986 - "GET /admin/teams HTTP/1.1" 200
+2026-02-16 15:58:10 INFO uvicorn.access 127.0.0.1:57998 - "GET /admin/users/?page=1&limit=10 HTTP/1.1" 200
