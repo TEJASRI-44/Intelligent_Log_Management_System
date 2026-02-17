@@ -1,85 +1,125 @@
-/* Sidebar base styles */
+/* =========================================
+   SIDEBAR BASE
+========================================= */
+
 .admin-sidebar {
   width: 240px;
   height: 100vh;
+  background: #0f172a;
+  color: white;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #1a1d20; /* Consistent dark gray */
-  z-index: 1000;
-  transition: transform 0.3s ease-in-out;
+  z-index: 1050;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease-in-out;
 }
+
+/* =========================================
+   SIDEBAR BRAND
+========================================= */
 
 .sidebar-brand {
-  padding: 30px 20px;
-  margin-top: -14px;
+  padding: 24px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 18px;
   text-align: center;
+  margin: 0;
 }
 
-/* Navigation links */
+/* =========================================
+   SIDEBAR NAVIGATION
+========================================= */
+
+.sidebar-nav {
+  flex: 1;
+  padding: 20px;
+}
+
 .sidebar-nav .nav-link {
-  padding: 12px 20px;
-  border-radius: 8px;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #cbd5f5;
   transition: all 0.2s ease;
-  font-weight: 500;
 }
 
-.link-hover:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff !important;
+.sidebar-nav .nav-link:hover {
+  background: #1e293b;
+  color: white !important;
 }
 
-/* Mobile Toggle Button */
+.sidebar-nav .nav-link.active {
+  background: #2563eb !important;
+  color: white !important;
+}
+
+/* =========================================
+   MOBILE TOGGLE BUTTON
+========================================= */
+
 .mobile-toggle-btn {
   position: fixed;
-  top: 8px;
-  left: 7px;
+  top: 12px;
+  left: 12px;
   z-index: 1100;
-  padding: 8px 15px;
-  font-weight: bold;
-  width: 10px;
+  background: #0f172a;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
 }
 
-/* Mobile Overlay */
+.mobile-toggle-btn i {
+  font-size: 20px;
+  color: black;
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
 .sidebar-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
-  z-index: 999;
+  z-index: 1040;
 }
 
-/* --- Responsive Logic --- */
+/* =========================================
+   RESPONSIVE BEHAVIOR
+========================================= */
 
-/* Desktop: Always visible */
-@media (min-width: 768px) {
-  .admin-sidebar {
-    transform: translateX(0) !important;
-  }
-  .mobile-toggle-btn {
-    left: 0 !important;;
-    width: 10px !important;
-    display: none !important;
-  }
-}
+/* Mobile & Tablet */
+@media (max-width: 991px) {
 
-/* Mobile: Hidden by default */
-@media (max-width: 767.98px) {
   .admin-sidebar {
     transform: translateX(-100%);
   }
+
   .admin-sidebar.open {
     transform: translateX(0);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-  }
-  
-  .sidebar-brand {
-    margin-top: 60px; 
   }
 
+  .mobile-toggle-btn {
+    display: block;
+  }
 }
- 
+
+
+/* Desktop */
+@media (min-width: 992px) {
+
+  .admin-sidebar {
+    transform: translateX(0);
+  }
+
+  .mobile-toggle-btn {
+    display: none;
+  }
+}
+

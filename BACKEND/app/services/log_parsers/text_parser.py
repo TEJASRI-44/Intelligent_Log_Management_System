@@ -56,4 +56,4 @@ def parse_text_logs(db: Session, file_id: int, raw_text: str):
     db.commit()
     parsed_percentage=(inserted/(inserted+skipped))*100 if (inserted+skipped)>0 else 0
     return parsed_percentage
-    print(f"TEXT logs inserted: {inserted}")
+   

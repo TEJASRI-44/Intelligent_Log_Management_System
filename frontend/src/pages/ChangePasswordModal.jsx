@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { toast } from "react-toastify";
 import { changeMyPassword } from "../api/user.api";
 
+
 export default function ChangePasswordModal({ show, onClose }) {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -61,14 +62,17 @@ export default function ChangePasswordModal({ show, onClose }) {
       setLoading(false);
     }
   }
-
+  if (!show) return null; 
   return (
-    <Modal show={show} onHide={handleClose} centered backdrop="static">
-      <Modal.Header closeButton>
-        <Modal.Title>Change Password</Modal.Title>
-      </Modal.Header>
+    <div className="modal fade show d-block" style={{ background: "rgba(0,0,0,.5)" }}>
+      <div className="modal-dialog modal-lg modal-dialog-centered m-auto">
+        <div className="modal-content p-3">
+          <div className="modal-header">
+            <h5 className="modal-title">ChangePassword</h5>
+            <button className="btn-close" onClick={onClose}><i class="bi text-black bi-x-lg"></i></button>
+          </div>
+   
 
-      <Modal.Body  >
      
         <form onSubmit={handleSubmit}>
           {/* CURRENT PASSWORD */}
@@ -86,7 +90,9 @@ export default function ChangePasswordModal({ show, onClose }) {
                 className="btn btn-outline-secondary"
                 onClick={() => setShowCurrent(v => !v)}
               >
-                {showCurrent ? "" : ""}
+                {showCurrent ? <i class="bi bi-eye"></i>
+ : <i class="bi bi-eye-slash"></i>
+}
               </button>
             </div>
           </div>
@@ -106,7 +112,8 @@ export default function ChangePasswordModal({ show, onClose }) {
                 className="btn btn-outline-secondary"
                 onClick={() => setShowNew(v => !v)}
               >
-                {showNew ? "" : ""}
+               {showNew ? <i class="bi bi-eye"></i>
+ : <i class="bi bi-eye-slash"></i>}
               </button>
             </div>
           </div>
@@ -126,7 +133,8 @@ export default function ChangePasswordModal({ show, onClose }) {
                 className="btn btn-outline-secondary"
                 onClick={() => setShowConfirm(v => !v)}
               >
-                {showConfirm ? "" : ""}
+                {showConfirm ? <i class="bi bi-eye"></i>
+ : <i class="bi bi-eye-slash"></i>}
               </button>
             </div>
           </div>
@@ -148,7 +156,8 @@ export default function ChangePasswordModal({ show, onClose }) {
             </Button>
           </div>
         </form>
-      </Modal.Body>
-    </Modal>
+      </div>
+      </div>
+    </div>
   );
 }

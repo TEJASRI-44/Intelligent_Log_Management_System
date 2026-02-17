@@ -8,6 +8,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,14 +42,27 @@ export default function Login() {
         onChange={(e) => setEmail(e.target.value)}
       />
 
+      <div className="input-group">
       <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+          type={showPassword ? "text" : "password"}
+          className="form-control"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <button type="submit">Login</button>
+        <button
+         type="button"
+         className="toggle"
+          
+          onClick={() => setShowPassword(prev => !prev)}
+        >
+          <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
+        </button>
+      </div>
+
+
+      <button className="login-btn"type="submit">Login</button>
       </div>
     </form>
   );

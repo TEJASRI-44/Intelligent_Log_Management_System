@@ -41,7 +41,7 @@ def parse_json_logs(db: Session, file_id: int, raw_text: str):
                 log["timestamp"].replace("Z", "+00:00")
             )
         except Exception:
-            continue  # skip invalid timestamps safely
+            continue  
 
         entry = LogEntry(
             file_id=file_id,

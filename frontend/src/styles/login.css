@@ -59,7 +59,7 @@
 }
 
 /* Button */
-.login-form button {
+.login-btn {
   margin-top: 1.8rem;
   padding: 14px;
   font-size: 1rem;
@@ -75,4 +75,15 @@
 .login-form button:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(118, 75, 162, 0.4);
+}
+.toggle{
+  background-color: white;
+  color: black;
+  padding: 14px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  
+
 }

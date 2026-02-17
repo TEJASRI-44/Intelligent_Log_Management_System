@@ -72,11 +72,11 @@ export default function AdminUploadModal({ show, onClose, onSuccess }) {
 
   return (
     <div className="modal fade show d-block" style={{ background: "rgba(0,0,0,.5)" }}>
-      <div className="modal-dialog modal-lg">
+      <div className="modal-dialog modal-lg modal-dialog-centered m-auto">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Upload Log File</h5>
-            <button className="btn-close" onClick={onClose}></button>
+            <button className="btn-close" onClick={onClose}><i class="bi text-black bi-x-lg"></i></button>
           </div>
 
           <form onSubmit={handleUpload}>
@@ -148,7 +148,7 @@ export default function AdminUploadModal({ show, onClose, onSuccess }) {
 
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-              <button type="submit" className="btn btn-primary" disabled={loading || !file}>
+              <button type="submit" className="btn btn-primary" disabled={loading || !files}>
                 {loading ? "Uploading..." : "Upload"}
               </button>
             </div>

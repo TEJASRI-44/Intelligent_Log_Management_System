@@ -22,7 +22,9 @@ export default function AdminSidebar() {
     <>
       {/* Mobile Toggle Button */}
       <button
-        className="btn  d-md-none mobile-toggle-btn w-10"
+        className="btn  d-md-none mobile-toggle-btn left-0 top-0 fixed-top position-fixed"
+          style={{ width: "10px" }}
+        
         onClick={() => setIsOpen(!isOpen)}
         
       >
