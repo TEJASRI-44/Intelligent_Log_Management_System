@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { uploadLogFile } from "../api/files.api";
 import { fetchMyTeams, fetchAllowedSources, fetchAllowedFormats } from "../api/lookups.api";
+import { toast } from "react-toastify";
 
 export default function AdminUploadModal({ show, onClose, onSuccess }) {
   const [teams, setTeams] = useState([]);
@@ -58,7 +59,8 @@ export default function AdminUploadModal({ show, onClose, onSuccess }) {
 
     setLoading(true);
     try {
-      await uploadLogFile(teamId, sourceId, formatId, file);
+      await uploadLogFile(teamId, sourceId, formatId, files);
+      toast.success("Files uploaded Successfully")
       onSuccess();
       onClose();
     } catch (err) {

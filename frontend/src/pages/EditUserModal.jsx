@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { updateUserProfile, updateUserAccess } from "../api/adminUsers.api";
 import { fetchRoles, fetchTeams } from "../api/admin.api";
 import "../styles/EditUserModal.css";
+import { toast } from "react-toastify";
 
 export default function EditUserModal({ user, onClose, onSaved }) {
   const [roles, setRoles] = useState([]);
@@ -47,15 +48,25 @@ export default function EditUserModal({ user, onClose, onSaved }) {
     );
   }
 
-  async function save() {
+
+
+async function save() {
+  try {
     setSaving(true);
+
     const payload = {};
+
     if (profile.first_name !== undefined)
       payload.first_name = profile.first_name;
-    if (profile.last_name !== undefined) payload.last_name = profile.last_name;
+
+    if (profile.last_name !== undefined)
+      payload.last_name = profile.last_name;
+
     if (profile.phone_number !== undefined)
       payload.phone_number = profile.phone_number;
-    if (profile.job_title !== undefined) payload.job_title = profile.job_title;
+
+    if (profile.job_title !== undefined)
+      payload.job_title = profile.job_title;
 
     await Promise.all([
       Object.keys(payload).length > 0 &&
@@ -63,9 +74,17 @@ export default function EditUserModal({ user, onClose, onSaved }) {
       updateUserAccess(user.user_id, selectedRoles, selectedTeams),
     ]);
 
-    setSaving(false);
+    toast.success("User updated successfully ");
+
     onSaved();
+  } catch (error) {
+    console.error(error);
+    toast.error("Failed to update user ");
+  } finally {
+    setSaving(false);
   }
+}
+
 
   return (
     <div className="custom-modal-backdrop show" onClick={onClose}>

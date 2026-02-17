@@ -12,9 +12,10 @@ export default function UserSidebar() {
      
       <button
         className="btn  fixed-top btn-sm mobile-toggle-btn"
+        style={{width:"10px"}}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? <i class="bi bi-x-lg"></i>
+        {isOpen ? <i class="bi text-white bi-x-lg"></i>
 : <i class="bi bi-list"></i>
 
 

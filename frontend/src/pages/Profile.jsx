@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchMyProfile, updateMyProfile } from "../api/user.api";
 import { useNavigate } from "react-router-dom";
-
+import {toast} from "react-toastify"
 import ChangePasswordModal from "./ChangePasswordModal";
 
 
@@ -50,6 +50,7 @@ export default function Profile() {
     setSaving(true);
     try {
       await updateMyProfile(form);
+      toast.success("Profile Updated Successfully")
       await loadProfile();
       setEditMode(false);
     } catch (err) {

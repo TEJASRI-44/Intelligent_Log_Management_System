@@ -6,35 +6,75 @@ from app.models.log_severities import LogSeverity
 from app.models.log_categories import LogCategory
 from app.services.log_parser import classify_log
 
+
 def parse_xml_logs(db: Session, file_id: int, raw_text: str):
-    root = ET.fromstring(raw_text)
+
+    try:
+        root = ET.fromstring(raw_text.strip())
+    except ET.ParseError:
+        raise Exception("Invalid XML format")
+
     inserted = 0
+    skipped = 0
 
-    for log in root.findall("log"):
-        severity = db.query(LogSeverity).filter(
-            LogSeverity.severity_code == log.findtext("level")
-        ).first()
+    logs = root.findall("log")
+    total_logs = len(logs)
 
-        message = log.findtext("message")
-        category_name = classify_log(message)
-        category = db.query(LogCategory).filter(
-            LogCategory.category_name == category_name
-        ).first()
+    for log in logs:
 
-        entry = LogEntry(
-            file_id=file_id,
-            log_timestamp=datetime.fromisoformat(
-                log.findtext("timestamp").replace("Z", "+00:00")
-            ),
-            severity_id=severity.severity_id if severity else None,
-            category_id=category.category_id if category else None,
-            service_name=log.findtext("service"),
-            message=message,
-            raw_log=ET.tostring(log, encoding="unicode")
-        )
+        try:
+            timestamp_text = log.findtext("timestamp")
+            level = log.findtext("level")
+            service = log.findtext("service")
+            message = log.findtext("message")
 
-        db.add(entry)
-        inserted += 1
+            if not timestamp_text or not level or not message:
+                skipped += 1
+                continue
+            try:
+                timestamp = datetime.fromisoformat(
+                    timestamp_text.strip().replace("Z", "+00:00")
+                )
+            except Exception:
+                skipped += 1
+                continue
+
+            # Validate severity
+            severity = db.query(LogSeverity).filter(
+                LogSeverity.severity_code == level.strip()
+            ).first()
+
+            if not severity:
+                skipped += 1
+                continue
+
+            # Classify category
+            category_name = classify_log(message)
+            category = db.query(LogCategory).filter(
+                LogCategory.category_name == category_name
+            ).first()
+
+            entry = LogEntry(
+                file_id=file_id,
+                log_timestamp=timestamp,
+                severity_id=severity.severity_id,
+                category_id=category.category_id if category else None,
+                service_name=service.strip() if service else None,
+                message=message.strip(),
+                raw_log=ET.tostring(log, encoding="unicode")
+            )
+
+            db.add(entry)
+            inserted += 1
+
+        except Exception:
+            skipped += 1
+            continue
 
     db.commit()
-    print(f" XML logs inserted: {inserted}")
+
+    parsed_percentage = (
+        (inserted / total_logs) * 100 if total_logs > 0 else 0
+    )
+
+    return round(parsed_percentage, 2)

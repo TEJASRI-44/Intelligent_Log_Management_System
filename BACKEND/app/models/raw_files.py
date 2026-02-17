@@ -1,4 +1,4 @@
-from sqlalchemy import Column, BigInteger, String,Boolean, ForeignKey, TIMESTAMP
+from sqlalchemy import Column, BigInteger, String,Boolean, ForeignKey, TIMESTAMP,Float
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from app.database import Base
@@ -23,6 +23,8 @@ class RawFile(Base):
         BigInteger,
         ForeignKey("upload_statuses.status_id"), 
     )
+    parsed_percentage = Column(Float, default=0)
+
     is_deleted = Column(Boolean, default=False) 
 
     uploaded_at = Column(TIMESTAMP(timezone=True), server_default=func.now())

@@ -75,7 +75,7 @@
 
 .mobile-toggle-btn i {
   font-size: 20px;
-  color: black;
+  color: white;   /* changed from black */
 }
 
 /* =========================================
@@ -94,26 +94,8 @@
    RESPONSIVE BEHAVIOR
 ========================================= */
 
-/* Mobile & Tablet */
-@media (max-width: 991px) {
-
-  .admin-sidebar {
-    transform: translateX(-100%);
-  }
-
-  .admin-sidebar.open {
-    transform: translateX(0);
-  }
-
-  .mobile-toggle-btn {
-    display: block;
-  }
-}
-
-
 /* Desktop */
-@media (min-width: 992px) {
-
+@media (min-width: 768px) {
   .admin-sidebar {
     transform: translateX(0);
   }
@@ -123,3 +105,18 @@
   }
 }
 
+/* Mobile */
+@media (max-width: 767.98px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar-brand {
+    margin-top: 60px;
+  }
+}

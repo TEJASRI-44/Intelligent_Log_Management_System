@@ -181,8 +181,8 @@ console.log(files);
                 <th>Date</th>
                 <th>Size</th>
                 <th>Status</th>
-
-                <th></th>
+                <th>Parsed Percentage</th>
+                <th>    Action</th>
               </tr>
             </thead>
             <tbody>
@@ -213,7 +213,7 @@ console.log(files);
                         {f.status}
                       </span>
                     </td>
-
+                    <td>{f.parsed_percentage}</td>
                     <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary"

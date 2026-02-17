@@ -51,7 +51,7 @@ def process_uploaded_file(file_id: int):
             raw_text=raw_text
         )
 
-        #  Mark PARSED
+        raw_file.parsed_percentage = parsed_percentage 
         raw_file.status_id = get_status_id(db, "PARSED")
         db.commit()
 
@@ -61,6 +61,7 @@ def process_uploaded_file(file_id: int):
         db.rollback()
 
         try:
+            raw_file.parsed_percentage=0
             raw_file.status_id = get_status_id(db, "FAILED")
             db.commit()
         except:

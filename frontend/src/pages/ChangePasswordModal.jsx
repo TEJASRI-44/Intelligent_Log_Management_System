@@ -54,7 +54,6 @@ export default function ChangePasswordModal({ show, onClose }) {
       });
 
       toast.success("Password changed successfully");
-      // Close after user sees success
       setTimeout(handleClose, 1200);
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to change password");

@@ -47,8 +47,20 @@
   overflow-y: auto;
 }
 
+@media (min-width: 768px) {
+  .admin-sidebar {
+    transform: translateX(0);
+  }
 
-@media (max-width: 991px) {
+  .mobile-toggle-btn {
+    display: none;
+  }
+  .main-admindashboard-content {
+    margin-left: 240px;
+  }
+}
+
+@media (max-width: 767px) {
 
   /* Remove left margin when sidebar becomes drawer */
   .main-admindashboard-content {

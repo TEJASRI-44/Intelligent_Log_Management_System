@@ -101,8 +101,9 @@ def my_uploaded_files(
             RawFile.uploaded_at,
             RawFile.file_size_bytes,
             RawFile.is_deleted,
+            RawFile.parsed_percentage,
             Team.team_name,
-            UploadStatus.status_code        # ✅ ADD THIS
+            UploadStatus.status_code
         )
         .join(Team, Team.team_id == RawFile.team_id)
         .join(UploadStatus, UploadStatus.status_id == RawFile.status_id)
@@ -138,7 +139,8 @@ def my_uploaded_files(
                 "uploaded_at": f.uploaded_at,
                 "file_size": f.file_size_bytes,
                 "team": f.team_name,
-                "status": f.status_code,     
+                "status": f.status_code,
+                "parsed_percentage":f.parsed_percentage,    
                 "is_deleted": f.is_deleted
             }
             for f in files

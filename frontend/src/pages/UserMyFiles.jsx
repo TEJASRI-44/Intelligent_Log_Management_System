@@ -78,9 +78,11 @@ export default function UserMyFiles() {
               <input
                 className="form-control"
                 placeholder="Search by file name"
+                value={filters.name}
                 onChange={e =>
-                  setFilters({ ...filters, name: e.target.value })
-                }
+                  {setFilters({ ...filters, name: e.target.value })
+                   setPage(1);
+                }}
               />
             </div>
 
@@ -130,8 +132,8 @@ export default function UserMyFiles() {
               >
                 Apply
               </button>
-            </div>
- */}
+            </div> */}
+ 
           </div>
         </div>
       </div>
@@ -149,6 +151,7 @@ export default function UserMyFiles() {
                   <th>Uploaded At</th>
                   <th>Size</th>
                   <th>Status</th>
+                  <th>Parsed percentage</th>
                   <th className="text-end">Action</th>
                 </tr>
               </thead>
@@ -184,6 +187,7 @@ export default function UserMyFiles() {
                         {f.status}
                       </span>
                     </td>
+                    <td>{f.parsed_percentage}</td>
                     <td className="text-end">
                       {f.is_deleted ? (
                         <button

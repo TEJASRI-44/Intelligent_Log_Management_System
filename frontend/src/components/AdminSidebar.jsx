@@ -28,7 +28,7 @@ export default function AdminSidebar() {
         onClick={() => setIsOpen(!isOpen)}
         
       >
-        {isOpen ?  <i class="bi text-white bi-x-lg"></i>:<i class="bi bi-list"></i> }
+        {isOpen ?  <i class="bi text-white bi-x-lg"></i>:<i class="bi text-black bi-list"></i> }
       </button>
 
       {/* Mobile Overlay */}

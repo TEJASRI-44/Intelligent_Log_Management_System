@@ -85,7 +85,8 @@ def list_all_files(
                 "uploaded_by": f.user.username,
                 "team": f.team.team_name,
                 "is_deleted": f.is_deleted,
-                "status": f.status.status_code if f.status else "UNKNOWN"
+                "status": f.status.status_code if f.status else "UNKNOWN",
+                "parsed_percentage":f.parsed_percentage
             }
             for f in files
         ]

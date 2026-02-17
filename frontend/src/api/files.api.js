@@ -13,7 +13,7 @@ export async function uploadLogFile(teamId, sourceId, formatId, files) {
   const formData = new FormData();
 
   files.forEach(file => {
-    formData.append("files", file); // IMPORTANT: must match backend param name
+    formData.append("files", file);  // append each file separately
   });
 
   const res = await axios.post(
@@ -21,12 +21,12 @@ export async function uploadLogFile(teamId, sourceId, formatId, files) {
     formData,
     {
       params: {
-        team_id: teamId,
-        source_id: sourceId,
-        format_id: formatId
+        team_id: Number(teamId),
+        source_id: Number(sourceId),
+        format_id: Number(formatId)
       },
       headers: {
-        ...getAuthHeader(),  
+        ...getAuthHeader(),
         "Content-Type": "multipart/form-data"
       }
     }
@@ -34,6 +34,8 @@ export async function uploadLogFile(teamId, sourceId, formatId, files) {
 
   return res.data;
 }
+
+
 export async function fetchMyFiles(params = {}) {
 
   const cleanParams = Object.fromEntries(
