@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "../auth/auth.service";
 
-const API = import.meta.env.VITE_API_URL||"http://localhost:8000/admin/users";
+const API = import.meta.env.VITE_API_URL||"http://localhost:8000";
 
 const authHeader = () => ({
   Authorization: `Bearer ${getToken()}`
@@ -27,26 +27,26 @@ export const fetchUsers = async ({
 };
 export const updateUserStatus = async (userId, isActive) => {
   await axios.patch(
-    `${API}/${userId}/status`,
+    `${API}/${userId}/admin/users/status`,
     { is_active: isActive },
     { headers: authHeader() }
   );
 };
 
 export const deleteUser = async (userId) => {
-  await axios.delete(`${API}/${userId}`, {
+  await axios.delete(`${API}/admin/users/${userId}`, {
     headers: authHeader()
   });
 };
 
 export const updateUserProfile = (userId, payload) =>
-  axios.put(`${API}/${userId}/profile`, payload, {
+  axios.put(`${API}/${userId}/admin/users/profile`, payload, {
     headers: authHeader()
   });
 
 export const updateUserAccess = (userId, roleIds, teamIds) =>
   axios.put(
-    `${API}/${userId}/access`,
+    `${API}/${userId}/admin/users/access`,
     {
       role_ids: roleIds,
       team_ids: teamIds

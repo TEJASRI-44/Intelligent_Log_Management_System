@@ -10,7 +10,7 @@ export default function AdminUploadModal({ show, onClose, onSuccess }) {
   const [teamId, setTeamId] = useState("");
   const [sourceId, setSourceId] = useState("");
   const [formatId, setFormatId] = useState("");
-  const [file, setFile] = useState(null);
+  const [files, setFiles] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
@@ -54,7 +54,7 @@ export default function AdminUploadModal({ show, onClose, onSuccess }) {
 
   async function handleUpload(e) {
     e.preventDefault();
-    if (!file || !teamId || !sourceId || !formatId) return;
+    if (!files || !teamId || !sourceId || !formatId) return;
 
     setLoading(true);
     try {
@@ -139,7 +139,7 @@ export default function AdminUploadModal({ show, onClose, onSuccess }) {
                     type="file" 
                     className="form-control" 
                     required 
-                    onChange={e => setFile(e.target.files[0])} 
+                    onChange={e => setFiles(e.target.files[0])} 
                   />
                 </div>
 

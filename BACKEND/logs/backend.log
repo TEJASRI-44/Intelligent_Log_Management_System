@@ -4926,3 +4926,201 @@ LINE 1: ...pe, entity_id) VALUES (1, 'CREATED USER', 'USER', 'rajini') ...
 2026-02-16 15:58:07 INFO uvicorn.access 127.0.0.1:57998 - "GET /admin/users?page=1&limit=10 HTTP/1.1" 307
 2026-02-16 15:58:07 INFO uvicorn.access 127.0.0.1:57986 - "GET /admin/teams HTTP/1.1" 200
 2026-02-16 15:58:10 INFO uvicorn.access 127.0.0.1:57998 - "GET /admin/users/?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 10:42:08 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 10:42:09 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 10:42:09 INFO uvicorn.error Started server process [746446]
+2026-02-17 10:42:09 INFO uvicorn.error Waiting for application startup.
+2026-02-17 10:42:09 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-17 10:42:09 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-17 10:42:09 INFO apscheduler.scheduler Scheduler started
+2026-02-17 10:42:09 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-17 10:42:09 INFO uvicorn.error Application startup complete.
+2026-02-17 10:57:12 INFO uvicorn.error Shutting down
+2026-02-17 10:57:12 INFO uvicorn.error Waiting for application shutdown.
+2026-02-17 10:57:12 INFO uvicorn.error Application shutdown complete.
+2026-02-17 10:57:12 INFO uvicorn.error Finished server process [746446]
+2026-02-17 10:57:13 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 10:57:14 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 10:57:14 INFO uvicorn.error Started server process [755008]
+2026-02-17 10:57:14 INFO uvicorn.error Waiting for application startup.
+2026-02-17 10:57:14 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-17 10:57:14 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-17 10:57:14 INFO apscheduler.scheduler Scheduler started
+2026-02-17 10:57:14 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-17 10:57:14 INFO uvicorn.error Application startup complete.
+2026-02-17 10:57:15 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 10:57:15 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 10:57:16 ERROR stderr Process SpawnProcess-3:
+2026-02-17 10:57:16 ERROR stderr Traceback (most recent call last):
+2026-02-17 10:57:16 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+2026-02-17 10:57:16 ERROR stderr File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+2026-02-17 10:57:16 ERROR stderr File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/.local/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+2026-02-17 10:57:16 ERROR stderr File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+2026-02-17 10:57:16 ERROR stderr File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2026-02-17 10:57:16 ERROR stderr File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2026-02-17 10:57:16 ERROR stderr File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2026-02-17 10:57:16 ERROR stderr File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2026-02-17 10:57:16 ERROR stderr File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2026-02-17 10:57:16 ERROR stderr File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/app.py", line 21, in <module>
+    from app.routes.file_upload import router as file_upload_router
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/routes/file_upload.py", line 17, in <module>
+    from app.services.log_background_processor import process_uploaded_file
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_background_processor.py", line 6, in <module>
+    from app.services.log_parsers.parser_router import parse_logs_by_format
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_parsers/parser_router.py", line 3, in <module>
+    from app.services.log_parsers.text_parser import parse_text_logs
+2026-02-17 10:57:16 ERROR stderr File "/home/venkata.teja/PYTHON/Intelligent_Log_Management_System/BACKEND/app/services/log_parsers/text_parser.py", line 1, in <module>
+    c
+2026-02-17 10:57:16 ERROR stderr NameError: name 'c' is not defined
+2026-02-17 10:57:17 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 10:57:18 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 10:57:18 INFO uvicorn.error Started server process [755073]
+2026-02-17 10:57:18 INFO uvicorn.error Waiting for application startup.
+2026-02-17 10:57:18 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-17 10:57:18 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-17 10:57:18 INFO apscheduler.scheduler Scheduler started
+2026-02-17 10:57:18 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-17 10:57:18 INFO uvicorn.error Application startup complete.
+2026-02-17 10:57:19 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 10:57:20 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 10:57:20 INFO uvicorn.error Started server process [755107]
+2026-02-17 10:57:20 INFO uvicorn.error Waiting for application startup.
+2026-02-17 10:57:20 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-17 10:57:20 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-17 10:57:20 INFO apscheduler.scheduler Scheduler started
+2026-02-17 10:57:20 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-17 10:57:20 INFO uvicorn.error Application startup complete.
+2026-02-17 11:07:08 INFO uvicorn.access 127.0.0.1:56156 - "OPTIONS /admin/reports/logs-per-day HTTP/1.1" 200
+2026-02-17 11:07:08 INFO uvicorn.access 127.0.0.1:56172 - "OPTIONS /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:07:08 INFO uvicorn.access 127.0.0.1:56174 - "OPTIONS /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:07:08 INFO uvicorn.access 127.0.0.1:56172 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 401
+2026-02-17 11:07:08 INFO uvicorn.access 127.0.0.1:56156 - "GET /admin/reports/logs-per-day HTTP/1.1" 401
+2026-02-17 11:07:08 INFO uvicorn.access 127.0.0.1:56174 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 401
+2026-02-17 11:07:16 INFO uvicorn.access 127.0.0.1:50638 - "OPTIONS /users/login-json HTTP/1.1" 200
+2026-02-17 11:07:20 INFO uvicorn.access 127.0.0.1:50638 - "POST /users/login-json HTTP/1.1" 200
+2026-02-17 11:07:21 INFO stdout [(datetime.date(2026, 2, 16), 6), (datetime.date(2026, 2, 15), 6), (datetime.date(2026, 2, 9), 14)]
+2026-02-17 11:07:21 INFO uvicorn.access 127.0.0.1:50638 - "GET /admin/reports/logs-per-day HTTP/1.1" 200
+2026-02-17 11:07:21 INFO uvicorn.access 127.0.0.1:50638 - "OPTIONS /admin/reports/top-errors HTTP/1.1" 200
+2026-02-17 11:07:21 INFO uvicorn.access 127.0.0.1:50640 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:07:21 INFO uvicorn.access 127.0.0.1:50652 - "GET /admin/reports/recent-logs?days=10&page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:07:21 INFO uvicorn.access 127.0.0.1:50638 - "GET /admin/reports/top-errors HTTP/1.1" 200
+2026-02-17 11:08:18 INFO uvicorn.access 127.0.0.1:35146 - "OPTIONS /admin/roles HTTP/1.1" 200
+2026-02-17 11:08:18 INFO uvicorn.access 127.0.0.1:35146 - "OPTIONS /admin/teams HTTP/1.1" 200
+2026-02-17 11:08:19 INFO uvicorn.access 127.0.0.1:35154 - "GET /admin/roles HTTP/1.1" 200
+2026-02-17 11:08:19 INFO uvicorn.access 127.0.0.1:35146 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:08:57 INFO uvicorn.error Shutting down
+2026-02-17 11:08:57 INFO uvicorn.error Waiting for application shutdown.
+2026-02-17 11:08:57 INFO uvicorn.error Application shutdown complete.
+2026-02-17 11:08:57 INFO uvicorn.error Finished server process [755107]
+2026-02-17 11:08:59 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 11:08:59 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 11:08:59 INFO uvicorn.error Started server process [761338]
+2026-02-17 11:08:59 INFO uvicorn.error Waiting for application startup.
+2026-02-17 11:08:59 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-17 11:08:59 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-17 11:08:59 INFO apscheduler.scheduler Scheduler started
+2026-02-17 11:08:59 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-17 11:08:59 INFO uvicorn.error Application startup complete.
+2026-02-17 11:09:00 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 11:09:01 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 11:09:01 INFO uvicorn.error Started server process [761386]
+2026-02-17 11:09:01 INFO uvicorn.error Waiting for application startup.
+2026-02-17 11:09:01 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-17 11:09:01 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-17 11:09:01 INFO apscheduler.scheduler Scheduler started
+2026-02-17 11:09:01 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-17 11:09:01 INFO uvicorn.error Application startup complete.
+2026-02-17 11:38:33 INFO uvicorn.access 127.0.0.1:41688 - "OPTIONS /auth/login HTTP/1.1" 200
+2026-02-17 11:38:33 INFO uvicorn.access 127.0.0.1:41688 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:38:45 INFO uvicorn.access 127.0.0.1:37292 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:38:46 INFO uvicorn.access 127.0.0.1:37292 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:38:46 INFO uvicorn.access 127.0.0.1:37292 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:38:46 INFO uvicorn.access 127.0.0.1:37292 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:41:14 INFO uvicorn.access 127.0.0.1:38328 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:41:45 INFO uvicorn.access 127.0.0.1:32932 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:41:46 INFO uvicorn.access 127.0.0.1:32932 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:41:46 INFO uvicorn.access 127.0.0.1:32932 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:42:13 INFO uvicorn.access 127.0.0.1:53084 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:42:13 INFO uvicorn.access 127.0.0.1:53084 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:42:13 INFO uvicorn.access 127.0.0.1:53084 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:42:14 INFO uvicorn.access 127.0.0.1:53084 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:42:14 INFO uvicorn.access 127.0.0.1:53084 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:42 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:42 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:43 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:46 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:47 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:47 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:47 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:47 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:47 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:48 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:48 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:48 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:48 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:48 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:49 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:49 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:46:49 INFO uvicorn.access 127.0.0.1:44402 - "POST /auth/login HTTP/1.1" 404
+2026-02-17 11:47:16 INFO uvicorn.access 127.0.0.1:41378 - "OPTIONS /teams HTTP/1.1" 200
+2026-02-17 11:47:16 INFO uvicorn.access 127.0.0.1:41378 - "OPTIONS /admin/files?name=&page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:47:16 INFO uvicorn.access 127.0.0.1:41390 - "GET /teams HTTP/1.1" 307
+2026-02-17 11:47:16 INFO uvicorn.access 127.0.0.1:41390 - "OPTIONS /teams/ HTTP/1.1" 200
+2026-02-17 11:47:16 INFO uvicorn.access 127.0.0.1:41378 - "GET /admin/files?name=&page=1&limit=10 HTTP/1.1" 401
+2026-02-17 11:47:17 INFO uvicorn.access 127.0.0.1:41378 - "OPTIONS /admin/roles HTTP/1.1" 200
+2026-02-17 11:47:17 INFO uvicorn.access 127.0.0.1:41402 - "OPTIONS /admin/teams HTTP/1.1" 200
+2026-02-17 11:47:18 INFO uvicorn.access 127.0.0.1:41414 - "OPTIONS /admin/users?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:47:18 INFO uvicorn.access 127.0.0.1:41414 - "GET /admin/users?page=1&limit=10 HTTP/1.1" 307
+2026-02-17 11:47:18 INFO uvicorn.access 127.0.0.1:41414 - "OPTIONS /admin/users/?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:47:18 INFO uvicorn.access 127.0.0.1:41414 - "GET /admin/users/?page=1&limit=10 HTTP/1.1" 401
+2026-02-17 11:47:18 INFO uvicorn.access 127.0.0.1:41390 - "GET /teams/ HTTP/1.1" 200
+2026-02-17 11:47:18 INFO uvicorn.access 127.0.0.1:41402 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:47:18 INFO uvicorn.access 127.0.0.1:41378 - "GET /admin/roles HTTP/1.1" 200
+2026-02-17 11:47:19 INFO uvicorn.access 127.0.0.1:41402 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:51:53 INFO uvicorn.access 127.0.0.1:45120 - "OPTIONS /?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:51:53 INFO uvicorn.access 127.0.0.1:45120 - "GET /?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:51:53 INFO uvicorn.access 127.0.0.1:45110 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:51:58 INFO uvicorn.access 127.0.0.1:52904 - "GET /?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:51:59 INFO uvicorn.access 127.0.0.1:52894 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:52:00 INFO uvicorn.access 127.0.0.1:52904 - "GET /?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:52:00 INFO uvicorn.access 127.0.0.1:52894 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:52:04 INFO uvicorn.access 127.0.0.1:52904 - "GET /?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:52:04 INFO uvicorn.access 127.0.0.1:52894 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:52:07 INFO uvicorn.access 127.0.0.1:52904 - "GET /?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:52:08 INFO uvicorn.access 127.0.0.1:52894 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:52:12 INFO uvicorn.access 127.0.0.1:52904 - "GET /?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:52:12 INFO uvicorn.access 127.0.0.1:52894 - "GET /admin/teams HTTP/1.1" 200
+2026-02-17 11:52:16 INFO uvicorn.access 127.0.0.1:52904 - "GET /?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 11:52:16 INFO uvicorn.access 127.0.0.1:52894 - "GET /admin/teams HTTP/1.1" 200
