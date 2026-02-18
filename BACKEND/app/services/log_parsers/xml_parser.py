@@ -12,7 +12,9 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
     try:
         root = ET.fromstring(raw_text.strip())
     except ET.ParseError:
-        raise Exception("Invalid XML format")
+        return {
+            "error": "Invalid XML format"
+        }
 
     inserted = 0
     skipped = 0
@@ -21,16 +23,18 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
     total_logs = len(logs)
 
     for log in logs:
-
         try:
             timestamp_text = log.findtext("timestamp")
             level = log.findtext("level")
             service = log.findtext("service")
             message = log.findtext("message")
 
+            # Required fields check
             if not timestamp_text or not level or not message:
                 skipped += 1
                 continue
+
+            # Timestamp parsing
             try:
                 timestamp = datetime.fromisoformat(
                     timestamp_text.strip().replace("Z", "+00:00")
@@ -49,7 +53,7 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
                 continue
 
             # Classify category
-            category_name = classify_log(message)
+            category_name = classify_log(message.strip())
             category = db.query(LogCategory).filter(
                 LogCategory.category_name == category_name
             ).first()
@@ -77,4 +81,4 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
         (inserted / total_logs) * 100 if total_logs > 0 else 0
     )
 
-    return round(parsed_percentage, 2)
+    return  round(parsed_percentage, 2)

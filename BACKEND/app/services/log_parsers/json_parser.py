@@ -9,7 +9,7 @@ from app.services.log_parser import classify_log
 def parse_json_logs(db: Session, file_id: int, raw_text: str):
     inserted = 0
     skipped = 0
-
+    
     try:
         parsed = json.loads(raw_text)
     except json.JSONDecodeError as e:
