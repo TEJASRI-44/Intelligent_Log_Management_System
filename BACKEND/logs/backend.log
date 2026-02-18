@@ -9319,3 +9319,109 @@ server closed the connection unexpectedly
 2026-02-17 19:01:33 INFO uvicorn.access 127.0.0.1:42206 - "GET /users/my-logs?keyword=mo&page=1&limit=10 HTTP/1.1" 200
 2026-02-17 19:01:39 INFO uvicorn.access 127.0.0.1:60092 - "GET /users/my-logs?keyword=m&page=1&limit=10 HTTP/1.1" 200
 2026-02-17 19:01:39 INFO uvicorn.access 127.0.0.1:60106 - "GET /users/my-logs?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 19:29:08 INFO uvicorn.access 127.0.0.1:52526 - "OPTIONS /users/my-teams HTTP/1.1" 200
+2026-02-17 19:29:08 INFO uvicorn.access 127.0.0.1:52526 - "GET /users/my-teams HTTP/1.1" 401
+2026-02-17 19:29:12 INFO uvicorn.access 127.0.0.1:52526 - "GET /users/my-teams HTTP/1.1" 401
+2026-02-17 19:29:31 INFO uvicorn.access 127.0.0.1:45246 - "OPTIONS /users/stats/summary HTTP/1.1" 200
+2026-02-17 19:29:31 INFO uvicorn.access 127.0.0.1:45246 - "OPTIONS /users/my-logs?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 19:29:31 INFO uvicorn.access 127.0.0.1:45246 - "GET /users/my-logs?page=1&limit=10 HTTP/1.1" 401
+2026-02-17 19:29:31 INFO uvicorn.access 127.0.0.1:45260 - "GET /users/stats/summary HTTP/1.1" 401
+2026-02-17 19:29:33 INFO uvicorn.access 127.0.0.1:45260 - "GET /users/my-logs?page=1&limit=10 HTTP/1.1" 401
+2026-02-17 19:29:33 INFO uvicorn.access 127.0.0.1:45246 - "GET /users/stats/summary HTTP/1.1" 401
+2026-02-17 19:29:40 INFO uvicorn.access 127.0.0.1:36596 - "OPTIONS /users/login-json HTTP/1.1" 200
+2026-02-17 19:29:41 INFO uvicorn.access 127.0.0.1:36596 - "POST /users/login-json HTTP/1.1" 200
+2026-02-17 19:29:41 INFO stdout user_id:
+2026-02-17 19:29:41 INFO stdout 10
+2026-02-17 19:29:42 INFO uvicorn.access 127.0.0.1:36606 - "GET /users/my-logs?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 19:29:43 INFO uvicorn.access 127.0.0.1:36596 - "GET /users/stats/summary HTTP/1.1" 200
+2026-02-17 19:29:44 INFO uvicorn.access 127.0.0.1:36606 - "GET /users/my-teams HTTP/1.1" 200
+2026-02-17 19:29:46 INFO uvicorn.access 127.0.0.1:36606 - "OPTIONS /lookups/team/2/sources HTTP/1.1" 200
+2026-02-17 19:29:48 INFO uvicorn.access 127.0.0.1:36606 - "GET /lookups/team/2/sources HTTP/1.1" 200
+2026-02-17 19:29:49 INFO uvicorn.access 127.0.0.1:36606 - "OPTIONS /lookups/team/2/source/1/formats HTTP/1.1" 200
+2026-02-17 19:29:49 INFO uvicorn.access 127.0.0.1:36606 - "GET /lookups/team/2/source/1/formats HTTP/1.1" 200
+2026-02-17 19:29:53 INFO uvicorn.access 127.0.0.1:36606 - "OPTIONS /lookups/team/2/source/2/formats HTTP/1.1" 200
+2026-02-17 19:29:53 INFO uvicorn.access 127.0.0.1:36606 - "GET /lookups/team/2/source/2/formats HTTP/1.1" 200
+2026-02-17 19:29:56 INFO uvicorn.access 127.0.0.1:36606 - "OPTIONS /lookups/team/2/source/3/formats HTTP/1.1" 200
+2026-02-17 19:29:56 INFO uvicorn.access 127.0.0.1:36606 - "GET /lookups/team/2/source/3/formats HTTP/1.1" 200
+2026-02-17 19:30:02 INFO uvicorn.access 127.0.0.1:54218 - "OPTIONS /files/upload?team_id=2&source_id=3&format_id=1 HTTP/1.1" 200
+2026-02-17 19:30:04 INFO uvicorn.access 127.0.0.1:54218 - "POST /files/upload?team_id=2&source_id=3&format_id=1 HTTP/1.1" 200
+2026-02-17 19:30:05 INFO stdout First 3 lines of file:
+2026-02-17 19:30:05 INFO stdout [2026-02-17 10:15:22.134] [info] Starting VS Code
+2026-02-17 19:30:05 INFO stdout [2026-02-17 10:15:22.567] [info] Loading extensions...
+2026-02-17 19:30:05 INFO stdout [2026-02-17 10:15:23.012] [info] Extension host started
+2026-02-17 19:30:06 INFO uvicorn.access 127.0.0.1:37460 - "OPTIONS /users/files/my-files?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 19:30:06 INFO uvicorn.access 127.0.0.1:54218 - "GET /users/my-teams HTTP/1.1" 200
+2026-02-17 19:30:06 INFO stdout File 14 parsed successfully | file parsed : 0%
+2026-02-17 19:30:06 INFO stdout MY FILES RAW RESULT:
+2026-02-17 19:30:06 INFO stdout [(14, 'vs_logs.txt', datetime.datetime(2026, 2, 17, 14, 0, 2, 975269, tzinfo=datetime.timezone.utc), 896, False, 0.0, 'DevOps', 'PARSED'), (13, 'sample_80_logs.xml', datetime.datetime(2026, 2, 17, 13, 28, 13, 351395, tzinfo=datetime.timezone.utc), 3796, False, 85.0, 'DevOps', 'PARSED'), (12, 'sample_50_logs.json', datetime.datetime(2026, 2, 17, 13, 10, 50, 585177, tzinfo=datetime.timezone.utc), 1012, False, 50.0, 'DevOps', 'PARSED'), (3, 'log_file1.txt', datetime.datetime(2026, 2, 16, 10, 32, 26, 550565, tzinfo=datetime.timezone.utc), 366, False, 0.0, 'DevOps', 'PARSED'), (2, 'log_file2.txt', datetime.datetime(2026, 2, 16, 10, 32, 25, 186716, tzinfo=datetime.timezone.utc), 322, False, 0.0, 'DevOps', 'PARSED')]
+2026-02-17 19:30:06 INFO uvicorn.access 127.0.0.1:37460 - "GET /users/files/my-files?page=1&limit=10 HTTP/1.1" 200
+2026-02-17 19:59:31 INFO uvicorn.error Shutting down
+2026-02-17 19:59:31 INFO uvicorn.error Waiting for application shutdown.
+2026-02-17 19:59:31 INFO uvicorn.error Application shutdown complete.
+2026-02-17 19:59:31 INFO uvicorn.error Finished server process [1028834]
+2026-02-17 19:59:32 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 19:59:32 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 19:59:32 INFO uvicorn.error Started server process [1066815]
+2026-02-17 19:59:32 INFO uvicorn.error Waiting for application startup.
+2026-02-17 19:59:32 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-17 19:59:32 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-17 19:59:32 INFO apscheduler.scheduler Scheduler started
+2026-02-17 19:59:32 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-17 19:59:32 INFO uvicorn.error Application startup complete.
+2026-02-17 19:59:37 INFO uvicorn.error Shutting down
+2026-02-17 19:59:37 INFO uvicorn.error Waiting for application shutdown.
+2026-02-17 19:59:37 INFO uvicorn.error Application shutdown complete.
+2026-02-17 19:59:37 INFO uvicorn.error Finished server process [1066815]
+2026-02-17 19:59:38 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-17 19:59:39 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-17 19:59:39 INFO uvicorn.error Started server process [1066915]
+2026-02-17 19:59:39 INFO uvicorn.error Waiting for application startup.
+2026-02-17 19:59:39 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-17 19:59:39 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-17 19:59:39 INFO apscheduler.scheduler Scheduler started
+2026-02-17 19:59:39 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-17 19:59:39 INFO uvicorn.error Application startup complete.
+2026-02-18 12:25:43 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-18 12:25:45 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-18 12:25:46 INFO uvicorn.error Started server process [1510993]
+2026-02-18 12:25:46 INFO uvicorn.error Waiting for application startup.
+2026-02-18 12:25:46 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-18 12:25:46 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-18 12:25:46 INFO apscheduler.scheduler Scheduler started
+2026-02-18 12:25:46 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-18 12:25:46 INFO uvicorn.error Application startup complete.
+2026-02-18 12:38:10 INFO uvicorn.error Shutting down
+2026-02-18 12:38:11 INFO uvicorn.error Waiting for application shutdown.
+2026-02-18 12:38:11 INFO uvicorn.error Application shutdown complete.
+2026-02-18 12:38:11 INFO uvicorn.error Finished server process [1510993]
+2026-02-18 12:38:13 INFO uvicorn.error Started server process [1513112]
+2026-02-18 12:38:13 INFO uvicorn.error Waiting for application startup.
+2026-02-18 12:38:13 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-18 12:38:13 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-18 12:38:13 INFO apscheduler.scheduler Scheduler started
+2026-02-18 12:38:13 INFO uvicorn.error Application startup complete.
+2026-02-18 12:38:34 INFO uvicorn.error Shutting down
+2026-02-18 12:38:34 INFO uvicorn.error Waiting for application shutdown.
+2026-02-18 12:38:34 INFO uvicorn.error Application shutdown complete.
+2026-02-18 12:38:34 INFO uvicorn.error Finished server process [1513112]
+2026-02-18 12:38:38 INFO stdout USER: postgres.kuiinxemhdeyinseohrv, PASSWORD: Tejasri%4044%2322, HOST: aws-1-ap-northeast-1.pooler.supabase.com, PORT: 6543, DBNAME: postgres
+2026-02-18 12:38:38 ERROR stderr /home/venkata.teja/.local/lib/python3.10/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+2026-02-18 12:38:38 INFO uvicorn.error Started server process [1513257]
+2026-02-18 12:38:38 INFO uvicorn.error Waiting for application startup.
+2026-02-18 12:38:38 INFO apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-18 12:38:38 INFO apscheduler.scheduler Added job "run_log_retention" to job store "default"
+2026-02-18 12:38:38 INFO apscheduler.scheduler Scheduler started
+2026-02-18 12:38:38 INFO stdout [SCHEDULER] Log retention scheduler started
+2026-02-18 12:38:38 INFO uvicorn.error Application startup complete.
+2026-02-18 12:38:41 INFO uvicorn.error Shutting down
+2026-02-18 12:38:41 INFO uvicorn.error Waiting for application shutdown.
+2026-02-18 12:38:41 INFO uvicorn.error Application shutdown complete.
+2026-02-18 12:38:41 INFO uvicorn.error Finished server process [1513257]

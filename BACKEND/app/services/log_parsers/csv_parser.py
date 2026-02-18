@@ -78,9 +78,4 @@ def parse_csv_logs(db: Session, file_id: int, raw_text: str):
         (inserted / total_logs) * 100 if total_logs > 0 else 0
     )
 
-    return {
-        "total": total_logs,
-        "inserted": inserted,
-        "skipped": skipped,
-        "parsed_percentage": round(parsed_percentage, 2)
-    }
+    return round(parsed_percentage, 2)

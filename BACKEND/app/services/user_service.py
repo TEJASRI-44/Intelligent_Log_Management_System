@@ -14,10 +14,6 @@ from app.models.roles import Role
 from app.core.security import hash_password, verify_password
 from app.core.jwt_utils import create_access_token
 
-
-# -------------------------------------------------------------------
-# USER CREATION (ADMIN)
-# -------------------------------------------------------------------
 def create_user_by_admin(db: Session, admin_id: int, payload):
     existing = db.query(User).filter(User.email == payload.email).first()
     if existing:
@@ -62,17 +58,10 @@ def create_user_by_admin(db: Session, admin_id: int, payload):
     db.commit()
     return user
 
-
-# -------------------------------------------------------------------
-# VIEW USERS
-# -------------------------------------------------------------------
 def get_all_users(db: Session):
     return db.query(User).filter(User.is_deleted == False).all()
 
 
-# -------------------------------------------------------------------
-# LOGIN (JSON – FRONTEND USES THIS)
-# -------------------------------------------------------------------
 def login_user(db: Session, payload):
     user = db.query(User).filter(
         User.email == payload.email,
@@ -96,7 +85,6 @@ def login_user(db: Session, payload):
             detail="Invalid credentials"
         )
 
-    # ✅ FETCH ALL ROLES
     roles = (
         db.query(Role.role_name)
         .join(UserRole, Role.role_id == UserRole.role_id)
@@ -106,7 +94,6 @@ def login_user(db: Session, payload):
 
     role_names = [r.role_name for r in roles]
 
-    # ✅ CREATE JWT WITH ROLES
     access_token = create_access_token({
         "sub": str(user.user_id),
         "email": user.email,
@@ -119,10 +106,6 @@ def login_user(db: Session, payload):
         "role": role_names[0] if role_names else "USER"
     }
 
-
-# -------------------------------------------------------------------
-# LOGIN (FORM – SWAGGER ONLY)
-# -------------------------------------------------------------------
 def login_user_form(db: Session, form_data: OAuth2PasswordRequestForm):
     user = db.query(User).filter(
         and_(

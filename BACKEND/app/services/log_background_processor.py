@@ -16,7 +16,7 @@ def process_uploaded_file(file_id: int):
     db: Session = SessionLocal()
 
     try:
-        # 1️ Fetch metadata
+        # Fetch metadata
         raw_file = (
             db.query(RawFile)
             .filter(
@@ -29,11 +29,11 @@ def process_uploaded_file(file_id: int):
         if not raw_file or not raw_file.storage_path:
             raise Exception("Raw file or storage reference missing")
 
-        #  Mark PROCESSING
+        # Mark PROCESSING
         raw_file.status_id = get_status_id(db, "PROCESSING")
         db.commit()
 
-        #  Read from Appwrite
+        # Read from Appwrite
         raw_text = read_file_from_appwrite(raw_file.storage_path)
 
         if not raw_text.strip():
@@ -43,7 +43,7 @@ def process_uploaded_file(file_id: int):
         for line in raw_text.splitlines()[:3]:
             print("   ", line)
 
-        #  Parse logs
+        # Parse logs
         parsed_percentage = parse_logs_by_format(
             db=db,
             file_id=raw_file.file_id,

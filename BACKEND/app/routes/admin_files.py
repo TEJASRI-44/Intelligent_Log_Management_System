@@ -1,8 +1,10 @@
+import io
+import os
 from fastapi import APIRouter, Depends, Query, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from sqlalchemy.orm import Session
 from datetime import datetime
-
+from dotenv import load_dotenv
 from app.models.upload_statuses import UploadStatus
 from app.database import get_db
 from app.core.dependencies import get_current_user
@@ -10,7 +12,9 @@ from app.models.raw_files import RawFile
 from app.models.user import User
 from app.models.teams import Team
 from app.models.audit_trail import AuditTrail
-
+from app.appwrite_client import get_appwrite_storage
+from appwrite.client import Client
+load_dotenv()
 router = APIRouter(prefix="/admin/files", tags=["Admin Files"])
 
 
@@ -152,7 +156,6 @@ def restore_file(
     db.commit()
 
     return {"message": "File restored successfully"}
-
 @router.get("/{file_id}/download")
 def admin_download_file(
     file_id: int,
@@ -163,10 +166,24 @@ def admin_download_file(
 
     file = db.query(RawFile).filter(RawFile.file_id == file_id).first()
     if not file:
-        raise HTTPException(404, "File not found")
+        raise HTTPException(status_code=404, detail="File not found")
 
-    return FileResponse(
-        path=file.storage_path,     # adjust if different
-        filename=file.original_name,
-        media_type="application/octet-stream"
-    )
+    try:
+        storage = get_appwrite_storage()
+
+        # Use Appwrite file ID stored in DB
+        file_bytes = storage.get_file_download(
+            bucket_id=os.getenv("APPWRITE_BUCKET_ID"),
+            file_id=file.storage_path  
+        )
+
+        return StreamingResponse(
+            io.BytesIO(file_bytes),
+            media_type="application/octet-stream",
+            headers={
+                "Content-Disposition": f"attachment; filename={file.original_name}"
+            }
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Download failed: {str(e)}")

@@ -15,7 +15,7 @@ from app.models.audit_trail import AuditTrail
 
 RETENTION_DAYS = 90
 ARCHIVE_BASE_DIR = "archivals"
-SYSTEM_USER_ID = None  # automated job
+SYSTEM_USER_ID = None  
 
 
 def archive_files_by_retention(db: Session):

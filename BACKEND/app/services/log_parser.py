@@ -92,7 +92,7 @@ def clean_log_lines(raw_text: str) -> list[dict]:
             level = log_data["level"].upper()
 
             if level not in SUPPORTED_LEVELS:
-                level = "INFO"  # safe fallback
+                level = "INFO" 
 
             service = log_data["service"].strip()
 
@@ -107,7 +107,6 @@ def clean_log_lines(raw_text: str) -> list[dict]:
             })
 
         except Exception:
-            # Skip invalid lines safely
             continue
 
     return normalized_logs

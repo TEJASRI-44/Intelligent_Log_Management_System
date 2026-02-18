@@ -31,7 +31,7 @@ def upload_log_files(
     source_id: int,
     format_id: int,
     background_tasks: BackgroundTasks,
-    files: List[UploadFile] = File(...),  # ✅ Multiple files
+    files: List[UploadFile] = File(...),  
     db: Session = Depends(get_db),
     current_user: dict = Depends(get_current_user)
 ):

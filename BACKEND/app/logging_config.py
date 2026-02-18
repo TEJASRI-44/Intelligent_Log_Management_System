@@ -1,4 +1,4 @@
-import logging
+""" import logging
 import os
 import sys
 from logging.handlers import RotatingFileHandler
@@ -54,3 +54,4 @@ class StreamToLogger:
 
 sys.stdout = StreamToLogger(logging.getLogger("stdout"), logging.INFO)
 sys.stderr = StreamToLogger(logging.getLogger("stderr"), logging.ERROR)
+ """
