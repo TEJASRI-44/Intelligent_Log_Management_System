@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+""" from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.database import get_db
@@ -22,3 +22,4 @@ def login_json(
         "access_token": token,
         "token_type": "bearer"
     }
+ """

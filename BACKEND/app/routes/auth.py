@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta, timezone
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, HTTPException, status,Request
 
@@ -15,11 +16,10 @@ router = APIRouter(
     prefix="/users",
     tags=["Authentication"]
 )
-
 @router.post("/login-json")
 def login_user(
     payload: LoginRequest,
-    request: Request,             
+    request: Request,
     db: Session = Depends(get_db)
 ):
     email = payload.email
@@ -28,7 +28,8 @@ def login_user(
     ip = request.client.host if request.client else None
     ua = request.headers.get("user-agent")
 
-    # 1️⃣ Fetch user
+    now = datetime.now(timezone.utc)
+
     user = (
         db.query(User)
         .filter(
@@ -39,7 +40,6 @@ def login_user(
         .first()
     )
 
-    # ❌ USER NOT FOUND
     if not user:
         db.add(LoginHistory(
             user_id=None,
@@ -51,15 +51,37 @@ def login_user(
         db.commit()
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    # 2️⃣ Fetch credentials
     creds = (
         db.query(UserCredentials)
         .filter(UserCredentials.user_id == user.user_id)
         .first()
     )
 
-    # ❌ INVALID PASSWORD
-    if not creds or not verify_password(password, creds.password_hash):
+    if not creds:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+
+    if creds.is_locked and creds.locked_until:
+        if creds.locked_until > now:
+            raise HTTPException(
+                status_code=403,
+                detail=f"Account locked. Try again after {creds.locked_until}"
+            )
+        else:
+            # Auto unlock after time passed
+            creds.is_locked = False
+            creds.failed_attempts = 0
+            creds.locked_until = None
+            db.commit()
+
+    if not verify_password(password, creds.password_hash):
+
+        creds.failed_attempts = (creds.failed_attempts or 0) + 1
+        creds.last_failed_at = now
+
+        if creds.failed_attempts >= 3:
+            creds.is_locked = True
+            creds.locked_until = now + timedelta(minutes=10)
+
         db.add(LoginHistory(
             user_id=user.user_id,
             login_ip=ip,
@@ -67,19 +89,25 @@ def login_user(
             success=False,
             failure_reason="INVALID_PASSWORD"
         ))
+
         db.commit()
+
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    # 3️⃣ Fetch roles
+
+    creds.failed_attempts = 0
+    creds.is_locked = False
+    creds.locked_until = None
+
     roles = (
         db.query(Role.role_name)
         .join(UserRole, UserRole.role_id == Role.role_id)
         .filter(UserRole.user_id == user.user_id)
         .all()
     )
+
     role_names = [r.role_name for r in roles]
 
-    # 4️⃣ Store SUCCESS login
     db.add(LoginHistory(
         user_id=user.user_id,
         login_ip=ip,
@@ -87,9 +115,9 @@ def login_user(
         success=True,
         failure_reason=None
     ))
+
     db.commit()
 
-    # 5️⃣ Create token
     access_token = create_access_token({
         "sub": str(user.user_id),
         "email": user.email,

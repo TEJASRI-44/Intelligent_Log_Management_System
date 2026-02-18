@@ -9,7 +9,6 @@ function authHeader() {
   };
 }
 
-/* 🔹 FETCH PROFILE */
 export const fetchMyProfile = async () => {
   const res = await axios.get(
     `${API_URL}/users/me`,
@@ -18,7 +17,6 @@ export const fetchMyProfile = async () => {
   return res.data;
 };
 
-/* 🔹 UPDATE PROFILE */
 export const updateMyProfile = async (payload) => {
   const res = await axios.put(
     `${API_URL}/users/me`,

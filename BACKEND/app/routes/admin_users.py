@@ -165,9 +165,6 @@ def update_user_profile(
     return {"message": "User profile updated successfully"}
 
 
-# -------------------------------------------------
-# UPDATE USER ROLES & TEAMS
-# -------------------------------------------------
 from app.schemas.admin_users import (
     AdminUserAccessUpdateRequest,
     AdminUserAccessUpdateResponse
@@ -204,10 +201,6 @@ def update_user_access(
     db.commit()
     return {"message": "User roles and teams updated successfully"}
 
-
-# -------------------------------------------------
-# ACTIVATE / DEACTIVATE USER
-# -------------------------------------------------
 @router.patch("/{user_id}/status")
 def update_user_status(
     user_id: int,
@@ -233,9 +226,6 @@ def update_user_status(
     db.commit()
     return {"message": "User status updated"}
 
-# -------------------------------------------------
-# SOFT DELETE USER
-# -------------------------------------------------
 @router.delete("/{user_id}")
 def delete_user(
     user_id: int,
