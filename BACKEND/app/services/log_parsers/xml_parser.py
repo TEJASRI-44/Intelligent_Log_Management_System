@@ -25,7 +25,7 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
     for log in logs:
         try:
             timestamp_text = log.findtext("timestamp")
-            level = log.findtext("level")
+            level = log.findtext("severity")
             service = log.findtext("service")
             message = log.findtext("message")
 

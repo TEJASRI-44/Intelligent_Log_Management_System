@@ -36,7 +36,7 @@ def parse_json_logs(db: Session, file_id: int, raw_text: str):
             continue
 
         # Validate required fields
-        if not log.get("timestamp") or not log.get("level") or not log.get("message"):
+        if not log.get("timestamp") or not log.get("severity") or not log.get("message"):
             skipped += 1
             continue
 
@@ -50,7 +50,7 @@ def parse_json_logs(db: Session, file_id: int, raw_text: str):
 
         try:
             severity = db.query(LogSeverity).filter(
-                LogSeverity.severity_code == log.get("level")
+                LogSeverity.severity_code == log.get("severity")
             ).first()
 
             category_name = classify_log(log.get("message"))

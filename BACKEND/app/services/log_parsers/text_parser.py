@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 from sqlalchemy.orm import Session
@@ -14,20 +15,18 @@ LOG_PATTERN = re.compile(
     r"(?P<message>.+)"
 )
 
+
 def parse_text_logs(db: Session, file_id: int, raw_text: str):
     inserted = 0
     skipped=0
     parsed_percentage=0.0
     cleaned_lines = clean_log_lines(raw_text)
     
-    for line in  cleaned_lines:
-        match = LOG_PATTERN.match(line.strip())
-        if not match:
-            skipped+=1
-            continue
+    for log in  cleaned_lines:
+        
 
-        data = match.groupdict()
-
+        data = log
+        timestamp_text =data["timestamp"]
         severity = db.query(LogSeverity).filter(
             LogSeverity.severity_code == data["severity"]
         ).first()
@@ -36,17 +35,16 @@ def parse_text_logs(db: Session, file_id: int, raw_text: str):
         category = db.query(LogCategory).filter(
             LogCategory.category_name == category_name
         ).first()
-
         entry = LogEntry(
             file_id=file_id,
-            log_timestamp=datetime.strptime(
-                data["timestamp"], "%Y-%m-%d %H:%M:%S"
+            log_timestamp = datetime.fromisoformat(
+                timestamp_text.strip().replace("Z", "+00:00")
             ),
             severity_id=severity.severity_id if severity else None,
             category_id=category.category_id if category else None,
             service_name=data["service"],
             message=data["message"],
-            raw_log=line
+            raw_log=json.dumps(log)
         )
 
         db.add(entry)

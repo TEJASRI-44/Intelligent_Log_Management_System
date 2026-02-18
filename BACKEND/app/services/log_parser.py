@@ -11,8 +11,6 @@ import re
 from datetime import datetime
 
 
-# Format 1:
-# 2026-01-13 10:22:31 ERROR auth-service Failed login
 PRIMARY_PATTERN = re.compile(
     r"(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+"
     r"(?P<level>DEBUG|INFO|WARN|ERROR|FATAL)\s+"
@@ -20,8 +18,6 @@ PRIMARY_PATTERN = re.compile(
     r"(?P<message>.+)"
 )
 
-# Format 2:
-# 13-01-2026 10:22:31 error auth-service Failed login
 ALT_PATTERN = re.compile(
     r"(?P<timestamp>\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2})\s+"
     r"(?P<level>\w+)\s+"
@@ -29,19 +25,24 @@ ALT_PATTERN = re.compile(
     r"(?P<message>.+)"
 )
 
+# Access logs
+ACCESS_LOG_PATTERN = re.compile(
+    r"(?P<level>\w+):\s+"
+    r"(?P<client>\S+)\s+-\s+"
+    r'"(?P<method>\w+)\s+(?P<path>\S+)\s+HTTP/(?P<http_version>[\d.]+)"\s+'
+    r"(?P<status_code>\d+)\s+(?P<status_message>.+)"
+)
 
 SUPPORTED_LEVELS = {"DEBUG", "INFO", "WARN", "ERROR", "FATAL"}
 
 
 def clean_log_lines(raw_text: str) -> list[dict]:
     """
-    Cleans raw text logs and converts them into
-    internal standardized format.
+    Returns standardized internal format:
 
-    Internal Standard Format:
     {
         "timestamp": ISO8601 string,
-        "level": uppercase severity,
+        "severity": uppercase severity,
         "service": string,
         "message": string
     }
@@ -54,10 +55,7 @@ def clean_log_lines(raw_text: str) -> list[dict]:
 
         line = line.strip()
 
-        if not line:
-            continue
-
-        if line in seen:
+        if not line or line in seen:
             continue
 
         seen.add(line)
@@ -74,13 +72,24 @@ def clean_log_lines(raw_text: str) -> list[dict]:
                 log_data = match.groupdict()
 
         if not log_data:
+            match = ACCESS_LOG_PATTERN.match(line)
+            if match:
+                access_data = match.groupdict()
+                log_data = {
+                    "timestamp": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
+                    "level": access_data["level"].upper(),
+                    "service": "api-access",
+                    "message": f'{access_data["method"]} {access_data["path"]} '
+                               f'Status:{access_data["status_code"]}'
+                }
+
+        if not log_data:
             continue
 
         try:
-
-
             timestamp_str = log_data["timestamp"]
 
+            # Handle timestamp parsing
             try:
                 dt = datetime.strptime(timestamp_str, "%Y-%m-%d %H:%M:%S")
             except ValueError:
@@ -88,20 +97,16 @@ def clean_log_lines(raw_text: str) -> list[dict]:
 
             iso_timestamp = dt.isoformat() + "Z"
 
-
-            level = log_data["level"].upper()
-
-            if level not in SUPPORTED_LEVELS:
-                level = "INFO" 
+            severity = log_data["level"].upper()
+            if severity not in SUPPORTED_LEVELS:
+                severity = "INFO"
 
             service = log_data["service"].strip()
-
             message = log_data["message"].strip()
-
 
             normalized_logs.append({
                 "timestamp": iso_timestamp,
-                "level": level,
+                "severity": severity,   
                 "service": service,
                 "message": message
             })
@@ -110,6 +115,7 @@ def clean_log_lines(raw_text: str) -> list[dict]:
             continue
 
     return normalized_logs
+
 
 
 

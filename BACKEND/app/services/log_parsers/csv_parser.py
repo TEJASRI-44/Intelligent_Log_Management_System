@@ -22,7 +22,7 @@ def parse_csv_logs(db: Session, file_id: int, raw_text: str):
     for row in rows:
         try:
             timestamp_text = row.get("timestamp")
-            level = row.get("level")
+            level = row.get("severity")
             service = row.get("service")
             message = row.get("message")
 

@@ -13,7 +13,7 @@ export async function uploadLogFile(teamId, sourceId, formatId, files) {
   const formData = new FormData();
 
   files.forEach(file => {
-    formData.append("files", file);  // append each file separately
+    formData.append("files", file); 
   });
 
   const res = await axios.post(

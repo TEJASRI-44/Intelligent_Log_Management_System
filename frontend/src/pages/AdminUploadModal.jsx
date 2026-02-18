@@ -137,12 +137,14 @@ export default function AdminUploadModal({ show, onClose, onSuccess }) {
 
                 <div className="col-12">
                   <label className="form-label">File</label>
-                  <input 
+                 <input 
                     type="file" 
                     className="form-control" 
+                    multiple
                     required 
-                    onChange={e => setFiles(e.target.files[0])} 
+                    onChange={(e) => setFiles(Array.from(e.target.files))}
                   />
+
                 </div>
 
               </div>
