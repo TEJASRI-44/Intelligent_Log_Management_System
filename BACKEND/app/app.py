@@ -80,4 +80,4 @@ def startup_event():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000,reload=True)
+    uvicorn.run(app, host="192.168.3.242", port=8000,reload=True)

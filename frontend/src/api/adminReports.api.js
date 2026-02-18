@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "../auth/auth.service";
 
 const BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:8000";
+  import.meta.env.VITE_API_URL || "http://192.168.3.242:8000";
 
 
 function getAuthHeader() {

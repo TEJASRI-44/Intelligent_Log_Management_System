@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "../auth/auth.service";
 /* import { API } from "./axios_api"; */
-const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API = import.meta.env.VITE_API_URL || "http://192.168.3.242:8000";
 
 const authHeader = () => ({
   Authorization: `Bearer ${getToken()}`
