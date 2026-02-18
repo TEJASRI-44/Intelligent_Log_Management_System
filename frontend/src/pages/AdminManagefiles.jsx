@@ -213,7 +213,7 @@ console.log(files);
                         {f.status}
                       </span>
                     </td>
-                    <td>{f.parsed_percentage}</td>
+                    <td>{f.parsed_percentage}%</td>
                     <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary"

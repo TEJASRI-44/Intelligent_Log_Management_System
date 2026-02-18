@@ -5,6 +5,16 @@ from app.models.log_entries import LogEntry
 from app.models.log_severities import LogSeverity
 from app.models.log_categories import LogCategory
 from app.services.log_parser import classify_log
+import re
+from app.models.environments import Environment
+def extract_env_host(message: str):
+    env_match = re.search(r'env=([\w-]+)', message)
+    host_match = re.search(r'host=([\w.-]+)', message)
+
+    environment_code = env_match.group(1).upper() if env_match else "LOCAL"
+    host = host_match.group(1) if host_match else "unknown-host"
+
+    return environment_code, host
 
 
 def parse_xml_logs(db: Session, file_id: int, raw_text: str):
@@ -21,7 +31,9 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
 
     logs = root.findall("log")
     total_logs = len(logs)
-
+    local_env = db.query(Environment).filter(
+        Environment.environment_code == "LOCAL"
+    ).first()
     for log in logs:
         try:
             timestamp_text = log.findtext("timestamp")
@@ -57,13 +69,22 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
             category = db.query(LogCategory).filter(
                 LogCategory.category_name == category_name
             ).first()
+            environment_code, host_name = extract_env_host(message.strip())
+            environment= db.query(Environment).filter(
+                Environment.environment_code == environment_code
+            ).first()
 
+            # If env not found → use LOCAL
+            if not environment:
+                environment = local_env
             entry = LogEntry(
                 file_id=file_id,
                 log_timestamp=timestamp,
                 severity_id=severity.severity_id,
                 category_id=category.category_id if category else None,
+                environment_id=environment.environment_id if environment else None,
                 service_name=service.strip() if service else None,
+                host_name=host_name,
                 message=message.strip(),
                 raw_log=ET.tostring(log, encoding="unicode")
             )
