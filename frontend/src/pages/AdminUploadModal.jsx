@@ -54,21 +54,42 @@ export default function AdminUploadModal({ show, onClose, onSuccess }) {
   }, [teamId, sourceId]);
 
   async function handleUpload(e) {
-    e.preventDefault();
-    if (!files || !teamId || !sourceId || !formatId) return;
+  e.preventDefault();
+  if (!files || !teamId || !sourceId || !formatId) return;
 
-    setLoading(true);
-    try {
-      await uploadLogFile(teamId, sourceId, formatId, files);
-      toast.success("Files uploaded Successfully")
-      onSuccess();
-      onClose();
-    } catch (err) {
-      alert("Upload failed: " + (err.response?.data?.detail || err.message));
-    } finally {
-      setLoading(false);
+  setLoading(true);
+  try {
+    const response = await uploadLogFile(teamId, sourceId, formatId, files);
+
+    const { uploaded_files, skipped_files } = response;
+
+    if (uploaded_files.length > 0 && skipped_files.length === 0) {
+      toast.success("Files uploaded successfully");
+    } 
+    else if (uploaded_files.length > 0 && skipped_files.length > 0) {
+      toast.warning(
+        `${uploaded_files.length} uploaded, ${skipped_files.length} skipped`
+      );
+    } 
+    else if (uploaded_files.length === 0 && skipped_files.length > 0) {
+      toast.error(
+        skipped_files.map(f => `${f.filename}: ${f.reason}`).join(", ")
+      );
     }
+
+    if (uploaded_files.length > 0) {
+  onSuccess();
+  onClose();
+}
+
+
+  } catch (err) {
+    toast.error("Upload failed: " + (err.response?.data?.detail || err.message));
+  } finally {
+    setLoading(false);
   }
+}
+
 
   if (!show) return null;
 

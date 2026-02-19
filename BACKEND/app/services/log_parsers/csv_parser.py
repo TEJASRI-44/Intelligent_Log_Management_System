@@ -21,55 +21,66 @@ def extract_env_host(message: str):
 
 def parse_csv_logs(db: Session, file_id: int, raw_text: str):
 
-    cleaned_lines = clean_log_lines(raw_text)
-    reader = csv.DictReader(cleaned_lines)
-
     inserted = 0
     skipped = 0
 
-    rows = list(reader)
-    total_logs = len(rows)
+    reader = csv.DictReader(raw_text.splitlines())
+
     local_env = db.query(Environment).filter(
         Environment.environment_code == "LOCAL"
     ).first()
-    for row in rows:
-        try:
-            timestamp_text = row.get("timestamp")
-            level = row.get("severity")
-            service = row.get("service")
-            message = row.get("message")
 
-            # Required fields check (same pattern as XML)
-            if not timestamp_text or not level or not message:
+    for row in reader:
+        try:
+            timestamp_text = (row.get("timestamp") or "").strip()
+            severity_value = (row.get("severity") or "").strip().upper()
+            service = (row.get("service") or "").strip()
+            message = (row.get("message") or "").strip()
+
+            if not timestamp_text or not severity_value or not message:
                 skipped += 1
                 continue
 
-            # Timestamp parsing
+            # Parse timestamp
             try:
                 timestamp = datetime.fromisoformat(
-                    timestamp_text.strip().replace("Z", "+00:00")
+                    timestamp_text.replace("Z", "+00:00")
                 )
             except Exception:
                 skipped += 1
                 continue
 
-            # Validate severity
+            # Normalize severity
+            severity_mapping = {
+                "WARNING": "WARN",
+                "CRITICAL": "ERROR"
+            }
+
+            severity_value = severity_mapping.get(severity_value, severity_value)
+
             severity = db.query(LogSeverity).filter(
-                LogSeverity.severity_code == level.strip()
+                LogSeverity.severity_code.ilike(severity_value)
             ).first()
 
             if not severity:
                 skipped += 1
                 continue
 
-            # Classify category
-            category_name = classify_log(message.strip())
+            # Category
+            category_name = classify_log(message)
             category = db.query(LogCategory).filter(
                 LogCategory.category_name == category_name
             ).first()
-            environment_code, host_name = extract_env_host(message.strip())
 
-           
+            if not category:
+                category = LogCategory(category_name=category_name)
+                db.add(category)
+                db.commit()
+                db.refresh(category)
+
+            # Environment
+            environment_code, host_name = extract_env_host(message)
+
             environment = db.query(Environment).filter(
                 Environment.environment_code == environment_code
             ).first()
@@ -83,19 +94,23 @@ def parse_csv_logs(db: Session, file_id: int, raw_text: str):
                 severity_id=severity.severity_id,
                 category_id=category.category_id if category else None,
                 environment_id=environment.environment_id if environment else None,
-                service_name=service.strip() if service else None,
+                service_name=service,
                 host_name=host_name,
-                message=message.strip(),
+                message=message,
                 raw_log=",".join(row.values())
             )
 
             db.add(entry)
             inserted += 1
 
-        except Exception:
+        except Exception as e:
+            print("CSV PARSE ERROR:", e)
             skipped += 1
-            continue
 
     db.commit()
-    parsed_percentage=(inserted/(inserted+skipped))*100 if (inserted+skipped)>0 else 0
+
+    total = inserted + skipped
+    parsed_percentage = (inserted / total) * 100 if total > 0 else 0
+
     return round(parsed_percentage, 2)
+

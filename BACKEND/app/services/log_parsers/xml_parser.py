@@ -37,12 +37,12 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
     for log in logs:
         try:
             timestamp_text = log.findtext("timestamp")
-            level = log.findtext("severity")
+            severity = log.findtext("severity")
             service = log.findtext("service")
             message = log.findtext("message")
 
             # Required fields check
-            if not timestamp_text or not level or not message:
+            if not timestamp_text or not severity or not message:
                 skipped += 1
                 continue
 
@@ -57,7 +57,7 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
 
             # Validate severity
             severity = db.query(LogSeverity).filter(
-                LogSeverity.severity_code == level.strip()
+                LogSeverity.severity_code == severity.strip()
             ).first()
 
             if not severity:

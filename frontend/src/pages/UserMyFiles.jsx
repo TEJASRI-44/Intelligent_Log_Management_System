@@ -187,7 +187,7 @@ export default function UserMyFiles() {
                         {f.status}
                       </span>
                     </td>
-                    <td>{f.parsed_percentage}</td>
+                    <td>{f.parsed_percentage}%</td>
                     <td className="text-end">
                       {f.is_deleted ? (
                         <button

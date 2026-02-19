@@ -13,21 +13,21 @@ from datetime import datetime
 
 PRIMARY_PATTERN = re.compile(
     r"(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+"
-    r"(?P<level>DEBUG|INFO|WARN|ERROR|FATAL)\s+"
+    r"(?P<severity>DEBUG|INFO|WARN|ERROR|FATAL)\s+"
     r"(?P<service>\S+)\s+"
     r"(?P<message>.+)"
 )
 
 ALT_PATTERN = re.compile(
     r"(?P<timestamp>\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2})\s+"
-    r"(?P<level>\w+)\s+"
+    r"(?P<severity>\w+)\s+"
     r"(?P<service>\S+)\s+"
     r"(?P<message>.+)"
 )
 
 # Access logs
 ACCESS_LOG_PATTERN = re.compile(
-    r"(?P<level>\w+):\s+"
+    r"(?P<severity>\w+):\s+"
     r"(?P<client>\S+)\s+-\s+"
     r'"(?P<method>\w+)\s+(?P<path>\S+)\s+HTTP/(?P<http_version>[\d.]+)"\s+'
     r"(?P<status_code>\d+)\s+(?P<status_message>.+)"
@@ -77,7 +77,7 @@ def clean_log_lines(raw_text: str) -> list[dict]:
                 access_data = match.groupdict()
                 log_data = {
                     "timestamp": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
-                    "level": access_data["level"].upper(),
+                    "severity": access_data["severity"].upper(),
                     "service": "api-access",
                     "message": f'{access_data["method"]} {access_data["path"]} '
                                f'Status:{access_data["status_code"]}'
@@ -97,7 +97,7 @@ def clean_log_lines(raw_text: str) -> list[dict]:
 
             iso_timestamp = dt.isoformat() + "Z"
 
-            severity = log_data["level"].upper()
+            severity = log_data["severity"].upper()
             if severity not in SUPPORTED_LEVELS:
                 severity = "INFO"
 

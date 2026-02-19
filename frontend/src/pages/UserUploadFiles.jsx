@@ -70,15 +70,37 @@ async function handleUpload(e) {
   setLoading(true);
 
   try {
-    await uploadLogFile(teamId, sourceId, formatId, files); 
-   
-    toast.success("Files uploaded successfully!");
-    setFiles([]);
-    setTeamId("");
-    setSourceId("");
-    setFormatId("");
+    const response = await uploadLogFile(teamId, sourceId, formatId, files);
 
-    e.target.reset();
+    const uploaded = response?.uploaded_files || [];
+    const skipped = response?.skipped_files || [];
+
+    if (uploaded.length > 0 && skipped.length === 0) {
+      toast.success("Files uploaded successfully!");
+    } 
+    else if (uploaded.length > 0 && skipped.length > 0) {
+      toast.warning(
+        `${uploaded.length} uploaded, ${skipped.length} skipped`
+      );
+    } 
+    else if (uploaded.length === 0 && skipped.length > 0) {
+      toast.error(
+        skipped.map(f => `${f.filename}: ${f.reason}`).join(", ")
+      );
+    } 
+    else {
+     toast.error("Duplicate files detected. Please upload new files.");
+
+    }
+
+   
+    if (uploaded.length > 0) {
+      setFiles([]);
+      setTeamId("");
+      setSourceId("");
+      setFormatId("");
+      e.target.reset();
+    }
 
   } catch (err) {
     console.error(err);
@@ -92,6 +114,7 @@ async function handleUpload(e) {
     setLoading(false);
   }
 }
+
 
 
   /* ================= RENDER ================= */
