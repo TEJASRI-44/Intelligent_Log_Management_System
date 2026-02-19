@@ -97,9 +97,5 @@ def parse_csv_logs(db: Session, file_id: int, raw_text: str):
             continue
 
     db.commit()
-
-    parsed_percentage = (
-        (inserted / total_logs) * 100 if total_logs > 0 else 0
-    )
-
+    parsed_percentage=(inserted/(inserted+skipped))*100 if (inserted+skipped)>0 else 0
     return round(parsed_percentage, 2)
