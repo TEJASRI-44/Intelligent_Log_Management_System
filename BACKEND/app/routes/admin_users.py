@@ -13,20 +13,19 @@ from app.models.user_profiles import UserProfile
 from app.schemas.user_profiles import UserProfileResponse
 from app.schemas.user_profiles import UserProfileUpdateRequest
 from app.schemas.user_profiles import UserStatusUpdate
+
+# Router for all admin-level user management APIs
 router = APIRouter(
     prefix="/admin/users",
     tags=["Admin User Management"]
 )
 
 
+# Small helper to make sure only admins can use these APIs
 def require_admin(user):
     if "ADMIN" not in user.get("roles", []):
         raise HTTPException(status_code=403, detail="Admin access required")
 
-
-# -------------------------------------------------
-# GET ALL USERS (with roles & teams)
-# -------------------------------------------------
 @router.get("/")
 def list_users(
     email: str | None = None,
@@ -36,19 +35,23 @@ def list_users(
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
+    # Only admins can view user list
     require_admin(current_user)
 
+    # Base query: exclude deleted users and hide current admin
     query = (
         db.query(User)
         .filter(
             User.is_deleted == False,
-            User.user_id != int(current_user["sub"])  # hide current admin
+            User.user_id != int(current_user["sub"])
         )
     )
 
+    # Optional email filter
     if email:
         query = query.filter(User.email.ilike(f"%{email}%"))
 
+    # Optional team filter
     if team_id:
         query = (
             query
@@ -56,8 +59,7 @@ def list_users(
             .filter(UserTeam.team_id == team_id)
         )
 
-   
-    total = query.count()
+    total = query.count()  # Total matching users
 
     users = (
         query
@@ -70,8 +72,9 @@ def list_users(
     response = []
 
     for u in users:
-        profile = u.profile
+        profile = u.profile  # Fetch profile if exists
 
+        # Fetch roles of this user
         role_rows = (
             db.query(Role.role_id, Role.role_name)
             .join(UserRole, UserRole.role_id == Role.role_id)
@@ -79,6 +82,7 @@ def list_users(
             .all()
         )
 
+        # Fetch teams of this user
         team_rows = (
             db.query(Team.team_id, Team.team_name)
             .join(UserTeam, UserTeam.team_id == Team.team_id)
@@ -93,6 +97,7 @@ def list_users(
             "is_active": u.is_active,
             "created_at": u.created_at,
 
+            # Profile details (empty if not created)
             "profile": {
                 "first_name": profile.first_name if profile else "",
                 "last_name": profile.last_name if profile else "",
@@ -102,7 +107,6 @@ def list_users(
 
             "role_ids": [r.role_id for r in role_rows],
             "team_ids": [t.team_id for t in team_rows],
-
             "roles": [r.role_name for r in role_rows],
             "teams": [t.team_name for t in team_rows]
         })
@@ -113,16 +117,13 @@ def list_users(
     }
 
 
-
 from app.schemas.admin_users import (
     AdminUserProfileUpdateRequest,
     AdminUserProfileUpdateResponse
 )
 
-@router.put(
-    "/{user_id}/profile",
-    response_model=AdminUserProfileUpdateResponse
-)
+# Update user profile details (admin action)
+@router.put("/{user_id}/profile", response_model=AdminUserProfileUpdateResponse)
 def update_user_profile(
     user_id: int,
     payload: AdminUserProfileUpdateRequest,
@@ -131,6 +132,7 @@ def update_user_profile(
 ):
     require_admin(current_user)
 
+    # Fetch the user
     user = (
         db.query(User)
         .filter(User.user_id == user_id, User.is_deleted == False)
@@ -139,21 +141,21 @@ def update_user_profile(
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
+    # Create profile if it doesn't exist
     if not user.profile:
         user.profile = UserProfile(user_id=user_id)
 
+    # Update only provided fields
     if payload.first_name is not None:
         user.profile.first_name = payload.first_name.strip()
-
     if payload.last_name is not None:
         user.profile.last_name = payload.last_name.strip()
-
     if payload.phone_number is not None:
         user.profile.phone_number = payload.phone_number.strip()
-
     if payload.job_title is not None:
         user.profile.job_title = payload.job_title.strip()
 
+    # Log this action
     db.add(AuditTrail(
         user_id=int(current_user["sub"]),
         action_type="UPDATE_USER_PROFILE",
@@ -170,10 +172,8 @@ from app.schemas.admin_users import (
     AdminUserAccessUpdateResponse
 )
 
-@router.put(
-    "/{user_id}/access",
-    response_model=AdminUserAccessUpdateResponse
-)
+# Update user roles and teams (admin control)
+@router.put("/{user_id}/access", response_model=AdminUserAccessUpdateResponse)
 def update_user_access(
     user_id: int,
     payload: AdminUserAccessUpdateRequest,
@@ -182,15 +182,19 @@ def update_user_access(
 ):
     require_admin(current_user)
 
+    # Clear old roles and teams
     db.query(UserRole).filter(UserRole.user_id == user_id).delete()
     db.query(UserTeam).filter(UserTeam.user_id == user_id).delete()
 
+    # Assign new roles
     for role_id in payload.role_ids:
         db.add(UserRole(user_id=user_id, role_id=role_id))
 
+    # Assign new teams
     for team_id in payload.team_ids:
         db.add(UserTeam(user_id=user_id, team_id=team_id))
 
+    # Log access update
     db.add(AuditTrail(
         user_id=int(current_user["sub"]),
         action_type="UPDATE_USER_ACCESS",
@@ -201,6 +205,8 @@ def update_user_access(
     db.commit()
     return {"message": "User roles and teams updated successfully"}
 
+
+# Activate / deactivate user
 @router.patch("/{user_id}/status")
 def update_user_status(
     user_id: int,
@@ -216,6 +222,7 @@ def update_user_status(
 
     user.is_active = payload.is_active
 
+    # Log status change
     db.add(AuditTrail(
         user_id=int(current_user["sub"]),
         action_type="UPDATE_USER_STATUS",
@@ -226,6 +233,8 @@ def update_user_status(
     db.commit()
     return {"message": "User status updated"}
 
+
+# Soft delete a user (do not remove from DB)
 @router.delete("/{user_id}")
 def delete_user(
     user_id: int,
@@ -241,6 +250,7 @@ def delete_user(
     user.is_deleted = True
     user.is_active = False
 
+    # Log deletion
     db.add(AuditTrail(
         user_id=int(current_user["sub"]),
         action_type="DELETE_USER",

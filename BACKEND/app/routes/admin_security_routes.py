@@ -6,12 +6,14 @@ from app.models.login_history import LoginHistory
 from app.models.user import User
 from app.core.dependencies import get_current_user
 
+# Router for admin security related APIs
 router = APIRouter(
     prefix="/admin/security",
     tags=["Admin Security"]
 )
 
 
+# Simple function to check whether the user is ADMIN
 def require_admin(user):
     if "ADMIN" not in user.get("roles", []):
         raise HTTPException(status_code=403, detail="Admin access required")
@@ -19,14 +21,16 @@ def require_admin(user):
 
 @router.get("/login-history")
 def get_login_history(
-    page: int = Query(1, ge=1),
-    limit: int = Query(10, le=50),
-    success: bool | None = Query(None),
+    page: int = Query(1, ge=1),      # Page number
+    limit: int = Query(10, le=50),   # Number of records per page
+    success: bool | None = Query(None),  # Optional filter for success/failure
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
+    # Only admins should access login history
     require_admin(current_user)
 
+    # Base query with join to fetch username
     query = (
         db.query(
             LoginHistory.login_id,
@@ -38,21 +42,23 @@ def get_login_history(
             User.username
         )
         .outerjoin(User, User.user_id == LoginHistory.user_id)
-        .order_by(LoginHistory.login_time.desc())
+        .order_by(LoginHistory.login_time.desc())  # Latest logins first
     )
 
+    # Apply success filter if provided
     if success is not None:
         query = query.filter(LoginHistory.success == success)
 
-    total = query.count()
+    total = query.count()  # Total matching records
 
     records = (
         query
-        .offset((page - 1) * limit)
+        .offset((page - 1) * limit)  # Pagination offset
         .limit(limit)
         .all()
     )
 
+    # Return paginated login history
     return {
         "count": total,
         "results": [

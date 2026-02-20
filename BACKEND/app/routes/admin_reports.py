@@ -1,5 +1,4 @@
-
-from fastapi import APIRouter, Depends,HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from datetime import datetime, timedelta
 from fastapi.params import Query
 from sqlalchemy.orm import Session
@@ -7,30 +6,25 @@ from sqlalchemy import func, cast, Date, desc
 
 from app.database import get_db
 from app.core.dependencies import get_current_user
-
 from app.models.log_entries import LogEntry
 from app.models.log_severities import LogSeverity
 from app.models.raw_files import RawFile
 from app.models.log_categories import LogCategory
 
+# Router for Admin Reports APIs
 router = APIRouter(
     prefix="/admin/reports",
     tags=["Admin Reports"]
 )
 
-# ---------------------------------------------------------
-# Helper: Admin access check
-# ---------------------------------------------------------
+# Ensure only ADMIN users can access
 def require_admin(user):
     roles = user.get("roles", [])
     if "ADMIN" not in roles:
-        raise HTTPException(
-            status_code=403,
-            detail="Admin access required"
-        )
+        raise HTTPException(status_code=403, detail="Admin access required")
 
-from sqlalchemy import func, cast, Date, desc
 
+# Logs per day (last 30 days)
 @router.get("/logs-per-day")
 def logs_per_day(
     db: Session = Depends(get_db),
@@ -50,19 +44,14 @@ def logs_per_day(
         .limit(30)
         .all()
     )
-    print(results)
 
     return [
-        {
-            "log_date": row.log_date,
-            "total_logs": row.total_logs
-        }
+        {"log_date": row.log_date, "total_logs": row.total_logs}
         for row in results
     ]
 
-# ---------------------------------------------------------
-# 2️⃣ Top Error Types (ERROR + FATAL)
-# ---------------------------------------------------------
+
+# Top error types (ERROR and FATAL)
 @router.get("/top-errors")
 def top_error_types(
     db: Session = Depends(get_db),
@@ -72,7 +61,6 @@ def top_error_types(
 
     response = []
 
-    # Fetch ERROR + FATAL severities
     severities = (
         db.query(LogSeverity)
         .filter(LogSeverity.severity_code.in_(["ERROR", "FATAL"]))
@@ -80,14 +68,12 @@ def top_error_types(
     )
 
     for sev in severities:
-        # Total error count
         total_count = (
             db.query(func.count(LogEntry.log_id))
             .filter(LogEntry.severity_id == sev.severity_id)
             .scalar()
         )
 
-        # Latest error log samples
         logs = (
             db.query(LogEntry)
             .filter(LogEntry.severity_id == sev.severity_id)
@@ -111,12 +97,7 @@ def top_error_types(
     return response
 
 
-# ---------------------------------------------------------
-# 3️⃣ Most Active Systems (by service_name)
-# ---------------------------------------------------------
-
-
-
+# Most active systems
 @router.get("/active-systems")
 def most_active_systems(
     start_date: datetime | None = Query(None),
@@ -128,16 +109,13 @@ def most_active_systems(
 
     query = db.query(LogEntry)
 
-    # 🔹 Date range filtering (IMPORTANT)
     if start_date:
         query = query.filter(LogEntry.log_timestamp >= start_date)
     if end_date:
         query = query.filter(LogEntry.log_timestamp <= end_date)
 
-    # 🔹 Step 1: Aggregate most active systems
     systems = (
-        query
-        .with_entities(
+        query.with_entities(
             LogEntry.service_name.label("service"),
             func.count(LogEntry.log_id).label("log_count")
         )
@@ -150,7 +128,6 @@ def most_active_systems(
 
     response = []
 
-    # 🔹 Step 2: Fetch recent logs per system
     for sys in systems:
         recent_logs = (
             db.query(
@@ -178,14 +155,10 @@ def most_active_systems(
             ]
         })
 
-    # ✅ RETURN ARRAY (CRITICAL FIX)
     return response
 
 
-
-# ---------------------------------------------------------
-# 4️⃣ Logs By Category (APPLICATION, SECURITY, etc.)
-# ---------------------------------------------------------
+# Logs by category
 @router.get("/logs-by-category")
 def logs_by_category(
     db: Session = Depends(get_db),
@@ -205,16 +178,12 @@ def logs_by_category(
     )
 
     return [
-        {
-            "category": row.category_name,
-            "count": row.count
-        }
+        {"category": row.category_name, "count": row.count}
         for row in results
     ]
 
-# ---------------------------------------------------------
-# 5️⃣ Logs By Severity (ALL severities)
-# ---------------------------------------------------------
+
+# Logs by severity
 @router.get("/logs-by-severity")
 def logs_by_severity(
     db: Session = Depends(get_db),
@@ -234,16 +203,12 @@ def logs_by_severity(
     )
 
     return [
-        {
-            "severity": row.severity_code,
-            "count": row.count
-        }
+        {"severity": row.severity_code, "count": row.count}
         for row in results
     ]
 
-# ---------------------------------------------------------
-# 6️⃣ Files Uploaded Per Day
-# ---------------------------------------------------------
+
+# Files uploaded per day
 @router.get("/files-per-day")
 def files_uploaded_per_day(
     db: Session = Depends(get_db),
@@ -263,14 +228,12 @@ def files_uploaded_per_day(
     )
 
     return [
-        {
-            "upload_date": row.upload_date,
-            "files_uploaded": row.files_uploaded
-        }
+        {"upload_date": row.upload_date, "files_uploaded": row.files_uploaded}
         for row in results
     ]
 
 
+# Recent logs (last N days) with pagination
 @router.get("/recent-logs")
 def fetch_recent_logs(
     days: int = Query(10, ge=1, le=30),

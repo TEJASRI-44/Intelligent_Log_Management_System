@@ -1,4 +1,3 @@
-// src/pages/user/UserSearchLogs.jsx
 import { useEffect, useState } from "react";
 import { fetchMyLogs, searchLogs } from "../api/logs.api";
 import { fetchUserStats } from "../api/stats.api";
@@ -20,7 +19,6 @@ export default function UserSearchLogs() {
   const [userLogScope, setUserLogScope] = useState("MY");
   const [userSearchMsg, setUserSearchMsg] = useState("");
 
-  /* ================= EFFECTS ================= */
 
   useEffect(() => {
     fetchUserStats().then(setUserStats);
@@ -31,7 +29,6 @@ export default function UserSearchLogs() {
 }, [userPage, userPageSize, userLogScope, userFilters]);
 
 
-  /* ================= HANDLERS ================= */
 
   async function loadUserLogs(filters = userFilters) {
   setUserLogs([]);
@@ -82,10 +79,6 @@ function resetFilters() {
 }
 
 
-
-
-  /* ================= RENDER ================= */
-
   return (
     <div className="user-page-content">
       <div className="user-page-header">
@@ -93,7 +86,6 @@ function resetFilters() {
         <p>Search and filter through your system logs</p>
       </div>
 
-      {/* ===== STATS ===== */}
       {userStats && (
         <div className="user-stats-grid">
           <div className="user-stat-card">

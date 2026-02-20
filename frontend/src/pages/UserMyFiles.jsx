@@ -1,4 +1,3 @@
-// src/pages/user/UserMyFiles.jsx
 import { useEffect, useState } from "react";
 import {
   fetchMyFiles,
@@ -60,7 +59,7 @@ export default function UserMyFiles() {
   return (
     <div className="container-fluid px-3 px-md-4 py-4">
 
-      {/* HEADER */}
+     
       <div className="mb-4">
         <h2 className="mb-1">My Files</h2>
         <p className="text-muted mb-0">
@@ -68,7 +67,7 @@ export default function UserMyFiles() {
         </p>
       </div>
 
-      {/* FILTERS */}
+      
       <div className="card shadow-sm mb-4">
         <div className="card-body">
           <div className="row g-3 align-items-end">
@@ -138,7 +137,7 @@ export default function UserMyFiles() {
         </div>
       </div>
 
-      {/* TABLE */}
+      
       <div className="card shadow-sm">
         <div className="card-body">
 
@@ -211,7 +210,7 @@ export default function UserMyFiles() {
             </table>
           </div>
 
-          {/* PAGINATION */}
+          
           <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3">
             <button
               className="btn btn-outline-secondary btn-sm"

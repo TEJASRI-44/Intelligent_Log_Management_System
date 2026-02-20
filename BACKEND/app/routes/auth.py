@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 from sqlalchemy.orm import Session
-from fastapi import APIRouter, Depends, HTTPException, status,Request
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 
 from app.models.login_history import LoginHistory
 from app.database import get_db
@@ -12,24 +12,30 @@ from app.schemas.user import LoginRequest
 from app.core.jwt_utils import create_access_token
 from app.core.security import verify_password
 
+# Router for user authentication
 router = APIRouter(
     prefix="/users",
     tags=["Authentication"]
 )
+
+
 @router.post("/login-json")
 def login_user(
     payload: LoginRequest,
     request: Request,
     db: Session = Depends(get_db)
 ):
+    # Extract email and password from request body
     email = payload.email
     password = payload.password
 
+    # Capture client IP and browser info for login history
     ip = request.client.host if request.client else None
     ua = request.headers.get("user-agent")
 
     now = datetime.now(timezone.utc)
 
+    # Check if user exists and is active
     user = (
         db.query(User)
         .filter(
@@ -40,6 +46,7 @@ def login_user(
         .first()
     )
 
+    # If user not found, log the failed attempt
     if not user:
         db.add(LoginHistory(
             user_id=None,
@@ -51,6 +58,7 @@ def login_user(
         db.commit()
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
+    # Fetch stored credentials
     creds = (
         db.query(UserCredentials)
         .filter(UserCredentials.user_id == user.user_id)
@@ -60,6 +68,7 @@ def login_user(
     if not creds:
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
+    # If account is locked, check lock time
     if creds.is_locked and creds.locked_until:
         if creds.locked_until > now:
             raise HTTPException(
@@ -67,21 +76,25 @@ def login_user(
                 detail=f"Account locked. Try again after {creds.locked_until}"
             )
         else:
-            # Auto unlock after time passed
+            # Automatically unlock if lock time has passed
             creds.is_locked = False
             creds.failed_attempts = 0
             creds.locked_until = None
             db.commit()
 
+    # Verify password
     if not verify_password(password, creds.password_hash):
 
+        # Increase failed attempts count
         creds.failed_attempts = (creds.failed_attempts or 0) + 1
         creds.last_failed_at = now
 
+        # Lock account after 3 failed attempts
         if creds.failed_attempts >= 3:
             creds.is_locked = True
             creds.locked_until = now + timedelta(minutes=10)
 
+        # Log failed login attempt
         db.add(LoginHistory(
             user_id=user.user_id,
             login_ip=ip,
@@ -91,14 +104,14 @@ def login_user(
         ))
 
         db.commit()
-
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-
+    # If login successful, reset failed attempts
     creds.failed_attempts = 0
     creds.is_locked = False
     creds.locked_until = None
 
+    # Fetch all roles assigned to this user
     roles = (
         db.query(Role.role_name)
         .join(UserRole, UserRole.role_id == Role.role_id)
@@ -108,6 +121,7 @@ def login_user(
 
     role_names = [r.role_name for r in roles]
 
+    # Log successful login
     db.add(LoginHistory(
         user_id=user.user_id,
         login_ip=ip,
@@ -118,12 +132,14 @@ def login_user(
 
     db.commit()
 
+    # Create JWT access token with user info and roles
     access_token = create_access_token({
         "sub": str(user.user_id),
         "email": user.email,
         "roles": role_names
     })
 
+    # Return token to client
     return {
         "access_token": access_token,
         "token_type": "bearer",

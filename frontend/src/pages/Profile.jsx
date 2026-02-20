@@ -22,7 +22,7 @@ export default function Profile() {
 
   const navigate = useNavigate();
 
-  /* ================= LOAD PROFILE ================= */
+ 
 
   useEffect(() => {
     loadProfile();
@@ -43,8 +43,7 @@ export default function Profile() {
       setLoading(false);
     }
   }
- 
-  /* ================= SAVE ================= */
+
 
   async function handleSave() {
     setSaving(true);
@@ -62,8 +61,6 @@ export default function Profile() {
 
   if (loading) return <p>Loading profile...</p>;
   if (!profile) return <p>No profile data available</p>;
-
-  /* ================= RENDER ================= */
 
   return (
     <div className="container-fluid px-4 py-4 user-profile-page">

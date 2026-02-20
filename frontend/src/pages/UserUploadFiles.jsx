@@ -1,4 +1,3 @@
-// src/pages/user/UserUploadFiles.jsx
 import { useEffect, useState } from "react";
 import { uploadLogFile } from "../api/files.api";
 import { fetchMyTeams, fetchSources, fetchFormats } from "../api/lookups.api";
@@ -26,7 +25,6 @@ export default function UserUploadFiles() {
   const [loading, setLoading] = useState(false);
   
 
-  /* ================= EFFECTS ================= */
 
   useEffect(() => {
     Promise.all([fetchMyTeams()])
@@ -57,8 +55,7 @@ useEffect(() => {
 }, [teamId, sourceId]);
 
 
-  /* ================= HANDLER ================= */
-
+ 
 async function handleUpload(e) {
   e.preventDefault();
 
@@ -115,9 +112,6 @@ async function handleUpload(e) {
   }
 }
 
-
-
-  /* ================= RENDER ================= */
 
   return (
     <div className="user-upload-page">

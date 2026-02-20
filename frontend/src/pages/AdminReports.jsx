@@ -8,7 +8,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function AdminReports() {
-  /* ================= STATE ================= */
+ 
 
   const [logsPerDay, setLogsPerDay] = useState([]);
   const [topErrors, setTopErrors] = useState([]);
@@ -35,7 +35,7 @@ export default function AdminReports() {
   const [page, setPage] = useState(1);
   const pageSize = 10;
 
-  /* ================= LOAD ================= */
+ 
 
   useEffect(() => {
     loadReports();
@@ -84,7 +84,7 @@ export default function AdminReports() {
     }
   }
 
-  /* ================= UI ================= */
+ 
 
   return (
     <div className="container-fluid px-4 py-4">
@@ -109,7 +109,7 @@ export default function AdminReports() {
         <div className="alert alert-danger py-2">{error}</div>
       )}
 
-      {/* ================= LOGS BY DATE ================= */}
+     
       {activeSection === "ALL" && (
   <div className="card shadow-sm mb-4">
     <div className="card-body">
@@ -220,7 +220,6 @@ export default function AdminReports() {
 )}
 
 
-      {/* ================= ACTIVE SYSTEMS ================= */}
       {activeSection === "ACTIVE_SYSTEMS" && (
   <div className="card shadow-sm mb-4">
     <div className="card-body">
@@ -272,7 +271,7 @@ export default function AdminReports() {
   </div>
 )}
 
-      {/* ================= RECENT LOGS ================= */}
+    
 <div className="card shadow-sm">
   <div className="card-body">
     <div className="d-flex justify-content-between align-items-center mb-3">

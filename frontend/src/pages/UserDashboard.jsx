@@ -21,10 +21,10 @@ export default function UserDashboard() {
 
   return (
     <div className="dashboard-layout">
-      {/* SIDEBAR */}
+   
       <UserSidebar />
 
-      {/* MAIN AREA */}
+      
       <div className="dashboard-main">
         <header className="dashboard-header position-fixed top-0 start-0 end-0 ">
           <h1>Intelligent Log Management System</h1>
@@ -33,7 +33,7 @@ export default function UserDashboard() {
           </button>
         </header>
 
-        {/* ROUTED CONTENT */}
+        
         <main className="main-content">
           <Outlet />
         </main>

@@ -30,6 +30,7 @@ import os
 
 UPLOAD_DIR = "uploads"  
 
+# SOft deletes the file
 @router.delete("/{file_id}")
 def delete_uploaded_file(
     file_id: int,
@@ -81,7 +82,7 @@ def delete_uploaded_file(
     db.commit()
 
     return {"message": "File deleted successfully"}
-
+# fetches the files uploaded by user
 @router.get("/my-files")
 def my_uploaded_files(
     page: int = 1,
