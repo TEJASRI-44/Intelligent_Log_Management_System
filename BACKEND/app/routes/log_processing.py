@@ -7,6 +7,7 @@ from app.models.log_entries import LogEntry
 from app.models.log_categories import LogCategory
 from app.models.log_severities import LogSeverity
 
+# Router for log search and filtering APIs
 router = APIRouter(prefix="/logs", tags=["Log Processing"])
 
 
@@ -19,6 +20,7 @@ def search_logs(
     keyword: str | None = Query(None),
     db: Session = Depends(get_db)
 ):
+    # Base query joining severity and category tables
     query = (
         db.query(
             LogEntry.log_timestamp,
@@ -31,26 +33,28 @@ def search_logs(
         .join(LogCategory, LogEntry.category_id == LogCategory.category_id)
     )
 
-    #  Date filters
+    # Apply date range filters if provided
     if start_date:
         query = query.filter(LogEntry.log_timestamp >= start_date)
     if end_date:
         query = query.filter(LogEntry.log_timestamp <= end_date)
 
-    # Category filter
+    # Filter by category if given
     if category:
         query = query.filter(LogCategory.category_name == category.upper())
 
-    # Severity filter
+    # Filter by severity if given
     if severity:
         query = query.filter(LogSeverity.severity_code == severity.upper())
 
-    #  Keyword search
+    # Search logs by keyword inside message
     if keyword:
         query = query.filter(LogEntry.message.ilike(f"%{keyword}%"))
 
+    # Limit results to latest 200 logs
     logs = query.order_by(LogEntry.log_timestamp.desc()).limit(200).all()
 
+    # Return filtered log results
     return {
         "count": len(logs),
         "results": [

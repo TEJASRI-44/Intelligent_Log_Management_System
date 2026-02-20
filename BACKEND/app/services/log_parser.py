@@ -10,7 +10,7 @@ from app.models.log_categories import LogCategory
 import re
 from datetime import datetime
 
-
+# Main log pattern (standard format: YYYY-MM-DD HH:MM:SS LEVEL service message)
 PRIMARY_PATTERN = re.compile(
     r"(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+"
     r"(?P<severity>DEBUG|INFO|WARN|ERROR|FATAL)\s+"
@@ -18,6 +18,7 @@ PRIMARY_PATTERN = re.compile(
     r"(?P<message>.+)"
 )
 
+# Alternate format (DD-MM-YYYY)
 ALT_PATTERN = re.compile(
     r"(?P<timestamp>\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2})\s+"
     r"(?P<severity>\w+)\s+"
@@ -25,7 +26,7 @@ ALT_PATTERN = re.compile(
     r"(?P<message>.+)"
 )
 
-# Access logs
+# Pattern for API access logs
 ACCESS_LOG_PATTERN = re.compile(
     r"(?P<severity>\w+):\s+"
     r"(?P<client>\S+)\s+-\s+"
@@ -33,13 +34,13 @@ ACCESS_LOG_PATTERN = re.compile(
     r"(?P<status_code>\d+)\s+(?P<status_message>.+)"
 )
 
+# Supported severity levels
 SUPPORTED_LEVELS = {"DEBUG", "INFO", "WARN", "ERROR", "FATAL"}
 
 
 def clean_log_lines(raw_text: str) -> list[dict]:
     """
-    Returns standardized internal format:
-
+    Convert raw log text into a clean, standardized format:
     {
         "timestamp": ISO8601 string,
         "severity": uppercase severity,
@@ -49,12 +50,13 @@ def clean_log_lines(raw_text: str) -> list[dict]:
     """
 
     normalized_logs = []
-    seen = set()
+    seen = set()  # Used to remove duplicate lines
 
     for line in raw_text.splitlines():
 
         line = line.strip()
 
+        # Skip empty or duplicate lines
         if not line or line in seen:
             continue
 
@@ -62,15 +64,18 @@ def clean_log_lines(raw_text: str) -> list[dict]:
 
         log_data = None
 
+        # Try matching primary format
         match = PRIMARY_PATTERN.match(line)
         if match:
             log_data = match.groupdict()
 
+        # Try alternate format
         if not log_data:
             match = ALT_PATTERN.match(line)
             if match:
                 log_data = match.groupdict()
 
+        # Try access log format
         if not log_data:
             match = ACCESS_LOG_PATTERN.match(line)
             if match:
@@ -83,13 +88,14 @@ def clean_log_lines(raw_text: str) -> list[dict]:
                                f'Status:{access_data["status_code"]}'
                 }
 
+        # If no pattern matched, skip line
         if not log_data:
             continue
 
         try:
             timestamp_str = log_data["timestamp"]
 
-            # Handle timestamp parsing
+            # Handle different timestamp formats
             try:
                 dt = datetime.strptime(timestamp_str, "%Y-%m-%d %H:%M:%S")
             except ValueError:
@@ -97,6 +103,7 @@ def clean_log_lines(raw_text: str) -> list[dict]:
 
             iso_timestamp = dt.isoformat() + "Z"
 
+            # Normalize severity
             severity = log_data["severity"].upper()
             if severity not in SUPPORTED_LEVELS:
                 severity = "INFO"
@@ -104,24 +111,24 @@ def clean_log_lines(raw_text: str) -> list[dict]:
             service = log_data["service"].strip()
             message = log_data["message"].strip()
 
+            # Append normalized log
             normalized_logs.append({
                 "timestamp": iso_timestamp,
-                "severity": severity,   
+                "severity": severity,
                 "service": service,
                 "message": message
             })
 
         except Exception:
+            # Skip if parsing fails
             continue
 
     return normalized_logs
 
 
-
-
 def classify_log(message: str) -> str:
     """
-    Classifies logs into categories based on message content
+    Classifies logs into categories based on keywords in the message
     """
 
     if not message:
@@ -145,7 +152,7 @@ def classify_log(message: str) -> str:
     ]):
         return "SECURITY"
 
-    #  Infrastructure related logs
+    # Infrastructure related logs
     if any(keyword in msg for keyword in [
         "cpu",
         "memory",
@@ -162,7 +169,7 @@ def classify_log(message: str) -> str:
     ]):
         return "INFRASTRUCTURE"
 
-    #  Audit & compliance logs
+    # Audit & compliance logs
     if any(keyword in msg for keyword in [
         "audit",
         "compliance",
@@ -176,7 +183,7 @@ def classify_log(message: str) -> str:
     ]):
         return "AUDIT"
 
-    #  Application related logs
+    # Application related logs
     if any(keyword in msg for keyword in [
         "exception",
         "error",
@@ -190,5 +197,5 @@ def classify_log(message: str) -> str:
     ]):
         return "APPLICATION"
 
+    # Default category
     return "UNCATEGORIZED"
-

@@ -14,11 +14,16 @@ from app.models.roles import Role
 from app.core.security import hash_password, verify_password
 from app.core.jwt_utils import create_access_token
 
+
+# Admin creates a new user
 def create_user_by_admin(db: Session, admin_id: int, payload):
+
+    # Check if email already exists
     existing = db.query(User).filter(User.email == payload.email).first()
     if existing:
         raise ValueError("Email already exists")
 
+    # Create basic user record
     user = User(
         email=payload.email,
         username=payload.username,
@@ -26,8 +31,9 @@ def create_user_by_admin(db: Session, admin_id: int, payload):
         is_deleted=False
     )
     db.add(user)
-    db.flush()
+    db.flush()  # Get generated user_id before commit
 
+    # Create user profile
     db.add(UserProfile(
         user_id=user.user_id,
         first_name=payload.first_name,
@@ -36,18 +42,22 @@ def create_user_by_admin(db: Session, admin_id: int, payload):
         job_title=payload.job_title
     ))
 
+    # Store hashed password in credentials table
     db.add(UserCredentials(
         user_id=user.user_id,
         password_hash=hash_password(payload.password),
         password_algo="bcrypt"
     ))
 
+    # Assign roles
     for role_id in payload.role_ids:
         db.add(UserRole(user_id=user.user_id, role_id=role_id))
 
+    # Assign teams
     for team_id in payload.team_ids:
         db.add(UserTeam(user_id=user.user_id, team_id=team_id))
 
+    # Log this action in audit trail
     db.add(AuditTrail(
         user_id=admin_id,
         action_type="CREATED USER",
@@ -58,11 +68,16 @@ def create_user_by_admin(db: Session, admin_id: int, payload):
     db.commit()
     return user
 
+
+# Fetch all non-deleted users
 def get_all_users(db: Session):
     return db.query(User).filter(User.is_deleted == False).all()
 
 
+# Login using JSON payload (email + password)
 def login_user(db: Session, payload):
+
+    # Check if user exists and is active
     user = db.query(User).filter(
         User.email == payload.email,
         User.is_active == True,
@@ -75,16 +90,19 @@ def login_user(db: Session, payload):
             detail="Invalid credentials"
         )
 
+    # Fetch user credentials
     creds = db.query(UserCredentials).filter(
         UserCredentials.user_id == user.user_id
     ).first()
 
+    # Verify password
     if not creds or not verify_password(payload.password, creds.password_hash):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid credentials"
         )
 
+    # Fetch roles assigned to user
     roles = (
         db.query(Role.role_name)
         .join(UserRole, Role.role_id == UserRole.role_id)
@@ -94,6 +112,7 @@ def login_user(db: Session, payload):
 
     role_names = [r.role_name for r in roles]
 
+    # Generate JWT token
     access_token = create_access_token({
         "sub": str(user.user_id),
         "email": user.email,
@@ -106,7 +125,11 @@ def login_user(db: Session, payload):
         "role": role_names[0] if role_names else "USER"
     }
 
+
+# Login using form data (username/email + password)
 def login_user_form(db: Session, form_data: OAuth2PasswordRequestForm):
+
+    # Allow login using either email or username
     user = db.query(User).filter(
         and_(
             or_(
@@ -121,13 +144,16 @@ def login_user_form(db: Session, form_data: OAuth2PasswordRequestForm):
     if not user:
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
+    # Fetch credentials
     creds = db.query(UserCredentials).filter(
         UserCredentials.user_id == user.user_id
     ).first()
 
+    # Verify password
     if not creds or not verify_password(form_data.password, creds.password_hash):
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
+    # Fetch user roles
     roles = (
         db.query(Role.role_name)
         .join(UserRole, Role.role_id == UserRole.role_id)
@@ -137,6 +163,7 @@ def login_user_form(db: Session, form_data: OAuth2PasswordRequestForm):
 
     role_names = [r.role_name for r in roles]
 
+    # Generate JWT token
     access_token = create_access_token({
         "sub": str(user.user_id),
         "email": user.email,

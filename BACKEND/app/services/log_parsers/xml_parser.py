@@ -7,10 +7,13 @@ from app.models.log_categories import LogCategory
 from app.services.log_parser import classify_log
 import re
 from app.models.environments import Environment
+
+# Extract environment and host from log message
 def extract_env_host(message: str):
     env_match = re.search(r'env=([\w-]+)', message)
     host_match = re.search(r'host=([\w.-]+)', message)
 
+    # Use defaults if not present in message
     environment_code = env_match.group(1).upper() if env_match else "LOCAL"
     host = host_match.group(1) if host_match else "unknown-host"
 
@@ -19,6 +22,7 @@ def extract_env_host(message: str):
 
 def parse_xml_logs(db: Session, file_id: int, raw_text: str):
 
+    # Try parsing XML content
     try:
         root = ET.fromstring(raw_text.strip())
     except ET.ParseError:
@@ -29,24 +33,29 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
     inserted = 0
     skipped = 0
 
+    # Find all <log> elements
     logs = root.findall("log")
     total_logs = len(logs)
+
+    # Get LOCAL environment as fallback
     local_env = db.query(Environment).filter(
         Environment.environment_code == "LOCAL"
     ).first()
+
     for log in logs:
         try:
+            # Extract values from XML tags
             timestamp_text = log.findtext("timestamp")
             severity = log.findtext("severity")
             service = log.findtext("service")
             message = log.findtext("message")
 
-            # Required fields check
+            # Check required fields
             if not timestamp_text or not severity or not message:
                 skipped += 1
                 continue
 
-            # Timestamp parsing
+            # Parse timestamp safely
             try:
                 timestamp = datetime.fromisoformat(
                     timestamp_text.strip().replace("Z", "+00:00")
@@ -55,7 +64,7 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
                 skipped += 1
                 continue
 
-            # Validate severity
+            # Validate severity from DB
             severity = db.query(LogSeverity).filter(
                 LogSeverity.severity_code == severity.strip()
             ).first()
@@ -64,19 +73,23 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
                 skipped += 1
                 continue
 
-            # Classify category
+            # Classify category based on message
             category_name = classify_log(message.strip())
             category = db.query(LogCategory).filter(
                 LogCategory.category_name == category_name
             ).first()
+
+            # Extract environment and host
             environment_code, host_name = extract_env_host(message.strip())
-            environment= db.query(Environment).filter(
+            environment = db.query(Environment).filter(
                 Environment.environment_code == environment_code
             ).first()
 
-            # If env not found → use LOCAL
+            # If environment not found, fallback to LOCAL
             if not environment:
                 environment = local_env
+
+            # Create log entry
             entry = LogEntry(
                 file_id=file_id,
                 log_timestamp=timestamp,
@@ -93,9 +106,16 @@ def parse_xml_logs(db: Session, file_id: int, raw_text: str):
             inserted += 1
 
         except Exception:
+            # Skip this log if any unexpected error occurs
             skipped += 1
             continue
 
     db.commit()
-    parsed_percentage=(inserted/(inserted+skipped))*100 if (inserted+skipped)>0 else 0
+
+    # Calculate parsing success percentage
+    parsed_percentage = (
+        (inserted / (inserted + skipped)) * 100
+        if (inserted + skipped) > 0 else 0
+    )
+
     return round(parsed_percentage, 2)
