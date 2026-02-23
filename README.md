@@ -64,7 +64,7 @@ React
 Installation
 
 1. Clone the repository
-   git clone [https://github.com/your-username/Intelligent_Log_Management_System.git](https://github.com/your-username/Intelligent_Log_Management_System.git)
+   git clone [https://github.com/TEJASRI-44/Intelligent_Log_Management_System.git](https://github.com/your-username/Intelligent_Log_Management_System.git)
 
 2. Navigate into the project directory
    cd Intelligent_Log_Management_System
