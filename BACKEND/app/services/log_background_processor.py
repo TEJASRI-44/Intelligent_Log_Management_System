@@ -47,7 +47,6 @@ def process_uploaded_file(file_id: int):
         parsed_percentage = parse_logs_by_format(
             db=db,
             file_id=raw_file.file_id,
-            format_id=raw_file.format_id,
             raw_text=raw_text
         )
 
