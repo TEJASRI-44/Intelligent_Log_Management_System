@@ -11,7 +11,7 @@ Key Features
 
 * Multi-file upload support for both admin and user dashboards
 * Support for JSON, CSV, XML, and access log formats
-* Dedicated parser modules for each format
+* Dedicated parser modules for each format based on content inside the log file(Content based parsing)
 * Normalization layer to standardize log data
 * PostgreSQL database integration using SQLAlchemy
 * Cloud file storage using Appwrite
@@ -26,7 +26,7 @@ How the System Works
 
 1. A user uploads one or more log files.
 2. The files are stored securely in Appwrite cloud storage.
-3. Based on the uploaded format that particular parser get dispatched.
+3. Based on the uploaded format that particular parser get dispatched using content detection.
 4. The appropriate parser processes the log content by cleaning(removes spaces and duplicate lines).
 5. The normalization layer converts logs into a consistent schema and parses based on category and severity.
 6. During parsing not matched log lines get skipped with this parsed percentage get calculated.
